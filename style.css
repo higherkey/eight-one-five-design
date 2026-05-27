@@ -1,46 +1,134 @@
+/* ═══════════════════════════════════════════════
+   8:15 DESIGN — GROUNDED WISDOM DESIGN SYSTEM
+   Golden Ratio Scale (1.618) & Custom Theme Tokens
+   ═══════════════════════════════════════════════ */
+
+/* Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Typographic Tokens */
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Golden Ratio Layout & Spacing */
+  --space-gutter: 1.618rem;
+  --space-section: 2.618rem;
+  --radius: 0.809rem;
+
+  /* Micro-Animation Presets */
+  --scale-hover: 1.02;
+  --scale-click: 0.98;
+  --transition-spd: 300ms;
+  --transition-ease: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Theme I: Grounded Wisdom — Structural (Light Mode Defaults) */
+  --bg-main: #FDFBF7;
+  --bg-card: #FFFFFF;
+  --bg-input: #FFFFFF;
+  --text-main: #1A1A1A;
+  --text-muted: #555555;
+  --accent: #D97706;        /* Warm Amber */
+  --accent-hover: #B45309;  /* Deep Amber */
+  --accent-rgb: 217, 119, 6;
+  --border: #EFEBE4;        /* Soft Limestone Warm Grey */
+  --shadow-sm: 0 2px 8px rgba(26, 26, 26, 0.02);
+  --shadow-md: 0 10px 30px -10px rgba(217, 119, 6, 0.06);
+  --shadow-lg: 0 20px 40px -15px rgba(217, 119, 6, 0.08);
+}
+
+/* Theme I: Grounded Wisdom — Authoritative (Dark Mode Overrides) */
+.theme-dark {
+  --bg-main: #0B0F19;       /* Obsidian Space Slate */
+  --bg-card: #111827;       /* Rich Graphite Card */
+  --bg-input: #1F2937;      /* Input Field Charcoal */
+  --text-main: #F8FAFC;     /* Crisp Linen White */
+  --text-muted: #94A3B8;    /* Cool Steel Grey */
+  --accent: #D4AF7A;        /* Muted Brass Gold */
+  --accent-hover: #C59B63;  /* Gilded Gold */
+  --accent-rgb: 212, 175, 122;
+  --border: #1F2937;        /* Obsidian Dark Border */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 10px 30px -10px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 20px 40px -15px rgba(212, 175, 122, 0.04);
+}
+
+/* Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background-color: var(--bg-main);
   color: var(--text-main);
   font-family: var(--font-body);
-  transition: background-color var(--transition-speed) var(--transition-ease),
-              color var(--transition-speed) var(--transition-ease);
+  line-height: 1.618;
+  overflow-x: hidden;
+  transition: background-color var(--transition-spd) var(--transition-ease),
+              color var(--transition-spd) var(--transition-ease),
+              border-color var(--transition-spd) var(--transition-ease);
 }
 
+/* Typographic Hierarchy */
 h1, h2, h3, h4, h5, h6, .font-heading {
   font-family: var(--font-heading);
-  transition: font-family var(--transition-speed) var(--transition-ease);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
 }
 
-.text-body {
-  font-family: var(--font-body);
-  transition: font-family var(--transition-speed) var(--transition-ease);
+/* Layout Utilities */
+.custom-gutter { gap: var(--space-gutter); }
+.custom-section-gap { gap: var(--space-section); }
+.custom-padding { padding: var(--space-gutter); }
+.custom-radius { border-radius: var(--radius); }
+
+/* Sticky Premium Header */
+.brand-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: rgba(253, 251, 247, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  transition: background-color var(--transition-spd) var(--transition-ease),
+              border-color var(--transition-spd) var(--transition-ease);
 }
 
-/* Golden Ratio spacing utilities */
-.custom-gutter {
-  gap: var(--space-gutter);
-}
-.custom-section-gap {
-  gap: var(--space-section);
-}
-.custom-padding {
-  padding: var(--space-gutter);
-}
-.custom-radius {
-  border-radius: var(--radius);
+.theme-dark .brand-header {
+  background-color: rgba(11, 15, 25, 0.8);
 }
 
-/* Interactive state scale micro-animations (Work & Play compliance) */
+/* Tab Switching Fade Transitions */
+.section-view {
+  opacity: 0;
+  transform: translateY(12px);
+  display: none;
+  transition: opacity var(--transition-spd) var(--transition-ease),
+              transform var(--transition-spd) var(--transition-ease);
+}
+
+.section-view.active {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Premium Buttons & Cards */
 .btn-action {
-  transition: transform var(--transition-speed) var(--transition-ease),
-              background-color var(--transition-speed) var(--transition-ease),
-              color var(--transition-speed) var(--transition-ease),
-              border-color var(--transition-speed) var(--transition-ease),
-              box-shadow var(--transition-speed) var(--transition-ease);
+  transition: transform var(--transition-spd) var(--transition-ease),
+              background-color var(--transition-spd) var(--transition-ease),
+              color var(--transition-spd) var(--transition-ease),
+              border-color var(--transition-spd) var(--transition-ease),
+              box-shadow var(--transition-spd) var(--transition-ease);
+  cursor: pointer;
 }
 .btn-action:hover {
   transform: scale(var(--scale-hover));
-  box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow-sm);
 }
 .btn-action:active {
   transform: scale(var(--scale-click));
@@ -49,40 +137,158 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 .card-interactive {
   background-color: var(--bg-card);
   border: 1px solid var(--border);
-  transition: transform var(--transition-speed) var(--transition-ease),
-              box-shadow var(--transition-speed) var(--transition-ease),
-              background-color var(--transition-speed) var(--transition-ease),
-              border-color var(--transition-speed) var(--transition-ease);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-spd) var(--transition-ease),
+              box-shadow var(--transition-spd) var(--transition-ease),
+              background-color var(--transition-spd) var(--transition-ease),
+              border-color var(--transition-spd) var(--transition-ease);
+  cursor: pointer;
 }
 .card-interactive:hover {
   transform: scale(var(--scale-hover));
   border-color: var(--accent);
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-md);
 }
 .card-interactive:active {
   transform: scale(var(--scale-click));
 }
 
-/* Collapsible summary details styling */
-details summary {
-  list-style: none;
-}
-details summary::-webkit-details-marker {
-  display: none;
+/* Theme Slide Toggle Custom Styling */
+.switch-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-/* Custom elegant web scrollbar */
+.switch-track {
+  width: 46px;
+  height: 24px;
+  background-color: var(--border);
+  border-radius: 100px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color var(--transition-spd) var(--transition-ease);
+}
+
+.switch-thumb {
+  width: 18px;
+  height: 18px;
+  background-color: var(--accent);
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  transition: transform var(--transition-spd) var(--transition-ease),
+              background-color var(--transition-spd) var(--transition-ease);
+}
+
+.theme-dark .switch-thumb {
+  transform: translateX(22px);
+}
+
+/* Vertical Experience Timeline */
+.timeline-container {
+  position: relative;
+  padding-left: 2rem;
+  border-left: 2px solid var(--border);
+  transition: border-color var(--transition-spd) var(--transition-ease);
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -6px;
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  border: 2px solid var(--bg-main);
+  transition: background-color var(--transition-spd) var(--transition-ease),
+              border-color var(--transition-spd) var(--transition-ease);
+}
+
+.timeline-item:hover .timeline-dot {
+  transform: scale(1.3);
+  box-shadow: 0 0 8px var(--accent);
+}
+
+/* Premium Form Elements */
+.input-premium {
+  width: 100%;
+  padding: 0.809rem 1rem;
+  background-color: var(--bg-input);
+  border: 1.5px solid var(--border);
+  border-radius: calc(var(--radius) / 2);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  transition: border-color var(--transition-spd) var(--transition-ease),
+              box-shadow var(--transition-spd) var(--transition-ease),
+              background-color var(--transition-spd) var(--transition-ease);
+  outline: none;
+}
+
+.input-premium:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(var(--accent-rgb), 0.15);
+}
+
+/* Bento Style Metrics */
+.metric-box {
+  background: linear-gradient(135deg, var(--bg-card) 0%, rgba(var(--accent-rgb), 0.02) 100%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-gutter);
+  transition: transform var(--transition-spd) var(--transition-ease),
+              border-color var(--transition-spd) var(--transition-ease),
+              box-shadow var(--transition-spd) var(--transition-ease);
+}
+
+.metric-box:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Elegant custom scrollbar */
 ::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
+  width: 6px;
+  height: 6px;
 }
 ::-webkit-scrollbar-track {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
   background: var(--border);
-  border-radius: 10px;
+  border-radius: 100px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent);
+}
+
+/* Navigation Menu Transitions */
+.nav-link {
+  position: relative;
+  transition: color var(--transition-spd) var(--transition-ease);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent);
+  transition: width var(--transition-spd) var(--transition-ease);
+}
+
+.nav-link.active {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.nav-link.active::after,
+.nav-link:hover::after {
+  width: 100%;
 }
