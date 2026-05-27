@@ -1,0 +1,88 @@
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  transition: background-color var(--transition-speed) var(--transition-ease),
+              color var(--transition-speed) var(--transition-ease);
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: var(--font-heading);
+  transition: font-family var(--transition-speed) var(--transition-ease);
+}
+
+.text-body {
+  font-family: var(--font-body);
+  transition: font-family var(--transition-speed) var(--transition-ease);
+}
+
+/* Golden Ratio spacing utilities */
+.custom-gutter {
+  gap: var(--space-gutter);
+}
+.custom-section-gap {
+  gap: var(--space-section);
+}
+.custom-padding {
+  padding: var(--space-gutter);
+}
+.custom-radius {
+  border-radius: var(--radius);
+}
+
+/* Interactive state scale micro-animations (Work & Play compliance) */
+.btn-action {
+  transition: transform var(--transition-speed) var(--transition-ease),
+              background-color var(--transition-speed) var(--transition-ease),
+              color var(--transition-speed) var(--transition-ease),
+              border-color var(--transition-speed) var(--transition-ease),
+              box-shadow var(--transition-speed) var(--transition-ease);
+}
+.btn-action:hover {
+  transform: scale(var(--scale-hover));
+  box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.08);
+}
+.btn-action:active {
+  transform: scale(var(--scale-click));
+}
+
+.card-interactive {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  transition: transform var(--transition-speed) var(--transition-ease),
+              box-shadow var(--transition-speed) var(--transition-ease),
+              background-color var(--transition-speed) var(--transition-ease),
+              border-color var(--transition-speed) var(--transition-ease);
+}
+.card-interactive:hover {
+  transform: scale(var(--scale-hover));
+  border-color: var(--accent);
+  box-shadow: var(--shadow);
+}
+.card-interactive:active {
+  transform: scale(var(--scale-click));
+}
+
+/* Collapsible summary details styling */
+details summary {
+  list-style: none;
+}
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Custom elegant web scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}

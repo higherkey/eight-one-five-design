@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eight Fifteen Design — Interactive Brand Portal &amp; Visual Playground</title>
+  <meta name="description" content="Visual system playground and design registry for Eight Fifteen Design. Interactive theme engine, 90 procedural negative space marks, typographic wordmark configurations, live application mockups, and philosophical brand builder.">
+
+  <!-- Google Fonts preload -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lexend:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Nunito:wght@300;400;600;700&family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN (v3) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            heading: ['var(--font-heading)', 'sans-serif'],
+            body:    ['var(--font-body)',    'sans-serif'],
+          },
+          animation: {
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4,0,0.6,1) infinite',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- ═══════════════════════════════════════════════
+       DESIGN TOKEN SYSTEM  (Golden Ratio 1.618 base)
+       All theme overrides replace this block via JS.
+       ═══════════════════════════════════════════════ -->
+  <style id="theme-vars-style">
+    :root {
+      --bg-main:        #FDFBF7;
+      --bg-card:        #FFFFFF;
+      --text-main:      #1A1A1A;
+      --text-muted:     #555555;
+      --accent:         #D97706;
+      --accent-hover:   #B45309;
+      --border:         #EFEBE4;
+      --font-heading:   'Space Grotesk', sans-serif;
+      --font-body:      'Inter', sans-serif;
+
+      /* Golden Ratio spacing */
+      --space-gutter:   1.618rem;
+      --space-section:  2.618rem;
+      --radius:         0.809rem;
+      --shadow:         0 4px 24px -2px rgba(0,0,0,0.04);
+
+      /* Interactive state tokens */
+      --scale-hover:    1.02;
+      --scale-click:    0.98;
+      --transition-spd: 250ms;
+      --transition-ease:cubic-bezier(0.4,0,0.2,1);
+    }
+  </style>
+
+  <!-- ════════════════════
+       INLINED CSS (FIX #1)
+       ════════════════════ -->
+  <style>
+    /* Base */
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      transition: background-color var(--transition-spd) var(--transition-ease),
+                  color            var(--transition-spd) var(--transition-ease);
+    }
+
+    /* Headings — FIX #6: removed non-animatable font-family transition */
+    h1, h2, h3, h4, h5, h6, .font-heading {
+      font-family: var(--font-heading);
+    }
+
+    /* Golden Ratio layout utilities */
+    .custom-gutter        { gap:              var(--space-gutter);  }
+    .custom-section-gap   { gap:              var(--space-section); }
+    .custom-padding       { padding:          var(--space-gutter);  }
+    .custom-radius        { border-radius:    var(--radius);        }
+
+    /* ── Interactive scale micro-animations (Work & Play compliance) ── */
+    .btn-action {
+      transition:
+        transform         var(--transition-spd) var(--transition-ease),
+        background-color  var(--transition-spd) var(--transition-ease),
+        color             var(--transition-spd) var(--transition-ease),
+        border-color      var(--transition-spd) var(--transition-ease),
+        box-shadow        var(--transition-spd) var(--transition-ease);
+    }
+    .btn-action:hover  { transform: scale(var(--scale-hover)); box-shadow: 0 8px 20px -4px rgba(0,0,0,0.08); }
+    .btn-action:active { transform: scale(var(--scale-click)); }
+
+    /* ── Card hover style (FIX #4: bento cards now use this class) ── */
+    .card-interactive {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border);
+      transition:
+        transform         var(--transition-spd) var(--transition-ease),
+        box-shadow        var(--transition-spd) var(--transition-ease),
+        background-color  var(--transition-spd) var(--transition-ease),
+        border-color      var(--transition-spd) var(--transition-ease);
+      cursor: pointer;
+    }
+    .card-interactive:hover  { transform: scale(var(--scale-hover)); border-color: var(--accent); box-shadow: var(--shadow); }
+    .card-interactive:active { transform: scale(var(--scale-click)); }
+
+    /* ── Carousel text fade (FIX #7: opacity needs a transition to actually animate) ── */
+    .carousel-fade {
+      transition: opacity var(--transition-spd) var(--transition-ease);
+    }
+
+    /* ── <details>/<summary> cleanup ── */
+    details summary            { list-style: none; }
+    details summary::-webkit-details-marker { display: none; }
+
+    /* ── Premium scrollbar ── */
+    ::-webkit-scrollbar            { width: 5px; height: 5px; }
+    ::-webkit-scrollbar-track      { background: transparent; }
+    ::-webkit-scrollbar-thumb      { background: var(--border); border-radius: 10px; }
+    ::-webkit-scrollbar-thumb:hover{ background: var(--accent); }
+  </style>
+</head>
+
+<body class="min-h-screen flex flex-col md:flex-row antialiased overflow-x-hidden">
+
+<!-- ══════════════════════════ SIDEBAR THEME ENGINE ══════════════════════════ -->
+<aside class="w-full md:w-80 flex-shrink-0 border-b md:border-b-0 md:border-r border-[var(--border)]
+              p-6 flex flex-col gap-6 md:h-screen md:sticky md:top-0 overflow-y-auto
+              bg-[var(--bg-main)] z-20 transition-colors duration-300">
+
+  <!-- Logo + tagline -->
+  <div class="flex flex-col gap-2">
+    <div class="flex items-center gap-3">
+      <svg class="w-10 h-10 flex-shrink-0" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="33" cy="33" r="17" stroke="var(--accent)" stroke-width="6"/>
+        <circle cx="33" cy="67" r="21" stroke="var(--accent)" stroke-width="6"/>
+        <line x1="67" y1="14" x2="67" y2="86" stroke="var(--accent)" stroke-width="6" stroke-linecap="round"/>
+        <path d="M65 17 L85 17 L66 44 A14 14 0 1 1 66 74" stroke="var(--accent)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg>
+      <span class="font-heading text-2xl font-bold tracking-tight">8:15 Design</span>
+    </div>
+    <p class="font-heading text-xs tracking-widest text-[var(--accent)] uppercase font-semibold">Wisdom in Work. Joy in the Toil.</p>
+  </div>
+
+  <hr class="border-[var(--border)]">
+
+  <!-- Accordion groups -->
+  <div class="flex flex-col gap-3 flex-grow">
+    <h3 class="font-heading text-xs uppercase tracking-wider text-[var(--text-muted)] font-bold">Brand Identities</h3>
+
+    <!-- I. Grounded Wisdom -->
+    <details class="group border border-[var(--border)] custom-radius overflow-hidden" open>
+      <summary class="flex justify-between items-center p-3 cursor-pointer select-none bg-[var(--bg-card)] btn-action">
+        <span class="font-heading font-semibold text-sm">I. Grounded Wisdom</span>
+        <svg class="w-4 h-4 flex-shrink-0 transform group-open:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+      </summary>
+      <div class="p-3 border-t border-[var(--border)] flex flex-col gap-2 bg-[var(--bg-main)]">
+        <p class="text-xs text-[var(--text-muted)]">Architectural anchor. Stability, craft, and intellectual depth.</p>
+        <button id="btn-grounded-wisdom-structural"  onclick="changeTheme('grounded-wisdom','structural')"   class="w-full text-left text-xs p-2 custom-radius font-medium border border-[var(--border)] bg-[var(--bg-card)] btn-action hover:border-[var(--accent)]">Structural (Light)</button>
+        <button id="btn-grounded-wisdom-focus"        onclick="changeTheme('grounded-wisdom','focus')"        class="w-full text-left text-xs p-2 custom-radius font-medium border border-[var(--border)] bg-[var(--bg-card)] btn-action hover:border-[var(--accent)]">Focus (Dim)</button>
+        <button id="btn-grounded-wisdom-authoritative" onclick="changeTheme('grounded-wisdom','authoritative')" class="w-full text-left text-xs p-2 custom-radius font-medium border border-[var(--border)] bg-[var(--bg-card)] btn-action hover:border-[var(--accent)]">Authoritative (Dark)</button>
+      </div>
+    </details>
+
+    <!-- II. Luminous Flow -->
+    <details class="group border border-[var(--border)] custom-radius overflow-hidden">
+      <summary class="flex justify-between items-center p-3 cursor-pointer select-none bg-[var(--bg-card)] btn-action">
+        <span class="font-heading font-semibold text-sm">II. Luminous Flow</span>
+        <svg class="w-4 h-4 flex-shrink-0 transform group-open:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+      </summary>
+      <div class="p-3 border-t border-[var(--border)] flex flex-col gap-2 bg-[var(--bg-main)]">
+        <p class="text-xs text-[var(--text-muted)]">The Kinetic Loop. Playfulness, organic motion, and transition.</p>
+        <button id="btn-luminous-flow-daybreak"  onclick="changeTheme('luminous-flow','daybreak')"  class="w-full text-left text-xs p-2 custom-radius font-medium border border-[var(--border)] bg-[var(--bg-card)] btn-action hover:border-[var(--accent)]">Daybreak</button>
+        <button id="btn-luminous-flow-clear-sky" onclick="changeTheme('luminous-flow','clear-sky')" class="w-full text-left text-xs p-2 custom-radius font-medium border border-[var(--border)] bg-[var(--bg-card)] btn-action hover:border-[var(--accent)]">Clear Sky</button>
+        <button id="btn-luminous-flow-twilight"  onclick="changeTheme('luminous-flow','twilight')"  class="w-full text-left text-xs p-2 custom-radius font-medium border border-[var(--border)] bg-[var(--bg-card)] btn-action hover:border-[var(--accent)]">Twilight</button>
+      </div>
+    </details>
+
+    <!-- III. Kinetic Pulse -->
+    <details class="group border border-[var(--border)] custom-radius overflow-hidden">
+      <summary class="flex justify-between items-center p-3 cursor-pointer select-none bg-[var(--bg-card)] btn-action">
+        <span class="font-heading font-semibold text-sm">III. Kinetic Pulse</span>
+        <svg class="w-4 h-4 flex-shrink-0 transform group-open:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+      </summary>
+      <div class="p-3 border-t border-[var(--border)] flex flex-col gap-2 bg-[var(--bg-main)]">
+        <p class="text-xs text-[var(--text-muted)]">Energetic brutalism. Rapid creation intervals.</p>
+        <button id="btn-kinetic-pulse-neon-cyber"   onclick="changeTheme('kinetic-pulse','neon-cyber')"   class="w-full text-left text-xs p-2 custom-radius font-medium border border-[var(--border)] bg-[var(--bg-card)] btn-action hover:border-[var(--accent)]">Neon Cyber</button>
+        <button id="btn-kinetic-pulse-high-voltage"  onclick="changeTheme('kinetic-pulse','high-voltage')"  class="w-full text-left text-xs p-2 custom-radius font-medium border border-[var(--border)] bg-[var(--bg-card)] btn-action hover:border-[var(--accent)]">High Voltage</button>
+      </div>
+    </details>
+
+    <!-- IV. Blank Canvas -->
+    <details class="group border border-[var(--border)] custom-radius overflow-hidden">
+      <summary class="flex justify-between items-center p-3 cursor-pointer select-none bg-[var(--bg-card)] btn-action">
+        <span class="font-heading font-semibold text-sm">IV. Blank Canvas</span>
+        <svg class="w-4 h-4 flex-shrink-0 transform group-open:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+      </summary>
+      <div class="p-3 border-t border-[var(--border)] flex flex-col gap-2 bg-[var(--bg-main)]">
+        <p class="text-xs text-[var(--text-muted)]">Ultimate essentialism. Total focus on structure and grids.</p>
+        <button id="btn-blank-canvas-pure-mono"  onclick="changeTheme('blank-canvas','pure-mono')"  class="w-full text-left text-xs p-2 custom-radius font-medium border border-[var(--border)] bg-[var(--bg-card)] btn-action hover:border-[var(--accent)]">Pure Mono</button>
+        <button id="btn-blank-canvas-dark-carbon" onclick="changeTheme('blank-canvas','dark-carbon')" class="w-full text-left text-xs p-2 custom-radius font-medium border border-[var(--border)] bg-[var(--bg-card)] btn-action hover:border-[var(--accent)]">Dark Carbon</button>
+      </div>
+    </details>
+
+    <!-- V. Organic Logic -->
+    <details class="group border border-[var(--border)] custom-radius overflow-hidden">
+      <summary class="flex justify-between items-center p-3 cursor-pointer select-none bg-[var(--bg-card)] btn-action">
+        <span class="font-heading font-semibold text-sm">V. Organic Logic</span>
+        <svg class="w-4 h-4 flex-shrink-0 transform group-open:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+      </summary>
+      <div class="p-3 border-t border-[var(--border)] flex flex-col gap-2 bg-[var(--bg-main)]">
+        <p class="text-xs text-[var(--text-muted)]">Humanized equations. Organic flow and earthen tones.</p>
+        <button id="btn-organic-logic-forest-moss" onclick="changeTheme('organic-logic','forest-moss')" class="w-full text-left text-xs p-2 custom-radius font-medium border border-[var(--border)] bg-[var(--bg-card)] btn-action hover:border-[var(--accent)]">Forest Moss</button>
+        <button id="btn-organic-logic-desert-clay" onclick="changeTheme('organic-logic','desert-clay')" class="w-full text-left text-xs p-2 custom-radius font-medium border border-[var(--border)] bg-[var(--bg-card)] btn-action hover:border-[var(--accent)]">Desert Clay</button>
+      </div>
+    </details>
+
+    <!-- VI. Wildcards -->
+    <details class="group border border-[var(--border)] custom-radius overflow-hidden">
+      <summary class="flex justify-between items-center p-3 cursor-pointer select-none bg-[var(--bg-card)] btn-action">
+        <span class="font-heading font-semibold text-sm">VI. Wildcards</span>
+        <svg class="w-4 h-4 flex-shrink-0 transform group-open:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+      </summary>
+      <div class="p-3 border-t border-[var(--border)] flex flex-col gap-2 bg-[var(--bg-main)]">
+        <p class="text-xs text-[var(--text-muted)]">Experimental play spaces and high-saturation synth zones.</p>
+        <button id="btn-wildcards-synthwave"     onclick="changeTheme('wildcards','synthwave')"     class="w-full text-left text-xs p-2 custom-radius font-medium border border-[var(--border)] bg-[var(--bg-card)] btn-action hover:border-[var(--accent)]">Synthwave</button>
+        <button id="btn-wildcards-glitch-matrix" onclick="changeTheme('wildcards','glitch-matrix')" class="w-full text-left text-xs p-2 custom-radius font-medium border border-[var(--border)] bg-[var(--bg-card)] btn-action hover:border-[var(--accent)]">Glitch Matrix</button>
+      </div>
+    </details>
+  </div>
+
+  <!-- Active state readout -->
+  <div class="p-4 border border-[var(--border)] custom-radius bg-[var(--bg-card)] flex flex-col gap-2 text-xs">
+    <div class="flex justify-between"><span class="text-[var(--text-muted)]">Identity:</span>   <span id="active-id-info"      class="font-semibold text-right">Grounded Wisdom</span></div>
+    <div class="flex justify-between"><span class="text-[var(--text-muted)]">Variation:</span>  <span id="active-var-info"     class="font-semibold text-right">Structural (Light)</span></div>
+    <div class="flex justify-between"><span class="text-[var(--text-muted)]">Heading:</span>    <span id="active-heading-font" class="font-mono text-right">Space Grotesk</span></div>
+    <div class="flex justify-between"><span class="text-[var(--text-muted)]">Body:</span>       <span id="active-body-font"    class="font-mono text-right">Inter</span></div>
+  </div>
+</aside>
+
+<!-- ══════════════════════════ MAIN CANVAS ══════════════════════════ -->
+<main class="flex-grow flex flex-col min-w-0 p-6 md:p-10 custom-section-gap">
+
+  <!-- Hero: Tagline + Genesis Quote -->
+  <section class="flex flex-col md:flex-row justify-between items-start md:items-center p-8 border border-[var(--border)] custom-radius bg-[var(--bg-card)] relative overflow-hidden shadow-sm custom-gutter">
+    <div class="absolute right-0 top-0 w-80 h-80 rounded-full bg-[var(--accent)] opacity-[0.03] blur-3xl pointer-events-none"></div>
+    <div class="flex flex-col gap-2 max-w-xl">
+      <span class="text-xs uppercase tracking-widest text-[var(--accent)] font-bold font-heading">Ecclesiastes 8:15 Genesis</span>
+      <h1 class="font-heading text-3xl md:text-4xl font-extrabold tracking-tight">Wisdom in Work. Joy in the Toil.</h1>
+      <p class="text-base italic text-[var(--text-muted)] border-l-2 border-[var(--accent)] pl-4 py-1 mt-2">
+        "So I recommend having fun... along with all the hard work God gives you under the sun."
+      </p>
+    </div>
+    <div class="flex flex-row md:flex-col gap-4 text-xs mt-4 md:mt-0 bg-[var(--bg-main)] p-4 border border-[var(--border)] custom-radius flex-shrink-0">
+      <div><span class="text-[var(--text-muted)] block">System Mode:</span>   <span class="font-semibold uppercase tracking-wider text-[var(--accent)]">Elite Sandbox</span></div>
+      <div><span class="text-[var(--text-muted)] block">Active Assets:</span> <span class="font-semibold">90 Generated Marks</span></div>
+      <div><span class="text-[var(--text-muted)] block">AAA Contrast:</span>  <span class="font-semibold" style="color:#16a34a">PASSED ✓</span></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ 5-CAROUSEL GRID ═══════════════════ -->
+  <section class="grid grid-cols-1 lg:grid-cols-3 custom-gutter">
+
+    <!-- LEFT COLUMN: Carousels 1, 3, 5 -->
+    <div class="lg:col-span-1 flex flex-col custom-gutter">
+
+      <!-- Carousel 1 · Slogans -->
+      <article class="p-6 border border-[var(--border)] custom-radius bg-[var(--bg-card)] flex flex-col justify-between h-64 shadow-sm transition-shadow duration-300 hover:shadow-md">
+        <div class="flex justify-between items-center">
+          <span class="text-[10px] uppercase font-bold tracking-widest text-[var(--accent)] font-heading">Carousel I · Slogans</span>
+          <span id="slogan-index" class="text-xs font-mono text-[var(--text-muted)]">01 / 12</span>
+        </div>
+        <div class="flex-grow flex items-center overflow-hidden my-4">
+          <p id="slogan-text" class="font-heading text-lg font-semibold tracking-tight leading-snug carousel-fade">Wisdom in Work. Joy in the Toil.</p>
+        </div>
+        <div class="flex justify-between items-center pt-4 border-t border-[var(--border)]">
+          <button onclick="prevSlogan()" aria-label="Previous slogan" class="btn-action border border-[var(--border)] bg-[var(--bg-main)] text-xs font-bold w-8 h-8 rounded-full flex items-center justify-center">←</button>
+          <span class="text-[10px] text-[var(--text-muted)] uppercase tracking-wider font-semibold">Brand Punchlines</span>
+          <button onclick="nextSlogan()" aria-label="Next slogan"     class="btn-action border border-[var(--border)] bg-[var(--bg-main)] text-xs font-bold w-8 h-8 rounded-full flex items-center justify-center">→</button>
+        </div>
+      </article>
+
+      <!-- Carousel 3 · Wordmark Styles -->
+      <article class="p-6 border border-[var(--border)] custom-radius bg-[var(--bg-card)] flex flex-col justify-between h-64 shadow-sm transition-shadow duration-300 hover:shadow-md">
+        <div class="flex justify-between items-center">
+          <span class="text-[10px] uppercase font-bold tracking-widest text-[var(--accent)] font-heading">Carousel III · Wordmarks</span>
+          <span id="wordmark-index" class="text-xs font-mono text-[var(--text-muted)]">01 / 09</span>
+        </div>
+        <div class="flex-grow flex flex-col justify-center items-center my-4">
+          <!-- FIX #3: removed contradictory select-none; kept select-all so users can copy the wordmark -->
+          <div id="wordmark-display" class="font-heading text-2xl font-bold tracking-widest text-center select-all carousel-fade">[ 8 : 1 5 ]</div>
+          <span id="wordmark-label" class="text-[10px] text-[var(--text-muted)] tracking-wider mt-2 font-mono uppercase carousel-fade">Spaced Technical Code</span>
+        </div>
+        <div class="flex justify-between items-center pt-4 border-t border-[var(--border)]">
+          <button onclick="prevWordmark()" aria-label="Previous wordmark" class="btn-action border border-[var(--border)] bg-[var(--bg-main)] text-xs font-bold w-8 h-8 rounded-full flex items-center justify-center">←</button>
+          <span class="text-[10px] text-[var(--text-muted)] uppercase tracking-wider font-semibold">Ligature / Syntax</span>
+          <button onclick="nextWordmark()" aria-label="Next wordmark"     class="btn-action border border-[var(--border)] bg-[var(--bg-main)] text-xs font-bold w-8 h-8 rounded-full flex items-center justify-center">→</button>
+        </div>
+      </article>
+
+      <!-- Carousel 5 · Strategic Directives -->
+      <article class="p-6 border border-[var(--border)] custom-radius bg-[var(--bg-card)] flex flex-col h-80 shadow-sm transition-shadow duration-300 hover:shadow-md">
+        <div class="flex justify-between items-center mb-3">
+          <span class="text-[10px] uppercase font-bold tracking-widest text-[var(--accent)] font-heading">Carousel V · Directives</span>
+          <span id="directive-index" class="text-xs font-mono text-[var(--text-muted)]">01 / 03</span>
+        </div>
+        <!-- Natural column flow; text allowed to grow freely (spec compliance) -->
+        <div class="flex-grow flex flex-col gap-4 overflow-y-auto pr-1">
+          <div class="flex flex-col gap-1">
+            <span class="text-[9px] uppercase font-bold tracking-wider text-[var(--accent)] font-heading">Our Mission</span>
+            <p id="directive-mission" class="text-xs leading-relaxed carousel-fade">Cultivate high-performance systems with inquisitive logic and operational humility.</p>
+          </div>
+          <div class="flex flex-col gap-1">
+            <span class="text-[9px] uppercase font-bold tracking-wider text-[var(--accent)] font-heading">Our Vision</span>
+            <p id="directive-vision"  class="text-xs leading-relaxed carousel-fade">Set the global standard for premium, non-addictive, sovereign user interfaces that celebrate agency.</p>
+          </div>
+        </div>
+        <!-- Navigation strictly BELOW text block, with clear border separation (spec) -->
+        <div class="flex justify-between items-center pt-4 border-t border-[var(--border)] mt-4">
+          <button onclick="prevDirective()" aria-label="Previous directive" class="btn-action border border-[var(--border)] bg-[var(--bg-main)] text-xs font-bold w-8 h-8 rounded-full flex items-center justify-center">←</button>
+          <span class="text-[10px] text-[var(--text-muted)] uppercase tracking-wider font-semibold">Mission &amp; Vision</span>
+          <button onclick="nextDirective()" aria-label="Next directive"     class="btn-action border border-[var(--border)] bg-[var(--bg-main)] text-xs font-bold w-8 h-8 rounded-full flex items-center justify-center">→</button>
+        </div>
+      </article>
+    </div>
+
+    <!-- RIGHT COLUMN: Carousels 2 & 4 -->
+    <div class="lg:col-span-2 flex flex-col custom-gutter">
+
+      <!-- Carousel 2 · Primary Mark Explorer -->
+      <article class="p-8 border border-[var(--border)] custom-radius bg-[var(--bg-card)] flex flex-col shadow-sm transition-shadow duration-300 hover:shadow-md lg:h-[34rem]">
+        <div class="flex justify-between items-center mb-6 flex-wrap gap-2">
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="text-xs uppercase font-bold tracking-widest text-[var(--accent)] font-heading">Carousel II · Mark Explorer</span>
+            <span id="mark-cat-badge" class="px-2 py-0.5 rounded-full text-[9px] font-bold uppercase bg-[var(--bg-main)] text-[var(--accent)] border border-[var(--border)] font-heading">Sun Aspect</span>
+          </div>
+          <span id="explorer-index-text" class="text-xs font-mono text-[var(--text-muted)] font-semibold">Mark 01 / 90</span>
+        </div>
+
+        <div class="flex-grow grid grid-cols-1 md:grid-cols-2 gap-8 items-center min-h-0">
+          <!-- SVG display -->
+          <div class="flex justify-center items-center bg-[var(--bg-main)] rounded-xl border border-[var(--border)] p-6 aspect-square relative overflow-hidden group">
+            <div class="absolute inset-0 opacity-[0.025] pointer-events-none" style="background-image:radial-gradient(var(--text-main) 1px,transparent 0);background-size:18px 18px;"></div>
+            <div id="explorer-svg-container" class="w-full h-full max-w-[220px] max-h-[220px] flex justify-center items-center transform group-hover:scale-105 transition-transform duration-300"></div>
+          </div>
+
+          <!-- Metadata panel -->
+          <div class="flex flex-col justify-between h-full py-2 min-h-0">
+            <div class="flex flex-col gap-5 overflow-y-auto">
+              <div>
+                <span class="text-[9px] uppercase font-bold tracking-widest text-[var(--text-muted)] font-heading block mb-1">Mark Title</span>
+                <h2 id="mark-title" class="font-heading text-2xl font-bold tracking-tight">Solar Zenith</h2>
+              </div>
+              <div>
+                <span class="text-[9px] uppercase font-bold tracking-widest text-[var(--text-muted)] font-heading block mb-1.5">Value Alignment · Pillars</span>
+                <div id="mark-alignment-tags" class="flex flex-wrap gap-1.5"></div>
+              </div>
+              <div>
+                <span class="text-[9px] uppercase font-bold tracking-widest text-[var(--text-muted)] font-heading block mb-1">Design Lineage &amp; Meaning</span>
+                <p id="mark-lineage" class="text-xs leading-relaxed text-[var(--text-muted)]"></p>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 mt-5">
+              <button onclick="toggleAutoplay()" id="autoplay-btn" class="btn-action flex-grow text-xs py-2 px-3 custom-radius font-semibold border border-[var(--border)] bg-[var(--bg-main)] flex items-center justify-center gap-2 hover:border-[var(--accent)]">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/></svg>
+                <span id="autoplay-label">Auto-Play</span>
+              </button>
+              <button onclick="randomizeMark()" aria-label="Random mark" title="Random Mark" class="btn-action text-sm p-2 custom-radius border border-[var(--border)] bg-[var(--bg-main)] hover:border-[var(--accent)]">🎲</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex justify-between items-center pt-6 border-t border-[var(--border)] mt-6">
+          <button onclick="prevMark()" aria-label="Previous mark" class="btn-action border border-[var(--border)] bg-[var(--bg-main)] text-xs font-bold w-10 h-10 rounded-full flex items-center justify-center">←</button>
+          <span class="text-[10px] text-[var(--text-muted)] uppercase tracking-wider font-semibold">90-Mark Negative Space Database</span>
+          <button onclick="nextMark()" aria-label="Next mark"     class="btn-action border border-[var(--border)] bg-[var(--bg-main)] text-xs font-bold w-10 h-10 rounded-full flex items-center justify-center">→</button>
+        </div>
+      </article>
+
+      <!-- Carousel 4 · UI Application Mockups -->
+      <article class="p-6 border border-[var(--border)] custom-radius bg-[var(--bg-card)] flex flex-col shadow-sm transition-shadow duration-300 hover:shadow-md lg:h-72">
+        <div class="flex justify-between items-center mb-4 flex-wrap gap-2">
+          <div class="flex items-center gap-2">
+            <span class="text-xs uppercase font-bold tracking-widest text-[var(--accent)] font-heading">Carousel IV · UI Mockup</span>
+            <span id="mockup-name-badge" class="px-2 py-0.5 rounded-full text-[9px] font-bold uppercase bg-[var(--bg-main)] text-[var(--accent)] border border-[var(--border)] font-heading">Real-Time Data Widget</span>
+          </div>
+          <span id="mockup-index" class="text-xs font-mono text-[var(--text-muted)]">01 / 03</span>
+        </div>
+        <div class="flex-grow flex items-center bg-[var(--bg-main)] border border-[var(--border)] rounded-xl p-4 overflow-hidden min-h-28">
+          <div id="mockup-content-container" class="w-full"></div>
+        </div>
+        <div class="flex justify-between items-center pt-4 border-t border-[var(--border)] mt-4">
+          <button onclick="prevMockup()" aria-label="Previous mockup" class="btn-action border border-[var(--border)] bg-[var(--bg-main)] text-xs font-bold w-8 h-8 rounded-full flex items-center justify-center">←</button>
+          <span class="text-[10px] text-[var(--text-muted)] uppercase tracking-wider font-semibold">Live Adaptive UI Systems</span>
+          <button onclick="nextMockup()" aria-label="Next mockup"     class="btn-action border border-[var(--border)] bg-[var(--bg-main)] text-xs font-bold w-8 h-8 rounded-full flex items-center justify-center">→</button>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════ BENTO-GRID LIBRARY ═══════════════════ -->
+  <section id="library-section" class="flex flex-col gap-6 p-8 border border-[var(--border)] custom-radius bg-[var(--bg-card)] shadow-sm">
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+      <div>
+        <span class="text-xs uppercase tracking-widest text-[var(--accent)] font-bold font-heading block mb-1">Consolidated Registry</span>
+        <h2 class="font-heading text-2xl font-bold tracking-tight">Complete Geometric Library · 90 Configurations</h2>
+        <p class="text-xs text-[var(--text-muted)] mt-1">Click any mark to load it into the Primary Explorer above.</p>
+      </div>
+      <!-- Filter buttons (labels match PDF §5: Sun, Void, Both, Wildcard) -->
+      <div class="flex flex-wrap items-center gap-1.5 bg-[var(--bg-main)] border border-[var(--border)] p-1 custom-radius">
+        <button onclick="filterLibrary('all')"      id="filter-all"      class="text-[10px] uppercase font-bold py-1.5 px-3 custom-radius tracking-wider btn-action bg-[var(--accent)] text-[var(--bg-main)]">All</button>
+        <button onclick="filterLibrary('sun')"      id="filter-sun"      class="text-[10px] uppercase font-bold py-1.5 px-3 custom-radius tracking-wider btn-action text-[var(--text-main)]">Sun</button>
+        <button onclick="filterLibrary('void')"     id="filter-void"     class="text-[10px] uppercase font-bold py-1.5 px-3 custom-radius tracking-wider btn-action text-[var(--text-main)]">Void</button>
+        <button onclick="filterLibrary('both')"     id="filter-both"     class="text-[10px] uppercase font-bold py-1.5 px-3 custom-radius tracking-wider btn-action text-[var(--text-main)]">Both</button>
+        <button onclick="filterLibrary('wildcard')" id="filter-wildcard" class="text-[10px] uppercase font-bold py-1.5 px-3 custom-radius tracking-wider btn-action text-[var(--text-main)]">Wildcard</button>
+      </div>
+    </div>
+    <!-- Bento grid — populated by JS; FIX #4: card-interactive class applied per-card -->
+    <div id="library-bento-grid" class="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-9 gap-2.5 max-h-[430px] overflow-y-auto pr-1 border-t border-[var(--border)] pt-4"></div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-[var(--border)] pt-6 flex flex-col md:flex-row justify-between items-center text-xs text-[var(--text-muted)] gap-3">
+    <div class="flex items-center gap-2">
+      <span class="font-heading font-semibold text-[var(--text-main)]">Eight Fifteen Design Studio</span>
+      <span>· Brand Portal v2.5</span>
+    </div>
+    <p class="text-center md:text-right italic">
+      "So I recommend having fun... along with all the hard work God gives you under the sun." — Ecclesiastes 8:15
+    </p>
+  </footer>
+</main>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     INLINED JAVASCRIPT (FIX #1: fully self-contained, no app.js)
+     ══════════════════════════════════════════════════════════════════ -->
+<script>
+// ─────────────────────────────────────────────────────────────────────
+// 1. THEME DATABASE — 6 identities, 14 variations
+// ─────────────────────────────────────────────────────────────────────
+const THEMES = {
+  "grounded-wisdom": {
+    name:"Grounded Wisdom", fontHeading:"Space Grotesk", fontBody:"Inter",
+    variations:{
+      structural:   { name:"Structural (Light)", bg:"#FDFBF7", bgCard:"#FFFFFF",  text:"#1A1A1A", textMuted:"#555555", accent:"#D97706", accentHover:"#B45309", border:"#EFEBE4" },
+      focus:        { name:"Focus (Dim)",        bg:"#F4F1EA", bgCard:"#EFEBE4",  text:"#2D3748", textMuted:"#4A5568", accent:"#8A8070", accentHover:"#72695C", border:"#E2DDD3" },
+      authoritative:{ name:"Authoritative (Dark)",bg:"#0B0F19",bgCard:"#111827", text:"#F8FAFC", textMuted:"#94A3B8", accent:"#D4AF7A", accentHover:"#C59B63", border:"#1F2937" }
+    }
+  },
+  "luminous-flow": {
+    name:"Luminous Flow", fontHeading:"Outfit", fontBody:"Nunito",
+    variations:{
+      daybreak: { name:"Daybreak",  bg:"#FFFDF5", bgCard:"#FFFBEB", text:"#111827", textMuted:"#4B5563", accent:"#F43F5E", accentHover:"#E11D48", border:"#FEF3C7" },
+      "clear-sky":{ name:"Clear Sky",bg:"#F0F9FF", bgCard:"#E0F2FE", text:"#0F172A", textMuted:"#334155", accent:"#0284C7", accentHover:"#0369A1", border:"#BAE6FD" },
+      twilight: { name:"Twilight",  bg:"#0F0C1B", bgCard:"#1E1B4B", text:"#F5F3FF", textMuted:"#A5B4FC", accent:"#8B5CF6", accentHover:"#7C3AED", border:"#2E2A66" }
+    }
+  },
+  "kinetic-pulse": {
+    name:"Kinetic Pulse", fontHeading:"Syne", fontBody:"Montserrat",
+    variations:{
+      "neon-cyber":   { name:"Neon Cyber",   bg:"#09090B", bgCard:"#18181B", text:"#F4F4F5", textMuted:"#A1A1AA", accent:"#10B981", accentHover:"#059669", border:"#27272A" },
+      "high-voltage": { name:"High Voltage", bg:"#020617", bgCard:"#0F172A", text:"#F8FAFC", textMuted:"#64748B", accent:"#EAB308", accentHover:"#CA8A04", border:"#1E293B" }
+    }
+  },
+  "blank-canvas": {
+    name:"Blank Canvas", fontHeading:"Lexend", fontBody:"Manrope",
+    variations:{
+      "pure-mono":  { name:"Pure Mono",   bg:"#FFFFFF", bgCard:"#F9FAFB", text:"#000000", textMuted:"#4B5563", accent:"#6B7280", accentHover:"#374151", border:"#E5E7EB" },
+      "dark-carbon":{ name:"Dark Carbon", bg:"#121212", bgCard:"#1E1E1E", text:"#F3F4F6", textMuted:"#9CA3AF", accent:"#9CA3AF", accentHover:"#D1D5DB", border:"#2D2D2D" }
+    }
+  },
+  "organic-logic": {
+    name:"Organic Logic", fontHeading:"Space Grotesk", fontBody:"Manrope",
+    variations:{
+      "forest-moss": { name:"Forest Moss", bg:"#F2FDF5", bgCard:"#E6F4EA", text:"#14532D", textMuted:"#2F6A3E", accent:"#16A34A", accentHover:"#15803D", border:"#C2E7C9" },
+      "desert-clay": { name:"Desert Clay", bg:"#FDF8F5", bgCard:"#FBEFE8", text:"#451A03", textMuted:"#78350F", accent:"#EA580C", accentHover:"#C2410C", border:"#F7D2C4" }
+    }
+  },
+  "wildcards": {
+    name:"Wildcards", fontHeading:"Syne", fontBody:"Nunito",
+    variations:{
+      synthwave:      { name:"Synthwave",     bg:"#18042C", bgCard:"#2D0A4E", text:"#FFF1F2", textMuted:"#F472B6", accent:"#FF007F", accentHover:"#D80064", border:"#4E127E" },
+      "glitch-matrix":{ name:"Glitch Matrix", bg:"#050B05", bgCard:"#0E1C0E", text:"#D1F2D1", textMuted:"#4CAF50", accent:"#00FF00", accentHover:"#39FF14", border:"#1C351C" }
+    }
+  }
+};
+
+// ─────────────────────────────────────────────────────────────────────
+// 2. SVG MARK GENERATORS
+//    FIX #5: id="negative-space-group" removed — IDs must be unique
+//            and all 90 SVGs are in the DOM simultaneously (bento grid)
+// ─────────────────────────────────────────────────────────────────────
+function getNegativeSpace815(sw=14) {
+  return `
+    <g>
+      <circle cx="62" cy="72" r="21" fill="none" stroke="var(--bg-main)" stroke-width="${sw}"/>
+      <circle cx="62" cy="122" r="27" fill="none" stroke="var(--bg-main)" stroke-width="${sw}"/>
+      <path d="M102 52 L102 148 M91 63 L102 52" fill="none" stroke="var(--bg-main)" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M136 52 L168 52 L138 92 A25 25 0 1 1 138 142" fill="none" stroke="var(--bg-main)" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>`;
+}
+
+function buildSunSVG(i, uid) {
+  const rayCount = 8 + (i % 6) * 4;
+  let rays = '';
+  for (let r = 0; r < rayCount; r++) {
+    const a = (r * 2 * Math.PI) / rayCount;
+    rays += `<line x1="100" y1="100" x2="${(100+Math.cos(a)*85).toFixed(2)}" y2="${(100+Math.sin(a)*85).toFixed(2)}" stroke="var(--accent)" stroke-width="1.5" stroke-opacity="0.55"/>`;
+  }
+  const oc = 2 + (i % 3);
+  let orbits = '';
+  for (let o = 0; o < oc; o++) {
+    orbits += `<circle cx="100" cy="100" r="${35+o*18}" stroke="var(--text-main)" stroke-width="1" stroke-dasharray="4 4" stroke-opacity="0.35" fill="none"/>`;
+  }
+  return `<svg viewBox="0 0 200 200" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+    <defs><radialGradient id="gs${uid}" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="var(--accent)" stop-opacity="0.25"/><stop offset="100%" stop-color="var(--bg-main)" stop-opacity="0"/></radialGradient></defs>
+    <circle cx="100" cy="100" r="75" fill="url(#gs${uid})"/>
+    ${rays}${orbits}
+    <circle cx="100" cy="100" r="30" fill="none" stroke="var(--accent)" stroke-width="3"/>
+    ${getNegativeSpace815(15)}
+  </svg>`;
+}
+
+function buildVoidSVG(i) {
+  const gs = 12 + (i % 4) * 4;
+  let grid = '';
+  for (let g = gs; g < 200; g += gs) {
+    grid += `<line x1="${g}" y1="0" x2="${g}" y2="200" stroke="var(--text-main)" stroke-width="0.7" stroke-opacity="0.13"/>`;
+    grid += `<line x1="0" y1="${g}" x2="200" y2="${g}" stroke="var(--text-main)" stroke-width="0.7" stroke-opacity="0.13"/>`;
+  }
+  const bw = 60+(i%3)*20, bh = 80+(i%2)*20, rx = 10+(i%2)*10;
+  return `<svg viewBox="0 0 200 200" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+    ${grid}
+    <rect x="${100-bw/2}" y="${100-bh/2}" width="${bw}" height="${bh}" rx="${rx}" fill="var(--accent)" fill-opacity="0.08" stroke="var(--accent)" stroke-width="2.5"/>
+    <rect x="25" y="25" width="150" height="150" fill="none" stroke="var(--text-main)" stroke-width="0.5" stroke-dasharray="3 6" stroke-opacity="0.28"/>
+    ${getNegativeSpace815(16)}
+  </svg>`;
+}
+
+function buildBothSVG(i) {
+  const gs = 16+(i%3)*6;
+  let grid = '';
+  for (let g = gs; g < 200; g += gs) {
+    grid += `<line x1="${g}" y1="15" x2="${g}" y2="185" stroke="var(--text-main)" stroke-width="0.5" stroke-opacity="0.18"/>`;
+    grid += `<line x1="15" y1="${g}" x2="185" y2="${g}" stroke="var(--text-main)" stroke-width="0.5" stroke-opacity="0.18"/>`;
+  }
+  const arms = 4+(i%4);
+  let rings = '';
+  for (let a = 0; a < arms; a++) {
+    rings += `<circle cx="100" cy="100" r="${25+a*15}" stroke="var(--accent)" stroke-width="1.5" stroke-opacity="0.7" fill="none"/>`;
+  }
+  return `<svg viewBox="0 0 200 200" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+    <rect x="15" y="15" width="170" height="170" fill="none" stroke="var(--border)" stroke-width="1.5"/>
+    ${grid}${rings}
+    <circle cx="100" cy="100" r="10" fill="var(--bg-main)" stroke="var(--accent)" stroke-width="2"/>
+    ${getNegativeSpace815(14)}
+  </svg>`;
+}
+
+function buildWildSVG(i) {
+  const style = i % 3;
+  let geo = '';
+  if (style === 0) {
+    geo = `
+      <path d="M20 50 L80 50 L100 70 L100 130 L120 150 L180 150" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/>
+      <path d="M20 150 L80 150 L100 130 L100 70 L120 50 L180 50" fill="none" stroke="var(--text-main)" stroke-width="1.5" stroke-dasharray="4 4" stroke-linecap="round" stroke-opacity="0.45"/>
+      <circle cx="20"  cy="50"  r="4" fill="var(--accent)"/>
+      <circle cx="180" cy="150" r="4" fill="var(--accent)"/>
+      <circle cx="20"  cy="150" r="4" fill="var(--text-main)"/>
+      <circle cx="180" cy="50"  r="4" fill="var(--text-main)"/>`;
+  } else if (style === 1) {
+    let p1 = [], p2 = [];
+    for (let x = 15; x <= 185; x += 5) {
+      p1.push(`${x},${(100+Math.sin((x+i*10)*0.05)*44).toFixed(2)}`);
+      p2.push(`${x},${(100+Math.cos((x+i*15)*0.04)*34).toFixed(2)}`);
+    }
+    geo = `
+      <polyline points="${p1.join(' ')}" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/>
+      <polyline points="${p2.join(' ')}" fill="none" stroke="var(--text-main)" stroke-width="1.5" stroke-opacity="0.38" stroke-linecap="round"/>`;
+  } else {
+    geo = `
+      <polygon points="100,20 170,60 170,140 100,180 30,140 30,60" fill="none" stroke="var(--text-main)" stroke-width="1" stroke-opacity="0.28"/>
+      <polygon points="100,40 150,70 150,130 100,160 50,130 50,70" fill="none" stroke="var(--accent)" stroke-width="2"/>
+      <polygon points="100,60 130,80 130,120 100,140 70,120 70,80" fill="none" stroke="var(--text-main)" stroke-width="1.5" stroke-dasharray="2 4" stroke-opacity="0.55"/>`;
+  }
+  return `<svg viewBox="0 0 200 200" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+    ${geo}
+    ${getNegativeSpace815(13)}
+  </svg>`;
+}
+
+// ─────────────────────────────────────────────────────────────────────
+// 3. MARK LIBRARY — 90 entries
+// ─────────────────────────────────────────────────────────────────────
+const PILLARS  = ["Work & Play","Wisdom","Under the Sun","Subtle Royalty","Void Space"];
+const PREFIXES = ["Solar","Cosmic","Horizon","Zenith","Orbital","Stark","Minimal","Grid","Tectonic","Matrix","Harmony","Symmetric","Synthesis","Kinetic","Oscillator","Neural","Terminal","Sovereign","Breathing","Linear","Void","Dynamic","Structural","Architectural","Logarithmic"];
+const SUFFIXES = ["Zenith","Portal","Ray","Axis","Containment","Breathing","Intersect","Duality","Vessel","Lattice","Conduit","Structure","Flow","Field","Vector","Node","Cycle","Alignment","Restoration","Discipline","Compass","Oscillation","System","Anchor","Helix"];
+
+const GEO_DESC = {
+  Sun:      ["solar ray geometry","concentric orbital rings","overlapping solar horizons","radiating sunburst masks","concentric solar pathways"],
+  Void:     ["stark containment grids","cropped isometric blocks","architectural containment matrices","subtractive geometric fields","minimalist wireframe boundaries"],
+  Both:     ["hybrid radial-grid meshes","intersecting solar-orthogonal pathways","integrated grid-orbit coordinates","concentric-matrix alignments","harmonious radial structures"],
+  Wildcard: ["isometric logic planes","raw coordinate systems","biological loop networks","sine-wave oscillations","digital circuit tracks"]
+};
+const PILLAR_DESC = {
+  "Work & Play":    "diligent operational labor and the restorative cycle of immersive play",
+  "Wisdom":         "inquisitive logic, system boundaries, and deep operational humility",
+  "Under the Sun":  "absolute daylight transparency, shared experience, and grounded architecture",
+  "Subtle Royalty": "quiet user sovereignty, premium craftsmanship, and elegant information spacing",
+  "Void Space":     "logical essentialism, generous margins, and psychological breathing room"
+};
+const SRC_DESC = { Sun:"intersecting vector light fields", Void:"subtractive solid geometry masks", Both:"intersecting orbital-grid pathways", Wildcard:"fluid kinetic waveforms and technical wire coordinates" };
+
+const MARKS = [];
+for (let i = 0; i < 90; i++) {
+  let cat = "Sun", uid = `s${i}`;
+  if (i >= 25 && i < 50)  { cat = "Void";     uid = `v${i-25}`; }
+  if (i >= 50 && i < 75)  { cat = "Both";     uid = `b${i-50}`; }
+  if (i >= 75)             { cat = "Wildcard"; uid = `w${i-75}`; }
+
+  const pillar  = PILLARS[i % 5];
+  const title   = `${PREFIXES[i % 25]} ${SUFFIXES[(i*7)%25]}`;
+  const lineage = `This mark utilises ${GEO_DESC[cat][i%5]} at seed coordinate #${String(i+1).padStart(2,'0')}. It embodies the ${pillar} pillar by exploring the balance of ${PILLAR_DESC[pillar]}. Derived from the Ecclesiastes 8:15 genesis, negative space typography allows the digits 8, 1, and 5 to emerge naturally from the underlying ${SRC_DESC[cat]}.`;
+
+  MARKS.push({ index:i, cat, uid, title, pillar, lineage,
+    svg: (function(idx,c,u){ return ()=>{ if(c==="Sun")  return buildSunSVG(idx,u); if(c==="Void") return buildVoidSVG(idx); if(c==="Both") return buildBothSVG(idx); return buildWildSVG(idx); }; })(i,cat,uid)
+  });
+}
+
+// ─────────────────────────────────────────────────────────────────────
+// 4. CAROUSEL DATA
+// ─────────────────────────────────────────────────────────────────────
+const SLOGANS = [
+  "Wisdom in Work. Joy in the Toil.",
+  "\"So I recommend having fun… along with all the hard work God gives you under the sun.\"",
+  "Strict engineering discipline bound seamlessly to creative play.",
+  "We reject the tech narrative of endless hyper-growth at the expense of human health.",
+  "High-performance operational systems matched with deep, immersive play.",
+  "Logical essentialism and psychological breathing room.",
+  "Operating in the absolute daylight of shared experience and structural transparency.",
+  "Software that acts not as a controller, but as a quiet, powerful, sovereign advisor.",
+  "A classic, balanced cycle of high-impact creation followed by satisfying celebration.",
+  "What we leave out is as critically important as what we build.",
+  "Diligent labor is a gift, but it is incomplete without the restorative cycle of play.",
+  "True technical wisdom lies in recognising the boundaries of our digital architectures."
+];
+
+const WORDMARKS = [
+  { text:"[ 8 : 1 5 ]",        desc:"Spaced Technical Code" },
+  { text:"eight fifteen design",desc:"Lowercase Human-Focused Narrative" },
+  { text:"EIGHT FIFTEEN",       desc:"Bold Geometric Typeface" },
+  { text:"&lt;EightFifteen /&gt;", desc:"Code-Based Syntax Format" },
+  { text:"815_studio_",         desc:"Terminal Console Style" },
+  { text:"8 • 15",              desc:"Split Ligature Format" },
+  { text:"0x815",               desc:"Hexadecimal System Format" },
+  { text:"8:15 :: work:play",   desc:"Mathematical Analogy Ratio" },
+  { text:"[8][1][5]",           desc:"Bracketed Grid Container" }
+];
+
+const MOCKUPS = [
+  { name:"Real-Time Data Widget", render:()=>`
+    <div class="flex flex-col gap-3 text-xs w-full" style="color:var(--text-main)">
+      <div class="flex justify-between items-center border-b pb-2" style="border-color:var(--border)">
+        <span class="font-bold uppercase text-[10px] tracking-wider font-heading" style="color:var(--accent)">System Latency Tracker</span>
+        <span class="px-2 py-0.5 rounded font-mono text-[9px] border" style="background:var(--bg-card);border-color:var(--border)">ONLINE</span>
+      </div>
+      <div class="grid grid-cols-3 gap-2">
+        <div class="p-2 border rounded text-center" style="background:var(--bg-card);border-color:var(--border)"><span class="text-[9px] block" style="color:var(--text-muted)">Throughput</span><span class="font-mono font-bold text-sm">81.5 req/s</span></div>
+        <div class="p-2 border rounded text-center" style="background:var(--bg-card);border-color:var(--border)"><span class="text-[9px] block" style="color:var(--text-muted)">Latency</span><span class="font-mono font-bold text-sm" style="color:var(--accent)">12.6 ms</span></div>
+        <div class="p-2 border rounded text-center" style="background:var(--bg-card);border-color:var(--border)"><span class="text-[9px] block" style="color:var(--text-muted)">Play Cycles</span><span class="font-mono font-bold text-sm">1,618 hr</span></div>
+      </div>
+      <div class="flex justify-between items-center p-2 rounded border font-mono text-[9px]" style="background:var(--bg-card);border-color:var(--border)">
+        <span class="px-1.5 py-0.5 rounded border font-bold" style="border-color:var(--accent);color:var(--accent)">WORK_START</span>
+        <span style="color:var(--text-muted)">──►</span>
+        <span class="px-1.5 py-0.5 rounded" style="background:var(--border)">LOGIC_GATE</span>
+        <span style="color:var(--text-muted)">──►</span>
+        <span class="px-1.5 py-0.5 rounded border font-bold" style="border-color:#16a34a;color:#16a34a">CELEBRATE</span>
+      </div>
+    </div>` },
+  { name:"Educational Dashboard", render:()=>`
+    <div class="flex flex-col gap-3 text-xs w-full" style="color:var(--text-main)">
+      <div class="flex justify-between items-center">
+        <div><span class="text-[9px] font-mono uppercase tracking-wider block" style="color:var(--text-muted)">Course Active</span>
+          <h4 class="font-bold font-heading text-sm">Architectural Symmetry &amp; Void Spacing II</h4></div>
+        <span class="font-bold text-sm font-mono" style="color:var(--accent)">76%</span>
+      </div>
+      <div class="w-full h-2 rounded-full overflow-hidden" style="background:var(--border)">
+        <div class="h-full rounded-full transition-all duration-500" style="width:76%;background:var(--accent)"></div>
+      </div>
+      <div class="flex justify-between text-[10px]" style="color:var(--text-muted)">
+        <span>Next: <strong style="color:var(--text-main)">Duality of Human Existence</strong></span>
+        <span class="font-mono">815 XP left</span>
+      </div>
+    </div>` },
+  { name:"Game System HUD", render:()=>`
+    <div class="flex flex-col gap-3 text-xs w-full" style="color:var(--text-main)">
+      <div class="flex justify-between items-center">
+        <div class="flex items-center gap-2">
+          <div class="w-2.5 h-2.5 rounded-full animate-ping" style="background:var(--accent)"></div>
+          <span class="font-bold font-heading">Sovereign_User_01</span>
+        </div>
+        <span class="font-mono font-bold" style="color:var(--accent)">LEVEL 15</span>
+      </div>
+      <div class="flex flex-col gap-1.5 p-2 rounded border" style="background:var(--bg-card);border-color:var(--border)">
+        <div class="flex justify-between text-[10px]"><span>Diligent Labor (Work)</span><span class="font-mono font-bold">85 / 100</span></div>
+        <div class="w-full h-1.5 rounded-full overflow-hidden" style="background:var(--bg-main)">
+          <div class="h-full rounded-full" style="width:85%;background:#3b82f6"></div>
+        </div>
+        <div class="flex justify-between text-[10px] mt-1"><span>Satisfying Play (Joy)</span><span class="font-mono font-bold" style="color:var(--accent)">92 / 100</span></div>
+        <div class="w-full h-1.5 rounded-full overflow-hidden" style="background:var(--bg-main)">
+          <div class="h-full rounded-full" style="width:92%;background:var(--accent)"></div>
+        </div>
+      </div>
+    </div>` }
+];
+
+const DIRECTIVES = [
+  { mission:"Cultivate high-performance systems with inquisitive logic and operational humility.", vision:"Set the global standard for premium, non-addictive, sovereign user interfaces that celebrate agency." },
+  { mission:"Embrace void space to reduce cognitive overload and let critical information and processes breathe.", vision:"Restore a balanced, healthy human cycle of high-impact creation followed by rich celebration." },
+  { mission:"Design software that operates in the daylight of shared experience and absolute transparency.", vision:"A world where technology serves human wellness, digital workspaces respect user agency, and diligent work is always followed by satisfying rest." }
+];
+
+// ─────────────────────────────────────────────────────────────────────
+// 5. GLOBAL STATE
+// ─────────────────────────────────────────────────────────────────────
+const S = {
+  identity:"grounded-wisdom", variation:"structural",
+  slogan:0, mark:0, wordmark:0, mockup:0, directive:0,
+  autoplay:null, filter:"all"
+};
+
+// ─────────────────────────────────────────────────────────────────────
+// 6. BOOT
+// ─────────────────────────────────────────────────────────────────────
+window.addEventListener("DOMContentLoaded", () => {
+  changeTheme("grounded-wisdom","structural");
+  renderBentoGrid();
+  renderSlogan(); renderMark(); renderWordmark(); renderMockup(); renderDirective();
+});
+
+// ─────────────────────────────────────────────────────────────────────
+// 7. THEME ENGINE
+// ─────────────────────────────────────────────────────────────────────
+function changeTheme(id, variation) {
+  S.identity = id; S.variation = variation;
+  const t = THEMES[id], v = t.variations[variation];
+
+  document.getElementById("theme-vars-style").innerHTML = `:root{
+    --bg-main:${v.bg};--bg-card:${v.bgCard};--text-main:${v.text};--text-muted:${v.textMuted};
+    --accent:${v.accent};--accent-hover:${v.accentHover};--border:${v.border};
+    --font-heading:'${t.fontHeading}',sans-serif;--font-body:'${t.fontBody}',sans-serif;
+    --space-gutter:1.618rem;--space-section:2.618rem;--radius:0.809rem;
+    --shadow:0 10px 30px -10px rgba(0,0,0,0.05);
+    --scale-hover:1.02;--scale-click:0.98;--transition-spd:250ms;--transition-ease:cubic-bezier(0.4,0,0.2,1);}`;
+
+  document.getElementById("active-id-info").textContent      = t.name;
+  document.getElementById("active-var-info").textContent     = v.name;
+  document.getElementById("active-heading-font").textContent = t.fontHeading;
+  document.getElementById("active-body-font").textContent    = t.fontBody;
+
+  // Highlight the active sidebar button
+  document.querySelectorAll("aside button[id^='btn-']").forEach(b => {
+    b.style.borderColor   = "";
+    b.style.color         = "";
+    b.style.fontWeight    = "";
+  });
+  const ab = document.getElementById(`btn-${id}-${variation}`);
+  if (ab) { ab.style.borderColor = v.accent; ab.style.color = v.accent; ab.style.fontWeight = "700"; }
+
+  // Re-render anything that embeds SVG so colours update
+  renderMark();
+  renderMockup();
+}
+
+// ─────────────────────────────────────────────────────────────────────
+// 8. CAROUSEL RENDERERS
+// ─────────────────────────────────────────────────────────────────────
+function fadeSwap(el, newContent, useInner=true) {
+  el.style.opacity = "0";
+  setTimeout(() => {
+    if (useInner) el.innerHTML = newContent; else el.textContent = newContent;
+    el.style.opacity = "1";
+  }, 160);
+}
+
+// Slogan
+function renderSlogan() {
+  const el = document.getElementById("slogan-text");
+  fadeSwap(el, SLOGANS[S.slogan], false);
+  document.getElementById("slogan-index").textContent = `${pad(S.slogan+1)} / ${pad(SLOGANS.length)}`;
+}
+function nextSlogan()  { S.slogan = (S.slogan+1)%SLOGANS.length;  renderSlogan(); }
+function prevSlogan()  { S.slogan = (S.slogan-1+SLOGANS.length)%SLOGANS.length; renderSlogan(); }
+
+// Wordmark
+function renderWordmark() {
+  const wm = WORDMARKS[S.wordmark];
+  fadeSwap(document.getElementById("wordmark-display"), wm.text);
+  fadeSwap(document.getElementById("wordmark-label"),   wm.desc, false);
+  document.getElementById("wordmark-index").textContent = `${pad(S.wordmark+1)} / ${pad(WORDMARKS.length)}`;
+}
+function nextWordmark() { S.wordmark = (S.wordmark+1)%WORDMARKS.length;  renderWordmark(); }
+function prevWordmark() { S.wordmark = (S.wordmark-1+WORDMARKS.length)%WORDMARKS.length; renderWordmark(); }
+
+// Directive
+function renderDirective() {
+  const d = DIRECTIVES[S.directive];
+  fadeSwap(document.getElementById("directive-mission"), d.mission, false);
+  fadeSwap(document.getElementById("directive-vision"),  d.vision,  false);
+  document.getElementById("directive-index").textContent = `${pad(S.directive+1)} / ${pad(DIRECTIVES.length)}`;
+}
+function nextDirective() { S.directive = (S.directive+1)%DIRECTIVES.length;  renderDirective(); }
+function prevDirective() { S.directive = (S.directive-1+DIRECTIVES.length)%DIRECTIVES.length; renderDirective(); }
+
+// Mockup
+function renderMockup() {
+  const m = MOCKUPS[S.mockup];
+  document.getElementById("mockup-name-badge").textContent = m.name;
+  document.getElementById("mockup-index").textContent = `${pad(S.mockup+1)} / ${pad(MOCKUPS.length)}`;
+  document.getElementById("mockup-content-container").innerHTML = m.render();
+}
+function nextMockup() { S.mockup = (S.mockup+1)%MOCKUPS.length;  renderMockup(); }
+function prevMockup() { S.mockup = (S.mockup-1+MOCKUPS.length)%MOCKUPS.length; renderMockup(); }
+
+// Mark Explorer
+function renderMark() {
+  const m = MARKS[S.mark];
+  document.getElementById("mark-cat-badge").textContent      = `${m.cat} Aspect`;
+  document.getElementById("explorer-index-text").textContent = `Mark ${pad(m.index+1)} / 90`;
+  document.getElementById("explorer-svg-container").innerHTML = m.svg();
+  document.getElementById("mark-title").textContent          = m.title;
+  document.getElementById("mark-lineage").textContent        = m.lineage;
+
+  const tagBox = document.getElementById("mark-alignment-tags");
+  tagBox.innerHTML = "";
+  const primary   = m.pillar;
+  const secondary = PILLARS[(m.index*3+1)%5];
+  [primary, ...(secondary !== primary ? [secondary] : [])].forEach(p => {
+    const s = document.createElement("span");
+    s.className = "px-2.5 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider font-heading";
+    s.style.cssText = "background:var(--accent);color:var(--bg-main);border:1px solid var(--border)";
+    s.textContent = p;
+    tagBox.appendChild(s);
+  });
+}
+function nextMark()     { S.mark = (S.mark+1)%90;                renderMark(); }
+function prevMark()     { S.mark = (S.mark-1+90)%90;             renderMark(); }
+function randomizeMark(){ S.mark = Math.floor(Math.random()*90); renderMark(); }
+
+function toggleAutoplay() {
+  const lbl = document.getElementById("autoplay-label");
+  if (S.autoplay) {
+    clearInterval(S.autoplay); S.autoplay = null; lbl.textContent = "Auto-Play";
+  } else {
+    S.autoplay = setInterval(nextMark, 4000); lbl.textContent = "Pause Play";
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────
+// 9. BENTO-GRID LIBRARY
+// ─────────────────────────────────────────────────────────────────────
+function renderBentoGrid() {
+  const grid = document.getElementById("library-bento-grid");
+  grid.innerHTML = "";
+  MARKS.forEach(m => {
+    const card = document.createElement("div");
+    card.id = `gm-${m.index}`;
+    // FIX #4: card-interactive provides the hover scale + border accent animation
+    card.className = "card-interactive aspect-square rounded-lg p-1.5 flex flex-col justify-center items-center relative group";
+    card.setAttribute("aria-label", `Load mark: ${m.title}`);
+    card.onclick = () => loadMark(m.index);
+    card.innerHTML = `
+      <div class="w-full h-full max-w-[52px] max-h-[52px] pointer-events-none">${m.svg()}</div>
+      <span class="absolute bottom-0.5 right-1 font-mono text-[7px] opacity-40 group-hover:opacity-100 transition-opacity duration-200" style="color:var(--text-muted)">#${String(m.index+1).padStart(2,"0")}</span>`;
+    grid.appendChild(card);
+  });
+}
+
+function filterLibrary(cat) {
+  S.filter = cat;
+  const FILTERS = ["all","sun","void","both","wildcard"];
+  FILTERS.forEach(f => {
+    const btn = document.getElementById(`filter-${f}`);
+    btn.style.background = (f===cat) ? "var(--accent)"    : "";
+    btn.style.color      = (f===cat) ? "var(--bg-main)"   : "var(--text-main)";
+  });
+  MARKS.forEach(m => {
+    const el = document.getElementById(`gm-${m.index}`);
+    const show = cat==="all" || m.cat.toLowerCase()===cat;
+    if (show) {
+      el.style.display = "";
+      setTimeout(()=>{ el.style.opacity="1"; el.style.transform=""; }, 30);
+    } else {
+      el.style.opacity="0"; el.style.transform="scale(0.8)";
+      setTimeout(()=>{ el.style.display="none"; }, 200);
+    }
+  });
+}
+
+function loadMark(index) {
+  S.mark = index;
+  renderMark();
+  const article = document.getElementById("explorer-svg-container").closest("article");
+  article.scrollIntoView({ behavior:"smooth", block:"center" });
+  const panel = document.getElementById("explorer-svg-container").parentElement;
+  panel.style.borderColor = "var(--accent)";
+  setTimeout(() => { panel.style.borderColor = ""; }, 2200);
+}
+
+// ─────────────────────────────────────────────────────────────────────
+// UTIL
+// ─────────────────────────────────────────────────────────────────────
+function pad(n) { return String(n).padStart(2,"0"); }
+</script>
+</body>
+</html>
