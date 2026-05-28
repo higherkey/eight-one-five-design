@@ -4,7 +4,7 @@ This document serves as the official **Source of Truth** and guiding beacon for 
 
 ---
 
-## ☀️ 1. Executive Summary & Brand Foundation
+## 1. Executive Summary & Brand Foundation
 
 **Eight One Five Design** is a boutique software development and digital design studio specializing in elegant web systems, robust workflow automation, and interactive gaming experiences. The studio represents a unique, delicate synthesis of strict technical engineering discipline and creative, immersive play.
 
@@ -16,7 +16,7 @@ This quote is our guiding light. We reject the contemporary technology narrative
 
 ---
 
-## 🏛️ 2. Core Philosophical Pillars
+## 2. Core Philosophical Pillars
 
 Every product, interface, line of code, and visual mark created by the studio must align with these five philosophical pillars:
 
@@ -44,7 +44,7 @@ Every product, interface, line of code, and visual mark created by the studio mu
 
 ---
 
-## 🎨 3. Grounded Wisdom Design System
+## 3. Grounded Wisdom Design System
 
 The portal utilizes highly expressive, modern typographic configurations and color systems to convey a distinct brand personality focused on stability, craft, and intellectual depth.
 
@@ -74,7 +74,7 @@ Our branding utilizes two primary HSL color mappings:
 
 ---
 
-## 📂 4. Project Structure & Codebase Architecture
+## 4. Project Structure & Codebase Architecture
 
 Our codebase is built for raw performance, clean separation of concerns, and immediate, zero-dependency visual hydration:
 
