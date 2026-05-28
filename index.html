@@ -55,7 +55,6 @@
           <a href="#" class="nav-link active text-muted hover:text-main" data-target="home">Home</a>
           <a href="#" class="nav-link text-muted hover:text-main" data-target="about-me">About Me</a>
           <a href="#" class="nav-link text-muted hover:text-main" data-target="portfolio">Portfolio</a>
-          <a href="#" class="nav-link text-muted hover:text-main" data-target="playground">Playground</a>
           <a href="#" class="nav-link text-muted hover:text-main" data-target="contact">Contact</a>
         </nav>
 
@@ -203,7 +202,7 @@
           </div>
           <div class="flex flex-col">
             <span class="text-muted text-[10px] uppercase font-mono">Email</span>
-            <a href="mailto:isaac.ahlfield@gmail.com" class="font-semibold text-[var(--accent)] hover:underline">isaac.ahlfield@gmail.com</a>
+            <a href="mailto:isaac.ahlfield@gmail.com" class="font-semibold text-xs text-main hover:text-[var(--accent)] hover:underline">isaac.ahlfield@gmail.com</a>
           </div>
           <div class="flex flex-col">
             <span class="text-muted text-[10px] uppercase font-mono">Portals</span>
@@ -212,7 +211,7 @@
               <a href="https://www.linkedin.com/in/isaac-ahlfield" target="_blank" class="font-mono bg-[var(--border)] hover:bg-[var(--accent)] hover:text-[var(--bg-main)] px-2 py-0.5 rounded transition-colors duration-200">LinkedIn</a>
             </div>
           </div>
-          <a href="Isaac Ahlfield_Software Engineer - Product_20260526.pdf" download class="btn-action w-full text-center text-xs py-2 px-4 rounded border border-[var(--accent)] bg-[var(--accent)] text-[var(--bg-main)] font-semibold mt-1">
+          <a href="docs/traces/Isaac Ahlfield_Software Engineer - Product_20260526.pdf" download class="btn-action w-full text-center text-xs py-2 px-4 rounded border border-[var(--accent)] bg-[var(--accent)] text-[var(--bg-main)] font-semibold mt-1">
             Download Resume PDF
           </a>
         </div>
@@ -224,7 +223,7 @@
         <!-- Experience Timeline Column (Left/Center) -->
         <div class="lg:col-span-2 flex flex-col gap-6">
           <h3 class="font-heading text-xl font-bold text-main flex items-center gap-2">
-            <svg class="w-5 h-5 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            <svg class="w-5 h-5 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
             Professional Milestones
           </h3>
           <div id="resume-timeline" class="timeline-container">
@@ -279,184 +278,7 @@
 
     </section>
 
-    <!-- ══════════════════ Section IV: Brand Playground ══════════════════ -->
-    <section id="sec-playground" class="section-view flex-col custom-section-gap">
-      
-      <!-- Playground Header -->
-      <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-        <div>
-          <span class="text-xs uppercase tracking-widest text-[var(--accent)] font-bold font-heading block mb-1">Visual Playground</span>
-          <h2 class="font-heading text-3xl font-extrabold text-main">System Design Playground</h2>
-          <p class="text-xs text-muted mt-1">Interactive brand builder ecosystem, cycling through visual marks, slogans, and adaptive UI layouts.</p>
-        </div>
-        <div class="text-xs italic bg-[var(--bg-card)] border border-[var(--border)] px-4 py-2 custom-radius text-muted">
-          Active Brand Module: <span class="font-bold text-[var(--accent)]">Grounded Wisdom Database</span>
-        </div>
-      </div>
-
-      <!-- 5-CAROUSEL MASTER GRID -->
-      <div class="grid grid-cols-1 lg:grid-cols-3 custom-gutter">
-        
-        <!-- LEFT COLUMN: Slogans, Wordmarks, Directives -->
-        <div class="lg:col-span-1 flex flex-col custom-gutter">
-          
-          <!-- Carousel 1 · Slogans -->
-          <article class="p-6 border border-[var(--border)] custom-radius bg-[var(--bg-card)] flex flex-col justify-between h-64 shadow-sm transition-shadow duration-300 hover:shadow-md">
-            <div class="flex justify-between items-center">
-              <span class="text-[10px] uppercase font-bold tracking-widest text-[var(--accent)] font-heading">Carousel I · Slogans</span>
-              <span id="slogan-index" class="text-xs font-mono text-muted">01 / 12</span>
-            </div>
-            <div class="flex-grow flex items-center overflow-hidden my-4">
-              <p id="slogan-text" class="font-heading text-base font-semibold tracking-tight leading-snug transition-opacity duration-300">Wisdom in Work. Joy in the Toil.</p>
-            </div>
-            <div class="flex justify-between items-center pt-4 border-t border-[var(--border)]">
-              <button id="btn-prev-slogan" aria-label="Previous slogan" class="btn-action border border-[var(--border)] bg-[var(--bg-main)] text-xs font-bold w-8 h-8 rounded-full flex items-center justify-center">←</button>
-              <span class="text-[10px] text-muted uppercase tracking-wider font-semibold">Brand Punchlines</span>
-              <button id="btn-next-slogan" aria-label="Next slogan"     class="btn-action border border-[var(--border)] bg-[var(--bg-main)] text-xs font-bold w-8 h-8 rounded-full flex items-center justify-center">→</button>
-            </div>
-          </article>
-
-          <!-- Carousel 3 · Wordmarks -->
-          <article class="p-6 border border-[var(--border)] custom-radius bg-[var(--bg-card)] flex flex-col justify-between h-64 shadow-sm transition-shadow duration-300 hover:shadow-md">
-            <div class="flex justify-between items-center">
-              <span class="text-[10px] uppercase font-bold tracking-widest text-[var(--accent)] font-heading">Carousel III · Wordmarks</span>
-              <span id="wordmark-index" class="text-xs font-mono text-muted">01 / 09</span>
-            </div>
-            <div class="flex-grow flex flex-col justify-center items-center my-4">
-              <div id="wordmark-display" class="font-heading text-2xl font-bold tracking-widest text-center select-all transition-opacity duration-300">[ 8 : 1 5 ]</div>
-              <span id="wordmark-label" class="text-[10px] text-muted tracking-wider mt-2 font-mono uppercase transition-opacity duration-300">Spaced Technical Code</span>
-            </div>
-            <div class="flex justify-between items-center pt-4 border-t border-[var(--border)]">
-              <button id="btn-prev-wordmark" aria-label="Previous wordmark" class="btn-action border border-[var(--border)] bg-[var(--bg-main)] text-xs font-bold w-8 h-8 rounded-full flex items-center justify-center">←</button>
-              <span class="text-[10px] text-muted uppercase tracking-wider font-semibold">Ligature / Syntax</span>
-              <button id="btn-next-wordmark" aria-label="Next wordmark"     class="btn-action border border-[var(--border)] bg-[var(--bg-main)] text-xs font-bold w-8 h-8 rounded-full flex items-center justify-center">→</button>
-            </div>
-          </article>
-
-          <!-- Carousel 5 · Strategic Directives -->
-          <article class="p-6 border border-[var(--border)] custom-radius bg-[var(--bg-card)] flex flex-col h-80 shadow-sm transition-shadow duration-300 hover:shadow-md">
-            <div class="flex justify-between items-center mb-3">
-              <span class="text-[10px] uppercase font-bold tracking-widest text-[var(--accent)] font-heading">Carousel V · Directives</span>
-              <span id="directive-index" class="text-xs font-mono text-muted">01 / 03</span>
-            </div>
-            <div class="flex-grow flex flex-col gap-4 overflow-y-auto pr-1">
-              <div class="flex flex-col gap-1">
-                <span class="text-[9px] uppercase font-bold tracking-wider text-[var(--accent)] font-heading">Our Mission</span>
-                <p id="directive-mission" class="text-xs leading-relaxed transition-opacity duration-300">Cultivate high-performance systems with inquisitive logic and operational humility.</p>
-              </div>
-              <div class="flex flex-col gap-1">
-                <span class="text-[9px] uppercase font-bold tracking-wider text-[var(--accent)] font-heading">Our Vision</span>
-                <p id="directive-vision"  class="text-xs leading-relaxed transition-opacity duration-300">Set the global standard for premium, non-addictive, sovereign user interfaces that celebrate agency.</p>
-              </div>
-            </div>
-            <div class="flex justify-between items-center pt-4 border-t border-[var(--border)] mt-4">
-              <button id="btn-prev-directive" aria-label="Previous directive" class="btn-action border border-[var(--border)] bg-[var(--bg-main)] text-xs font-bold w-8 h-8 rounded-full flex items-center justify-center">←</button>
-              <span class="text-[10px] text-muted uppercase tracking-wider font-semibold">Mission &amp; Vision</span>
-              <button id="btn-next-directive" aria-label="Next directive"     class="btn-action border border-[var(--border)] bg-[var(--bg-main)] text-xs font-bold w-8 h-8 rounded-full flex items-center justify-center">→</button>
-            </div>
-          </article>
-        </div>
-
-        <!-- RIGHT COLUMN: Mark Explorer & UI Mockups -->
-        <div class="lg:col-span-2 flex flex-col custom-gutter">
-          
-          <!-- Carousel 2 · Primary Mark Explorer -->
-          <article class="p-6 md:p-8 border border-[var(--border)] custom-radius bg-[var(--bg-card)] flex flex-col shadow-sm transition-shadow duration-300 hover:shadow-md lg:h-[34rem]">
-            <div class="flex justify-between items-center mb-6 flex-wrap gap-2">
-              <div class="flex items-center gap-2 flex-wrap">
-                <span class="text-xs uppercase font-bold tracking-widest text-[var(--accent)] font-heading">Carousel II · Mark Explorer</span>
-                <span id="mark-cat-badge" class="px-2 py-0.5 rounded-full text-[9px] font-bold uppercase bg-[var(--bg-main)] text-[var(--accent)] border border-[var(--border)] font-heading">Sun Aspect</span>
-              </div>
-              <span id="explorer-index-text" class="text-xs font-mono text-muted font-semibold">Mark 01 / 90</span>
-            </div>
-
-            <div class="flex-grow grid grid-cols-1 md:grid-cols-2 gap-8 items-center min-h-0">
-              <!-- SVG container -->
-              <div class="flex justify-center items-center bg-[var(--bg-main)] rounded-xl border border-[var(--border)] p-6 aspect-square relative overflow-hidden group">
-                <div class="absolute inset-0 opacity-[0.02] pointer-events-none" style="background-image:radial-gradient(var(--text-main) 1px,transparent 0);background-size:18px 18px;"></div>
-                <div id="explorer-svg-container" class="w-full h-full max-w-[220px] max-h-[220px] flex justify-center items-center transform group-hover:scale-105 transition-transform duration-300"></div>
-              </div>
-
-              <!-- Metadata Panel -->
-              <div class="flex flex-col justify-between h-full py-2 min-h-0">
-                <div class="flex flex-col gap-5 overflow-y-auto pr-1">
-                  <div>
-                    <span class="text-[9px] uppercase font-bold tracking-widest text-muted font-heading block mb-1">Mark Title</span>
-                    <h3 id="mark-title" class="font-heading text-2xl font-bold tracking-tight text-main">Solar Zenith</h3>
-                  </div>
-                  <div>
-                    <span class="text-[9px] uppercase font-bold tracking-widest text-muted font-heading block mb-1.5">Value Alignment · Pillars</span>
-                    <div id="mark-alignment-tags" class="flex flex-wrap gap-1.5"></div>
-                  </div>
-                  <div>
-                    <span class="text-[9px] uppercase font-bold tracking-widest text-muted font-heading block mb-1">Design Lineage &amp; Meaning</span>
-                    <p id="mark-lineage" class="text-xs leading-relaxed text-muted"></p>
-                  </div>
-                </div>
-                
-                <div class="flex items-center gap-2 mt-5">
-                  <button id="autoplay-btn" class="btn-action flex-grow text-xs py-2 px-3 custom-radius font-semibold border border-[var(--border)] bg-[var(--bg-main)] flex items-center justify-center gap-2 hover:border-[var(--accent)]">
-                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/></svg>
-                    <span id="autoplay-label">Auto-Play</span>
-                  </button>
-                  <button id="btn-random-mark" aria-label="Random mark" title="Random Mark" class="btn-action text-sm p-2 custom-radius border border-[var(--border)] bg-[var(--bg-main)] hover:border-[var(--accent)]">🎲</button>
-                </div>
-              </div>
-            </div>
-
-            <div class="flex justify-between items-center pt-6 border-t border-[var(--border)] mt-6">
-              <button id="btn-prev-mark" aria-label="Previous mark" class="btn-action border border-[var(--border)] bg-[var(--bg-main)] text-xs font-bold w-10 h-10 rounded-full flex items-center justify-center">←</button>
-              <span class="text-[10px] text-muted uppercase tracking-wider font-semibold">90-Mark Negative Space Database</span>
-              <button id="btn-next-mark" aria-label="Next mark"     class="btn-action border border-[var(--border)] bg-[var(--bg-main)] text-xs font-bold w-10 h-10 rounded-full flex items-center justify-center">→</button>
-            </div>
-          </article>
-
-          <!-- Carousel 4 · UI Mockups -->
-          <article class="p-6 border border-[var(--border)] custom-radius bg-[var(--bg-card)] flex flex-col shadow-sm transition-shadow duration-300 hover:shadow-md lg:h-72">
-            <div class="flex justify-between items-center mb-4 flex-wrap gap-2">
-              <div class="flex items-center gap-2">
-                <span class="text-xs uppercase font-bold tracking-widest text-[var(--accent)] font-heading">Carousel IV · UI Mockup</span>
-                <span id="mockup-name-badge" class="px-2 py-0.5 rounded-full text-[9px] font-bold uppercase bg-[var(--bg-main)] text-[var(--accent)] border border-[var(--border)] font-heading">Real-Time Data Widget</span>
-              </div>
-              <span id="mockup-index" class="text-xs font-mono text-muted">01 / 03</span>
-            </div>
-            <div class="flex-grow flex items-center bg-[var(--bg-main)] border border-[var(--border)] rounded-xl p-4 overflow-hidden min-h-28">
-              <div id="mockup-content-container" class="w-full"></div>
-            </div>
-            <div class="flex justify-between items-center pt-4 border-t border-[var(--border)] mt-4">
-              <button id="btn-prev-mockup" aria-label="Previous mockup" class="btn-action border border-[var(--border)] bg-[var(--bg-main)] text-xs font-bold w-8 h-8 rounded-full flex items-center justify-center">←</button>
-              <span class="text-[10px] text-muted uppercase tracking-wider font-semibold">Live Adaptive UI Systems</span>
-              <button id="btn-next-mockup" aria-label="Next mockup"     class="btn-action border border-[var(--border)] bg-[var(--bg-main)] text-xs font-bold w-8 h-8 rounded-full flex items-center justify-center">→</button>
-            </div>
-          </article>
-        </div>
-
-      </div>
-
-      <!-- Consolidated Bento-Grid mark database registry -->
-      <div id="library-section" class="flex flex-col gap-6 p-6 border border-[var(--border)] custom-radius bg-[var(--bg-card)] shadow-sm">
-        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-          <div>
-            <span class="text-xs uppercase tracking-widest text-[var(--accent)] font-bold font-heading block mb-1">Consolidated Registry</span>
-            <h3 class="font-heading text-xl font-bold tracking-tight text-main">Complete Geometric Library · 90 Configurations</h3>
-            <p class="text-xs text-muted mt-1">Click any aspect mark to load it into the Primary Explorer dashboard above.</p>
-          </div>
-          <!-- Filter elements -->
-          <div class="flex flex-wrap items-center gap-1.5 bg-[var(--bg-main)] border border-[var(--border)] p-1 custom-radius">
-            <button id="filter-all" class="text-[10px] uppercase font-bold py-1.5 px-3 custom-radius tracking-wider btn-action border transition-all duration-200">All</button>
-            <button id="filter-sun" class="text-[10px] uppercase font-bold py-1.5 px-3 custom-radius tracking-wider btn-action border transition-all duration-200">Sun</button>
-            <button id="filter-void" class="text-[10px] uppercase font-bold py-1.5 px-3 custom-radius tracking-wider btn-action border transition-all duration-200">Void</button>
-            <button id="filter-both" class="text-[10px] uppercase font-bold py-1.5 px-3 custom-radius tracking-wider btn-action border transition-all duration-200">Both</button>
-            <button id="filter-wildcard" class="text-[10px] uppercase font-bold py-1.5 px-3 custom-radius tracking-wider btn-action border transition-all duration-200">Wildcard</button>
-          </div>
-        </div>
-        <!-- Registry Grid -->
-        <div id="library-bento-grid" class="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-9 gap-2.5 max-h-[430px] overflow-y-auto pr-1 border-t border-[var(--border)] pt-4"></div>
-      </div>
-
-    </section>
-
-    <!-- ══════════════════ Section V: Contact ══════════════════ -->
+    <!-- ══════════════════ Section IV: Contact ══════════════════ -->
     <section id="sec-contact" class="section-view flex-col custom-section-gap">
       
       <!-- Header -->

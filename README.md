@@ -78,8 +78,7 @@ Our branding utilizes two primary HSL color mappings:
 
 Our codebase is built for raw performance, clean separation of concerns, and immediate, zero-dependency visual hydration:
 
-*   **[index.html](file:///c:/Programming/eight-one-five-design/index.html)**: The primary entry point. Houses the semantic structure of the brand website including **Home** (Philosophy & Pillars), **About Me** (Isaac's profile), **Portfolio** (Accomplishments bento grid), **Brand Playground** (Active asset explorer), and **Contact**.
+*   **[index.html](file:///c:/Programming/eight-one-five-design/index.html)**: The primary entry point. Houses the semantic structure of the brand website including **Home** (Philosophy & Pillars), **About Me (Studio Credentials)** (Isaac's profile), **Portfolio (Accomplishments Showcase)** (Bento metric grid case studies), and **Contact**.
 *   **[style.css](file:///c:/Programming/eight-one-five-design/style.css)**: The unified styling repository. Contains all CSS variables, golden-ratio layout grids, responsive timelines, and state transition keyframes. Free of all inline style constraints.
-*   **[app.js](file:///c:/Programming/eight-one-five-design/app.js)**: The interactive logic engine. Stores our resume timelines, portfolio metrics databases, section tab navigation switches, local storage theme managers, and the complete 90 aspect-marks generator arrays.
-*   **[sandbox.html](file:///c:/Programming/eight-one-five-design/sandbox.html)**: The preserved original interactive brand playground, allowing complete isolated access to raw carousel configurations and the 90 aspect-marks registry in real-time.
+*   **[app.js](file:///c:/Programming/eight-one-five-design/app.js)**: The interactive logic engine. Stores our credentials timelines, case study databases, section tab navigation switches, and local storage theme managers.
 *   **[docs/traces/](file:///c:/Programming/eight-one-five-design/docs/traces/)**: Contains active trace documentation (`feat-brand-website.md`) tracking development branches, architectural decisions, and verify checks.
