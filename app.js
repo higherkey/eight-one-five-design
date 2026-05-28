@@ -193,7 +193,7 @@ const PORTFOLIO_PROJECTS = [
     title: 'T.D. Williamson Core Internal Apps',
     metric: '100+',
     metricLabel: 'Repositories Documented & Unified',
-    pillar: 'Void Space',
+    pillar: 'Essential Void',
     description: 'Refactored internal operations apps using Angular, .NET Core, and SignalR. Introduced automated unit testing and containerized microservices deployments with Kubernetes. Built out clean, minimal interfaces that let business intelligence tools breathe, while standardizing SonarQube quality gates across 100+ active repositories.',
     tech: ['Angular', '.NET Core', 'SignalR', 'Docker', 'Kubernetes', 'SonarQube']
   }
@@ -202,7 +202,7 @@ const PORTFOLIO_PROJECTS = [
 // ─────────────────────────────────────────────────────────────────────
 // 4. PROCEDURAL ASPECT-MARKS ENGINE (90 MARKS TOTAL)
 // ─────────────────────────────────────────────────────────────────────
-const BRAND_PILLARS = ["Work & Play", "Wisdom", "Under the Sun", "Subtle Royalty", "Void Space"];
+const BRAND_PILLARS = ["Work & Play", "Wisdom", "Under the Sun", "Subtle Royalty", "Essential Void"];
 const MARK_PREFIXES = ["Solar", "Cosmic", "Horizon", "Zenith", "Orbital", "Stark", "Minimal", "Grid", "Tectonic", "Matrix", "Harmony", "Symmetric", "Synthesis", "Kinetic", "Oscillator", "Neural", "Terminal", "Sovereign", "Breathing", "Linear", "Void", "Dynamic", "Structural", "Architectural", "Logarithmic"];
 const MARK_SUFFIXES = ["Zenith", "Portal", "Ray", "Axis", "Containment", "Breathing", "Intersect", "Duality", "Vessel", "Lattice", "Conduit", "Structure", "Flow", "Field", "Vector", "Node", "Cycle", "Alignment", "Restoration", "Discipline", "Compass", "Oscillation", "System", "Anchor", "Helix"];
 
@@ -219,7 +219,7 @@ function generateDesignLineage(index, category, pillar) {
     "Wisdom": "inquisitive logic, system boundaries, and deep operational humility",
     "Under the Sun": "absolute daylight transparency, shared experience, and grounded architecture",
     "Subtle Royalty": "quiet user sovereignty, premium craftsmanship, and elegant information spacing",
-    "Void Space": "logical essentialism, generous margins, and psychological breathing room"
+    "Essential Void": "logical essentialism, generous margins, and psychological breathing room"
   };
   
   const sources = {
@@ -534,7 +534,7 @@ const DIRECTIVES = [
     vision: "Set the global standard for premium, non-addictive, sovereign user interfaces that celebrate agency."
   },
   {
-    mission: "Embrace void space to reduce cognitive overload and let critical information/processes breathe.",
+    mission: "Embrace essential void to reduce cognitive overload and let critical information/processes breathe.",
     vision: "Restore a balanced, healthy human cycle of high-impact creation followed by rich celebration."
   },
   {
