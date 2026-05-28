@@ -26,6 +26,18 @@ const STUDIO_CREDENTIALS = {
   },
   experience: [
     {
+      role: 'Founder',
+      company: 'Eight One Five Design LLC',
+      location: 'Broken Arrow, OK',
+      period: 'Jan 2026 - Present',
+      details: [
+        'Founded and structured the software development and digital design studio, delivering high-performance web products, workflow automation pipelines, and custom technical integrations.',
+        'Architected premium responsive visual systems using custom CSS design tokens, HSL color variations (Structural vs. Authoritative), and layouts leveraging 1.618 golden-ratio grids.',
+        'Engineered scalable full-stack applications with C#/.NET Core, Java, and Angular, ensuring code quality standards are maintained via strict SonarQube checkpoints.',
+        'Facilitated agile product ownership and stakeholder collaboration, bridging engineering excellence with operational and financial optimization.'
+      ]
+    },
+    {
       role: 'Computer Science Tutor & Career Coach',
       company: 'Freelance Architect / Mentor',
       location: 'Tulsa, OK',
@@ -49,7 +61,7 @@ const STUDIO_CREDENTIALS = {
       ]
     },
     {
-      role: 'Senior Software Engineer (Automation)',
+      role: 'Senior Software Engineer',
       company: 'UnitedHealth Group',
       location: 'Broken Arrow, OK (Remote)',
       period: 'Jan 2024 - Apr 2025',
@@ -82,7 +94,7 @@ const STUDIO_CREDENTIALS = {
       ]
     },
     {
-      role: 'Process Improver & Customer Advocate',
+      role: 'Customer Service Advocate',
       company: 'UnitedHealth Group',
       location: 'Minneapolis, MN',
       period: 'Apr 2015 - Oct 2019',
