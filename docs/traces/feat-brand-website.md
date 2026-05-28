@@ -1,7 +1,7 @@
 # Feature Trace — Grounded Wisdom Brand Website
 
 - **Branch Name**: `feat/brand-website`
-- **Goal**: Rebuild the primary brand presence of Eight Fifteen Design (8:15 Design) based on the Grounded Wisdom visual identity, integrating Isaac Ahlfield's resume (About Me), high-impact automation accomplishments (Portfolio), the interactive marks explorer (Brand Playground), and an elegant contact system.
+- **Goal**: Rebuild the primary brand presence of Eight One Five Design (8-1-5 Design) based on the Grounded Wisdom visual identity, integrating Isaac Ahlfield's resume (About Me), high-impact automation accomplishments (Portfolio), the interactive marks explorer (Brand Playground), and an elegant contact system.
 
 ---
 

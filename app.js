@@ -428,9 +428,9 @@ const SLOGANS = [
 
 const WORDMARKS = [
   { text: "[ 8 : 1 5 ]", desc: "Spaced Technical Code" },
-  { text: "eight fifteen design", desc: "Lowercase Human-Focused Narrative" },
-  { text: "EIGHT FIFTEEN", desc: "Bold Geometric Typeface" },
-  { text: "&lt;EightFifteen /&gt;", desc: "Code-Based Syntax Format" },
+  { text: "eight one five design", desc: "Lowercase Human-Focused Narrative" },
+  { text: "EIGHT ONE FIVE", desc: "Bold Geometric Typeface" },
+  { text: "&lt;EightOneFive /&gt;", desc: "Code-Based Syntax Format" },
   { text: "815_studio_", desc: "Terminal Console Style" },
   { text: "8 • 15", desc: "Split Ligature Format" },
   { text: "0x815", desc: "Hexadecimal System Format" },
