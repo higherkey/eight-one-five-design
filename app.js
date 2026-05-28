@@ -31,21 +31,21 @@ const STUDIO_CREDENTIALS = {
       location: 'Broken Arrow, OK',
       period: 'Jan 2026 - Present',
       details: [
-        'Founded and structured the software development and digital design studio, delivering high-performance web products, workflow automation pipelines, and custom technical integrations.',
-        'Architected premium responsive visual systems using custom CSS design tokens, HSL color variations (Structural vs. Authoritative), and layouts leveraging 1.618 golden-ratio grids.',
-        'Engineered scalable full-stack applications with C#/.NET Core, Java, and Angular, ensuring code quality standards are maintained via strict SonarQube checkpoints.',
-        'Facilitated agile product ownership and stakeholder collaboration, bridging engineering excellence with operational and financial optimization.'
+        'Found and direct the software development and digital design studio, delivering high-performance web products, workflow automation pipelines, and custom technical integrations.',
+        'Engineer scalable full-stack applications with C#/.NET Core, Java, and Angular, ensuring code quality standards are maintained via strict SonarQube checkpoints.',
+        'Migrate small business websites from legacy platforms (e.g., WordPress) to Netlify, re-architecting systems to massively improve developer experience, optimize load performance, and elevate UI/UX.',
+        'Develop the Board Game Hub project from the ground up, constructing a real-time multiplayer platform that leverages AI tools to drastically accelerate velocity while maintaining practical AI usage guidelines.'
       ]
     },
     {
       role: 'Computer Science Tutor & Career Coach',
-      company: 'Freelance Architect / Mentor',
+      company: 'Freelance',
       location: 'Tulsa, OK',
       period: 'Sep 2025 - Present',
       details: [
-        'Mentored 30+ developers and students in advanced software fundamentals, computer architecture, OOP, and complex regular expression engines.',
-        'Onboarded learners to production engineering workflows (CLI commands, Git version control, Docker containers, and full-stack C#/Java/SQL architectures).',
-        'Instructed developers in ethical, agentic AI development practices, helping them architect responsible, high-performance systems.'
+        'Mentor 30+ developers and students in advanced software fundamentals, computer architecture, OOP, and complex regular expression engines.',
+        'Onboard learners to production engineering workflows (CLI commands, Git version control, Docker containers, and full-stack C#/Java/SQL architectures).',
+        'Instruct developers in ethical, agentic AI development practices, helping them architect responsible, high-performance systems.'
       ]
     },
     {
