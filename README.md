@@ -1,84 +1,83 @@
 # Eight One Five Design — Brand Foundation & System Registry
 
-This document serves as the official **Source of Truth** and guiding beacon for **Eight One Five Design** (stylized as **8:15 Design** or **8-1-5 Design**) until formal corporate founding documents are established. It outlines the core genesis, philosophical pillars, design system architecture, and technical structure of our ecosystem.
+> The official brand registry, design specifications, and core philosophy portal for Eight One Five Design.
 
----
+[![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/richardlitt/standard-readme)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=flat-square)](https://higherkey.github.io/eight-one-five-design/)
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)](https://html.spec.whatwg.org/)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)](https://www.w3.org/Style/CSS/)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=flat-square&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
-## 1. Executive Summary & Brand Foundation
+This repository serves as the official **Source of Truth** and guiding beacon for **Eight One Five Design** (stylized as **8:15 Design** or **8-1-5 Design**). It outlines the core genesis, philosophical pillars, design system architecture, and technical structure of our studio ecosystem.
 
-**Eight One Five Design** is a boutique software development and digital design studio specializing in elegant web systems, robust workflow automation, and interactive gaming experiences. The studio represents a unique, delicate synthesis of strict technical engineering discipline and creative, immersive play.
+## Table of Contents
+
+- [Background](#background)
+- [Install](#install)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Background
+
+Eight One Five Design is a boutique software development and digital design studio specializing in elegant web systems, robust workflow automation, and interactive gaming experiences. The studio represents a synthesis of strict technical engineering discipline and creative, immersive play.
 
 ### The Genesis: Ecclesiastes 8:15
 Our identity is derived entirely from the scriptural perspective on the duality of human existence under heaven:
 > *"So I recommend having fun... along with all the hard work God gives you under the sun."*
 
-This quote is our guiding light. We reject the contemporary technology narrative of endless hyper-growth and constant optimization at the expense of human health and agency. Instead, we embrace a classic, balanced cycle of high-impact creation followed by satisfying, restorative celebration.
+### Core Philosophical Pillars
+1. **Work & Play**: High-performance systems and immersive play. *"Wisdom in Work. Joy in the Toil."*
+2. **Wisdom**: Inquisitive logic and operational humility. *"Not even the wisest discover everything, no matter what they say."*
+3. **Under the Sun**: Objective reality, absolute transparency, and clean, grounded architecture.
+4. **Subtle Royalty**: Absolute user agency and premium craftsmanship (golden ratio `1.618` details).
+5. **Essential Void**: Logical essentialism, margins, and psychological breathing room.
+
+### Grounded Wisdom Design System
+- **Headings**: `Space Grotesk` — A clean, slightly brutalist but humanized geometric sans-serif.
+- **Body & Interfaces**: `Inter` — High-density readability and interface clarity.
+- **Layout Spacing**: Golden Ratio Scaling Base (`1.618`):
+    - `--space-gutter`: `1.618rem`
+    - `--space-section`: `2.618rem`
+    - `--radius`: `0.809rem`
+- **Branding HSL Mappings**: Warm Linen Structural (Light Theme) and slate Obsidian Authoritative (Dark Theme).
+
+### Codebase Architecture
+- **[index.html](file:///c:/Programming/eight-one-five-design/index.html)**: Primary portal structure (Home, About Me, Portfolio Bento Grid, Contact).
+- **[style.css](file:///c:/Programming/eight-one-five-design/style.css)**: Golden-ratio layouts and theme transitions.
+- **[app.js](file:///c:/Programming/eight-one-five-design/app.js)**: Tab navigation, case studies database, local storage theme managers.
 
 ---
 
-## 2. Core Philosophical Pillars
+## Install
 
-Every product, interface, line of code, and visual mark created by the studio must align with these five philosophical pillars:
+This is a static web application with zero external dependencies.
 
-### I. Work & Play
-*   **The Paradigm**: High-performance systems and immersive play.
-*   **The Narrative**: Diligent labor is a gift, but it is incomplete without the restorative cycle of play. We build tools that handle heavy operational workloads flawlessly, liberating users so they have the freedom and time to enjoy their lives.
-*   **The Motto**: *"Wisdom in Work. Joy in the Toil."*
-
-### II. Wisdom
-*   **The Paradigm**: Inquisitive logic and operational humility.
-*   **The Narrative**: True technical wisdom lies in recognizing the boundaries of our systems. We approach complex problems (such as artificial intelligence, massive real-time networking, and automation) with rigorous technical preparation while remaining humble before the unknown.
-*   **The Quote**: *"Not even the wisest discover everything, no matter what they say."*
-
-### III. Under the Sun
-*   **The Paradigm**: Objective reality, absolute transparency, and clean, grounded architecture.
-*   **The Narrative**: We design software that operates in the absolute daylight of shared experience. Our tools illuminate complex workflows rather than obscuring them with dark patterns or addictive user loops. We build practical software for real human needs within the constraints of the physical world.
-
-### IV. Subtle Royalty
-*   **The Paradigm**: Absolute user agency and premium craftsmanship.
-*   **The Narrative**: We treat our users as sovereign over their own digital workspaces. The software acts not as a controller, but as a quiet, powerful, and highly respectful advisor. This "royalty" is never gaudy or loud; it is felt through premium visual choices, perfect information spacing (1.618 golden ratio), and immediate system responsiveness.
-
-### V. Essential Void
-*   **The Paradigm**: Logical essentialism and psychological breathing room.
-*   **The Narrative**: In design and coding, what we leave out is as critically important as what we put in. We leverage generous margins, deep negative space, and absolute minimalism to reduce cognitive overload and let critical information/processes breathe.
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/higherkey/eight-one-five-design.git
+   cd eight-one-five-design
+   ```
+2. **Setup local viewing:**
+   Simply open `index.html` in any modern web browser, or launch using a local static HTTP server.
 
 ---
 
-## 3. Grounded Wisdom Design System
+## Usage
 
-The portal utilizes highly expressive, modern typographic configurations and color systems to convey a distinct brand personality focused on stability, craft, and intellectual depth.
-
-### Typographic Specifications
-*   **Headings**: `Space Grotesk` — A clean, slightly brutalist but humanized geometric sans-serif with high ink-trap visibility and structural legibility.
-*   **Body & Interfaces**: `Inter` — A workhorse typeface engineered for high-density readability and interface clarity.
-*   **Layout Spacing**: Golden Ratio Scaling Base (`1.618`):
-    *   `--space-gutter`: `1.618rem`
-    *   `--space-section`: `2.618rem`
-    *   `--radius`: `0.809rem`
-
-### Tone & Color Variations (Light & Dark)
-Our branding utilizes two primary HSL color mappings:
-
-1.  **Structural (Light Theme)**: Represents sunward heat and physical draft sheets.
-    *   `--bg-main`: `#FDFBF7` (Soft warm linen paper base)
-    *   `--bg-card`: `#FFFFFF` (Card base white)
-    *   `--text-main`: `#1A1A1A` (Stark charcoal ink)
-    *   `--accent`: `#D97706` (Warm gilded amber)
-    *   `--border`: `#EFEBE4` (Limestone warm white border)
-2.  **Authoritative (Dark Theme)**: Represents quiet royalty and absolute focus.
-    *   `--bg-main`: `#0B0F19` (Obsidian space-slate midnight blue)
-    *   `--bg-card`: `#111827` (Rich graphite dark card)
-    *   `--text-main`: `#F8FAFC` (Clean slate linen white)
-    *   `--accent`: `#D4AF7A` (Muted brass sovereign gold)
-    *   `--border`: `#1F2937` (Cool charcoal border)
+For local development with hot-reloading:
+1. Open the project folder in VS Code.
+2. Launch with the **Live Server** extension, or host it locally using a simple HTTP server (e.g. `npx serve .`).
+3. Access the browser view at the served address.
 
 ---
 
-## 4. Project Structure & Codebase Architecture
+## Contributing
 
-Our codebase is built for raw performance, clean separation of concerns, and immediate, zero-dependency visual hydration:
+Please ensure any additions or visual modifications respect the core philosophical pillars (especially *Subtle Royalty* and *Essential Void*) and remain free of external libraries.
 
-*   **[index.html](file:///c:/Programming/eight-one-five-design/index.html)**: The primary entry point. Houses the semantic structure of the brand website including **Home** (Philosophy & Pillars), **About Me (Studio Credentials)** (Isaac's profile), **Portfolio (Accomplishments Showcase)** (Bento metric grid case studies), and **Contact**.
-*   **[style.css](file:///c:/Programming/eight-one-five-design/style.css)**: The unified styling repository. Contains all CSS variables, golden-ratio layout grids, responsive timelines, and state transition keyframes. Free of all inline style constraints.
-*   **[app.js](file:///c:/Programming/eight-one-five-design/app.js)**: The interactive logic engine. Stores our credentials timelines, case study databases, section tab navigation switches, and local storage theme managers.
-*   **[docs/traces/](file:///c:/Programming/eight-one-five-design/docs/traces/)**: Contains active trace documentation (`feat-brand-website.md`) tracking development branches, architectural decisions, and verify checks.
+---
+
+## License
+
+Built by [higherkey](https://github.com/higherkey). Standard copyright applies.
