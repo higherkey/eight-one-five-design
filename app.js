@@ -19,7 +19,7 @@ const STUDIO_CREDENTIALS = {
     name: 'Isaac Ahlfield',
     role: 'Lead Software Architect & Product Owner',
     location: 'Broken Arrow, OK',
-    email: 'isaac.ahlfield@gmail.com',
+    email: 'isaac@eight1fivedesign.com',
     linkedin: 'https://www.linkedin.com/in/isaac-ahlfield',
     github: 'https://github.com/higherkey',
     summary: 'Lead Software Architect and Product Owner specializing in robust full-stack systems, high-efficiency workflow automation, and premium digital design. Architect of enterprise automation engines delivering over $13.75M in cumulative operational savings. Focused on engineering high-throughput pipelines, modernizing legacy systems into scalable REST APIs, and advocating for user agency and structural craft.'
