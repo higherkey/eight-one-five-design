@@ -27,7 +27,7 @@ const STUDIO_CREDENTIALS = {
   experience: [
     {
       role: 'Founder',
-      company: 'Eight One Five Design LLC',
+      company: 'eight1five design LLC',
       location: 'Broken Arrow, OK',
       period: 'Jan 2026 - Present',
       details: [
@@ -122,6 +122,18 @@ const STUDIO_CREDENTIALS = {
     { name: 'Docker / Kubernetes', category: 'Infrastructure' },
     { name: 'Azure DevOps CI/CD', category: 'Infrastructure' },
     { name: 'SonarQube / Code Quality', category: 'Quality' }
+  ],
+  certifications: [
+    {
+      name: 'Product Owner',
+      issuer: 'Optum Tech University',
+      year: '2024'
+    },
+    {
+      name: 'Professional Scrum Product Owner (PSPO)',
+      issuer: 'Scrum.org',
+      year: 'In-progress'
+    }
   ]
 };
 
@@ -176,7 +188,7 @@ const CASE_STUDIES = [
 // ─────────────────────────────────────────────────────────────────────
 window.addEventListener('DOMContentLoaded', () => {
   initTheme();
-  setupNavigation();
+  
   hydrateResumeSection();
   hydratePortfolioSection();
 });
@@ -202,14 +214,11 @@ function setTheme(themeName) {
   localStorage.setItem('theme', themeName);
   
   const root = document.documentElement;
-  const logoText = document.getElementById('header-logo-text');
   
   if (themeName === 'authoritative') {
     root.classList.add('theme-dark');
-    if (logoText) logoText.textContent = 'Grounded Wisdom: Authoritative';
   } else {
     root.classList.remove('theme-dark');
-    if (logoText) logoText.textContent = 'Grounded Wisdom: Structural';
   }
 }
 
@@ -327,7 +336,7 @@ function hydrateResumeSection() {
   const skillsGrid = document.getElementById('skills-grid');
   if (skillsGrid) {
     skillsGrid.innerHTML = '';
-    const categories = ['Backend', 'Frontend', 'Database', 'Automation', 'Infrastructure', 'Philosophy'];
+    const categories = ['Backend', 'Frontend', 'Database', 'Automation', 'Infrastructure', 'Quality'];
     
     categories.forEach(cat => {
       const catGroup = document.createElement('div');

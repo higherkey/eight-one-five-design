@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%" style="background-color:#FDFBF7;">
+  <rect width="400" height="400" fill="#FDFBF7" />
+  <!-- SUN-07: Ray Quadrants -->
+  <g stroke="#1A1A1A" stroke-width="3" stroke-linecap="round">
+    <path d="M 200 120 L 200 60 M 200 280 L 200 340 M 120 200 L 60 200 M 280 200 L 340 200" />
+  </g>
+  <circle cx="200" cy="200" r="55" fill="none" stroke="#D97706" stroke-width="5" />
+  <circle cx="200" cy="200" r="30" fill="none" stroke="#1A1A1A" stroke-width="2" />
+</svg>

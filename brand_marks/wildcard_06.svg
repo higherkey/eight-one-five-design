@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%" style="background-color:#FDFBF7;">
+  <rect width="400" height="400" fill="#FDFBF7" />
+  <!-- WLD-06: Crystalline Lattice -->
+  <g stroke="#1A1A1A" stroke-width="1.5">
+    <polygon points="200,80 290,140 290,260 200,320 110,260 110,140" fill="none" />
+    <line x1="200" y1="80" x2="200" y2="320" />
+    <line x1="110" y1="140" x2="290" y2="260" />
+    <line x1="290" y1="140" x2="110" y2="260" />
+  </g>
+  <circle cx="200" cy="200" r="45" fill="none" stroke="#D97706" stroke-width="3" />
+  <circle cx="200" cy="200" r="10" fill="#1A1A1A" />
+</svg>

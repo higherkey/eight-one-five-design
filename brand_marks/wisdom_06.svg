@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%" style="background-color:#FDFBF7;">
+  <rect width="400" height="400" fill="#FDFBF7" />
+  <!-- WIS-06: Infinite Hexagon -->
+  <polygon points="200,60 320,130 320,270 200,340 80,270 80,130" fill="none" stroke="#1A1A1A" stroke-width="4" />
+  <polygon points="200,100 290,150 290,250 200,300 110,250 110,150" fill="none" stroke="#D97706" stroke-width="3" />
+  <polygon points="200,150 240,175 240,225 200,250 160,225 160,175" fill="#1A1A1A" />
+</svg>
