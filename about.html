@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me — Isaac Ahlfield | eight1five design</title>
+  <meta name="description" content="Isaac Ahlfield is a Lead Software Architect &amp; Product Owner. Discover his engineering journey, technical proficiencies, and professional milestones.">
+
+  <!-- Google Fonts Preload -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Tailwind CSS CDN (v3) for utility structural layout grid support -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            heading: ['var(--font-heading)', 'sans-serif'],
+            body:    ['var(--font-body)',    'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Grounded Wisdom External Design System CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="brand_marks/sun_08.svg">
+
+  <!-- Theme Flash Prevention -->
+  <script>
+    (function() {
+      try {
+        var savedTheme = localStorage.getItem('theme') || 'structural';
+        if (savedTheme === 'authoritative') {
+          document.documentElement.classList.add('theme-dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+
+<body class="min-h-screen flex flex-col antialiased">
+
+  <!-- ══════════════════════════ Navigation Header ══════════════════════════ -->
+  <header class="brand-header w-full px-6 py-4 transition-all duration-300">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+      
+      <!-- Logo + Tagline -->
+      <a href="index.html" class="flex items-center gap-3 hover:opacity-80 transition-opacity" aria-label="eight1five design home page">
+        <svg class="w-8 h-8 flex-shrink-0" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logo-title">
+          <title id="logo-title">eight1five design solar eclipse logo</title>
+          <circle cx="200" cy="200" r="80" fill="var(--accent)" />
+          <circle cx="215" cy="185" r="80" fill="var(--bg-main)" />
+          <circle cx="215" cy="185" r="76" fill="none" stroke="var(--text-main)" stroke-width="6" />
+          <circle cx="200" cy="200" r="15" fill="var(--accent)" />
+        </svg>
+        <div class="flex flex-col">
+          <span class="font-heading text-lg font-bold tracking-tight text-main">eight1five design</span>
+        </div>
+      </a>
+
+      <!-- Navigation Tabs & Theme Toggle -->
+      <div class="flex flex-wrap items-center gap-6">
+        <nav class="flex items-center gap-4 md:gap-6 text-xs font-heading font-medium tracking-wide" aria-label="Main navigation">
+          <a href="index.html" class="nav-link text-muted hover:text-main">Home</a>
+          <a href="about.html" class="nav-link active text-muted hover:text-main">About Me</a>
+          <a href="portfolio.html" class="nav-link text-muted hover:text-main">Portfolio</a>
+          <a href="contact.html" class="nav-link text-muted hover:text-main">Contact</a>
+        </nav>
+
+        <div class="h-4 w-px bg-[var(--border)] hidden sm:block"></div>
+
+        <!-- Theme Switch Pill -->
+        <button id="theme-toggle-btn" class="theme-switch-pill" aria-label="Toggle structural/authoritative theme">
+          <div class="theme-switch-slot">
+            <!-- Sun Icon (left) -->
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="4" />
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+            </svg>
+          </div>
+          <div class="theme-switch-slot">
+            <!-- Moon Icon (right) -->
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+          </div>
+          <!-- Sliding Thumb -->
+          <span class="theme-switch-thumb"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ══════════════════════════ Main Content Canvas ══════════════════════════ -->
+  <main class="flex-grow w-full max-w-7xl mx-auto px-6 py-10 flex flex-col justify-start">
+
+    <!-- ══════════════════ Section II: About Me (Interactive Resume) ══════════════════ -->
+    <section id="sec-about-me" class="flex flex-col custom-section-gap">
+      
+      <!-- Overview & Header -->
+      <div class="flex flex-col md:flex-row justify-between items-start gap-6 border-b border-[var(--border)] pb-8">
+        <div class="flex flex-col gap-2 max-w-3xl">
+          <h2 class="font-heading text-3xl md:text-4xl font-extrabold text-main">Isaac Ahlfield</h2>
+          <p class="text-sm font-semibold text-[var(--accent)]">Software Engineer &amp; Product Owner</p>
+          <p class="text-xs text-muted leading-relaxed mt-2">
+            Software Engineer and Product Owner with expertise in full-stack development and automation, delivering scalable web applications and APIs. Led development of automation solutions generating over $500k in annual savings and improved bot performance by more than twelvefold. Known for collaborating with cross-functional teams to translate user needs into intuitive, reliable features. Passionate about building lovable fintech products that blend technical excellence with user empathy.
+          </p>
+        </div>
+        
+        <!-- Quick Info Panel -->
+        <div class="p-5 border border-[var(--border)] custom-radius bg-[var(--bg-card)] text-xs flex flex-col gap-3 flex-shrink-0 w-full md:w-64">
+          <div class="flex flex-col">
+            <span class="text-muted text-[10px] uppercase font-mono">Location</span>
+            <span class="font-semibold text-main">Broken Arrow, OK</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-muted text-[10px] uppercase font-mono">Email</span>
+            <a href="mailto:isaac.ahlfield@gmail.com" class="font-semibold text-xs text-main hover:text-[var(--accent)] hover:underline">isaac.ahlfield@gmail.com</a>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-muted text-[10px] uppercase font-mono">Portals</span>
+            <div class="flex gap-2.5 mt-1">
+              <a href="https://github.com/higherkey" target="_blank" rel="noopener noreferrer" aria-label="Isaac Ahlfield GitHub Profile" class="font-mono bg-[var(--border)] hover:bg-[var(--accent)] hover:text-[var(--bg-main)] px-2 py-0.5 rounded transition-colors duration-200">GitHub</a>
+              <a href="https://www.linkedin.com/in/isaac-ahlfield" target="_blank" rel="noopener noreferrer" aria-label="Isaac Ahlfield LinkedIn Profile" class="font-mono bg-[var(--border)] hover:bg-[var(--accent)] hover:text-[var(--bg-main)] px-2 py-0.5 rounded transition-colors duration-200">LinkedIn</a>
+            </div>
+          </div>
+          <a href="docs/Isaac-Ahlfield-Resume.pdf" download class="btn-action w-full text-center text-xs py-2 px-4 rounded border border-[var(--accent)] bg-[var(--accent)] text-[var(--bg-main)] font-semibold mt-1">
+            Download Resume PDF
+          </a>
+        </div>
+      </div>
+
+      <!-- Experience & Skills Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+        
+        <!-- Experience Timeline Column (Left/Center) -->
+        <div class="lg:col-span-2 flex flex-col gap-6">
+          <h3 class="font-heading text-xl font-bold text-main flex items-center gap-2">
+            <svg class="w-5 h-5 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            Professional Milestones
+          </h3>
+          <div id="resume-timeline" class="timeline-container">
+            <!-- Dynamically populated by JS -->
+          </div>
+        </div>
+
+        <!-- Skills & Certifications Column (Right) -->
+        <div class="flex flex-col gap-6">
+          
+          <!-- Certifications -->
+          <div class="flex flex-col gap-4">
+            <h3 class="font-heading text-xl font-bold text-main flex items-center gap-2">
+              <svg class="w-5 h-5 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+              Certifications
+            </h3>
+            <div id="certs-list" class="flex flex-col gap-2.5">
+              <!-- Dynamically populated by JS -->
+            </div>
+          </div>
+
+          <!-- Skills Grid -->
+          <div class="flex flex-col gap-4">
+            <h3 class="font-heading text-xl font-bold text-main flex items-center gap-2">
+              <svg class="w-5 h-5 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+              Technical Proficiencies
+            </h3>
+            <div id="skills-grid" class="flex flex-col gap-3">
+              <!-- Dynamically populated by JS -->
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════ Footer ══════════════════════════ -->
+  <footer class="border-t border-[var(--border)] bg-[var(--bg-card)] py-6 px-6 mt-10 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-xs text-muted gap-3">
+      <div class="flex items-center gap-2">
+        <span class="font-heading font-semibold text-main">eight1five design Studio</span>
+        <span>· Brand Portal v3.0</span>
+      </div>
+      <div class="flex gap-4">
+        <a href="privacy.html" class="hover:text-main hover:underline">Privacy Policy</a>
+        <a href="terms.html" class="hover:text-main hover:underline">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Grounded Wisdom Interactivity Core Site JS -->
+  <script src="app.js"></script>
+</body>
+</html>

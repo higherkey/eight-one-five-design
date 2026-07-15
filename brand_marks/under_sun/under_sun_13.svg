@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%" style="background-color:#FDFBF7;">
+  <rect width="400" height="400" fill="#FDFBF7" />
+  <!-- SUN-08 + WIS-10 Var 13: Bounce Reflection -->
+  <!-- Upper Sun -->
+  <circle cx="200" cy="140" r="60" fill="#D97706" />
+  <circle cx="212" cy="128" r="60" fill="#FDFBF7" />
+  <circle cx="212" cy="128" r="57" fill="none" stroke="#1A1A1A" stroke-width="3" />
+  
+  <!-- Flat thick platform -->
+  <line x1="80" y1="220" x2="320" y2="220" stroke="#1A1A1A" stroke-width="6" stroke-linecap="round" />
+  
+  <!-- Three vertical hanging bars with circle bob weights below (play/oscillation) -->
+  <line x1="130" y1="220" x2="130" y2="280" stroke="#D97706" stroke-width="3" />
+  <circle cx="130" cy="290" r="10" fill="#D97706" />
+  
+  <line x1="200" y1="220" x2="200" y2="310" stroke="#1A1A1A" stroke-width="3" />
+  <circle cx="200" cy="320" r="10" fill="#1A1A1A" />
+  
+  <line x1="270" y1="220" x2="270" y2="260" stroke="#D97706" stroke-width="3" />
+  <circle cx="270" cy="270" r="10" fill="#D97706" />
+</svg>

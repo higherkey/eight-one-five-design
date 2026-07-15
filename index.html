@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eight One Five Design — Grounded Wisdom Brand System &amp; Portfolio</title>
-  <meta name="description" content="Official brand website and professional portfolio for Eight One Five Design (8-1-5 Design). Rooted in the Grounded Wisdom design system, featuring the works and portfolio of Software Engineer &amp; Product Owner Isaac Ahlfield.">
+  <title>eight1five design</title>
+  <meta name="description" content="Official home page of eight1five design studio. Rooted in Grounded Wisdom, specializing in high-performance digital systems and creative play.">
 
   <!-- Google Fonts Preload -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,6 +27,21 @@
 
   <!-- Grounded Wisdom External Design System CSS -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="brand_marks/sun_08.svg">
+
+  <!-- Theme Flash Prevention -->
+  <script>
+    (function() {
+      try {
+        var savedTheme = localStorage.getItem('theme') || 'structural';
+        if (savedTheme === 'authoritative') {
+          document.documentElement.classList.add('theme-dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
 </head>
 
 <body class="min-h-screen flex flex-col antialiased">
@@ -36,37 +51,50 @@
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
       
       <!-- Logo + Tagline -->
-      <div class="flex items-center gap-3">
-        <svg class="w-8 h-8 flex-shrink-0" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="33" cy="33" r="17" stroke="var(--accent)" stroke-width="6"/>
-          <circle cx="33" cy="67" r="21" stroke="var(--accent)" stroke-width="6"/>
-          <line x1="67" y1="14" x2="67" y2="86" stroke="var(--accent)" stroke-width="6" stroke-linecap="round"/>
-          <path d="M65 17 L85 17 L66 44 A14 14 0 1 1 66 74" stroke="var(--accent)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-        </svg>
+      <div class="flex items-center gap-3" aria-label="eight1five design home page">
+        <a href="/" class="hover:opacity-80 transition-opacity flex-shrink-0" aria-label="home page logo">
+          <svg class="w-8 h-8" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logo-title">
+            <title id="logo-title">eight1five design solar eclipse logo</title>
+            <circle cx="200" cy="200" r="80" fill="var(--accent)" />
+            <circle cx="215" cy="185" r="80" fill="var(--bg-main)" />
+            <circle cx="215" cy="185" r="76" fill="none" stroke="var(--text-main)" stroke-width="6" />
+            <circle cx="200" cy="200" r="15" fill="var(--accent)" />
+          </svg>
+        </a>
         <div class="flex flex-col">
-          <span class="font-heading text-lg font-bold tracking-tight text-main">8:15 Design</span>
-          <span id="header-logo-text" class="text-[9px] font-mono tracking-widest text-[var(--accent)] uppercase font-semibold">Grounded Wisdom: Structural</span>
+          <a href="/" class="font-heading text-lg font-bold tracking-tight text-main hover:opacity-80 transition-opacity">eight1five design</a>
         </div>
       </div>
 
       <!-- Navigation Tabs & Theme Toggle -->
       <div class="flex flex-wrap items-center gap-6">
-        <nav class="flex items-center gap-4 md:gap-6 text-xs font-heading font-medium tracking-wide">
-          <a href="#" class="nav-link active text-muted hover:text-main" data-target="home">Home</a>
-          <a href="#" class="nav-link text-muted hover:text-main" data-target="about-me">About Me</a>
-          <a href="#" class="nav-link text-muted hover:text-main" data-target="portfolio">Portfolio</a>
-          <a href="#" class="nav-link text-muted hover:text-main" data-target="contact">Contact</a>
+        <nav class="flex items-center gap-4 md:gap-6 text-xs font-heading font-medium tracking-wide" aria-label="Main navigation">
+          <a href="index.html" class="nav-link active text-muted hover:text-main">Home</a>
+          <a href="about.html" class="nav-link text-muted hover:text-main">About Me</a>
+          <a href="portfolio.html" class="nav-link text-muted hover:text-main">Portfolio</a>
+          <a href="contact.html" class="nav-link text-muted hover:text-main">Contact</a>
         </nav>
 
         <div class="h-4 w-px bg-[var(--border)] hidden sm:block"></div>
 
-        <!-- Theme Slide Switch (Grounded Wisdom Toggle) -->
-        <div class="switch-container">
-          <span class="text-[10px] font-mono text-muted uppercase">Theme</span>
-          <button id="theme-toggle-btn" class="switch-track" aria-label="Toggle structural/authoritative theme">
-            <span class="switch-thumb"></span>
-          </button>
-        </div>
+        <!-- Theme Switch Pill -->
+        <button id="theme-toggle-btn" class="theme-switch-pill" aria-label="Toggle structural/authoritative theme">
+          <div class="theme-switch-slot">
+            <!-- Sun Icon (left) -->
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="4" />
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+            </svg>
+          </div>
+          <div class="theme-switch-slot">
+            <!-- Moon Icon (right) -->
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+          </div>
+          <!-- Sliding Thumb -->
+          <span class="theme-switch-thumb"></span>
+        </button>
       </div>
 
     </div>
@@ -76,13 +104,12 @@
   <main class="flex-grow w-full max-w-7xl mx-auto px-6 py-10 flex flex-col justify-start">
 
     <!-- ══════════════════ Section I: Home (Identity & Pillars) ══════════════════ -->
-    <section id="sec-home" class="section-view active flex-col custom-section-gap">
+    <section id="sec-home" class="flex flex-col custom-section-gap">
       
       <!-- Hero Banner -->
       <div class="w-full p-8 md:p-12 border border-[var(--border)] custom-radius bg-[var(--bg-card)] relative overflow-hidden shadow-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
         <div class="absolute right-0 top-0 w-80 h-80 rounded-full bg-[var(--accent)] opacity-[0.025] blur-3xl pointer-events-none"></div>
         <div class="flex flex-col gap-3 max-w-2xl">
-          <span class="text-xs uppercase tracking-widest text-[var(--accent)] font-bold font-heading">Studio Genesis &amp; Philosophy</span>
           <h1 class="font-heading text-3xl md:text-5xl font-extrabold tracking-tight text-main">Wisdom in Work. Joy in the Toil.</h1>
           <p class="text-base italic text-muted border-l-2 border-[var(--accent)] pl-4 py-1 mt-2">
             "So I recommend having fun... along with all the hard work God gives you under the sun." — Ecclesiastes 8:15
@@ -95,14 +122,13 @@
         <div class="flex flex-col justify-center gap-4">
           <h2 class="font-heading text-2xl md:text-3xl font-bold text-main">Duality under heaven.</h2>
           <p class="text-sm text-muted leading-relaxed">
-            Eight One Five Design is a software development and digital design studio specializing in elegant web systems, robust workflow automation, and interactive gaming experiences. The studio represents a unique synthesis of strict, technical engineering discipline and creative play.
+            eight1five design is a software development and digital design studio specializing in elegant web systems, robust workflow automation, and interactive gaming experiences. The studio represents a unique synthesis of strict, technical engineering discipline and creative play.
           </p>
           <p class="text-sm text-muted leading-relaxed">
             We reject the modern tech narrative of endless hyper-growth and constant optimization at the expense of human health. Instead, we embrace a classic, balanced cycle of high-impact creation followed by rich, satisfying celebration.
           </p>
         </div>
         <div class="p-6 border border-[var(--border)] custom-radius bg-[var(--bg-card)] flex flex-col justify-center gap-3">
-          <span class="text-[10px] uppercase font-bold tracking-widest text-[var(--accent)] font-heading">Core Target</span>
           <h3 class="font-heading text-xl font-bold text-main">Our Mission</h3>
           <p class="text-xs text-muted leading-relaxed">
             Cultivate high-performance systems with inquisitive logic and operational humility, establishing a global standard for premium, non-addictive, sovereign user interfaces that celebrate agency and return joy to work.
@@ -118,7 +144,6 @@
       <!-- 5 Philosophical Pillars Showcase -->
       <div class="flex flex-col gap-6 mt-4">
         <div class="text-center md:text-left">
-          <span class="text-xs uppercase tracking-widest text-[var(--accent)] font-bold font-heading block mb-1">Architectural Foundations</span>
           <h2 class="font-heading text-2xl md:text-3xl font-bold text-main">The 5 Core Philosophical Pillars</h2>
           <p class="text-xs text-muted mt-1">Every interface, line of code, and visual mark created by the studio must align with these pillars.</p>
         </div>
@@ -130,23 +155,23 @@
             <span class="font-mono text-xs text-[var(--accent)] font-bold">I. WORK &amp; PLAY</span>
             <h4 class="font-heading text-sm font-bold text-main">High-Performance &amp; Rest</h4>
             <p class="text-[11px] text-muted leading-relaxed">
-              Diligent labor is a gift, but incomplete without play. We build tools that handle heavy workloads flawlessly, liberating users so they have freedom and time to enjoy their lives.
+              Diligent labor is a gift but is incomplete without play. We build tools that handle heavy workloads and help people enjoy their lives. Our employees work at their best with satisfying rest and fulfilling work empowering each in turn.
             </p>
           </div>
 
           <!-- Pillar 2 -->
           <div class="p-5 border border-[var(--border)] custom-radius bg-[var(--bg-card)] flex flex-col gap-3 transition-all duration-300 hover:border-[var(--accent)]">
             <span class="font-mono text-xs text-[var(--accent)] font-bold">II. WISDOM</span>
-            <h4 class="font-heading text-sm font-bold text-main">Logic &amp; Humility</h4>
+            <h4 class="font-heading text-sm font-bold text-main">Humble Understanding</h4>
             <p class="text-[11px] text-muted leading-relaxed">
-              True technical wisdom lies in recognizing the boundaries of our systems. We approach complex problems with rigorous preparation while remaining humble before the unknown.
+              True technical wisdom lies in recognizing the boundaries of ourselves and our systems. We approach complex problems with rigorous preparation while remaining humble before the unknown.
             </p>
           </div>
 
           <!-- Pillar 3 -->
           <div class="p-5 border border-[var(--border)] custom-radius bg-[var(--bg-card)] flex flex-col gap-3 transition-all duration-300 hover:border-[var(--accent)]">
             <span class="font-mono text-xs text-[var(--accent)] font-bold">III. UNDER THE SUN</span>
-            <h4 class="font-heading text-sm font-bold text-main">Absolute Transparency</h4>
+            <h4 class="font-heading text-sm font-bold text-main">Complete Transparency</h4>
             <p class="text-[11px] text-muted leading-relaxed">
               We design software that operates in the daylight of shared experience. Our tools illuminate complex workflows rather than obscuring them with dark patterns or addictive user loops.
             </p>
@@ -154,215 +179,23 @@
 
           <!-- Pillar 4 -->
           <div class="p-5 border border-[var(--border)] custom-radius bg-[var(--bg-card)] flex flex-col gap-3 transition-all duration-300 hover:border-[var(--accent)]">
-            <span class="font-mono text-xs text-[var(--accent)] font-bold">IV. SUBTLE ROYALTY</span>
+            <span class="font-mono text-xs text-[var(--accent)] font-bold">IV. SUBTLE NOBILITY</span>
             <h4 class="font-heading text-sm font-bold text-main">Absolute Agency</h4>
             <p class="text-[11px] text-muted leading-relaxed">
-              We treat users as sovereign. The software acts as a quiet, powerful advisor—felt through premium visual choices, perfect information spacing, and immediate responsiveness.
+              Users are the focus. The software acts as a quiet, powerful advisor—felt through premium visual choices, perfect information spacing, and immediate responsiveness.
             </p>
           </div>
 
           <!-- Pillar 5 -->
           <div class="p-5 border border-[var(--border)] custom-radius bg-[var(--bg-card)] flex flex-col gap-3 transition-all duration-300 hover:border-[var(--accent)]">
             <span class="font-mono text-xs text-[var(--accent)] font-bold">V. ESSENTIAL VOID</span>
-            <h4 class="font-heading text-sm font-bold text-main">Logical Essentialism</h4>
+            <h4 class="font-heading text-sm font-bold text-main">Let Space Speak</h4>
             <p class="text-[11px] text-muted leading-relaxed">
-              In design and coding, what we leave out is as important as what we put in. We leverage generous margins, deep negative space, and minimalism to let critical info breathe.
+              In life and in work, what we leave out is as important as what we put in. We include the important and nothing else. A picture may paint a thousand words, but intuitive design needs none.
             </p>
           </div>
 
         </div>
-      </div>
-
-    </section>
-
-    <!-- ══════════════════ Section II: About Me (Interactive Resume) ══════════════════ -->
-    <section id="sec-about-me" class="section-view flex-col custom-section-gap">
-      
-      <!-- Overview & Header -->
-      <div class="flex flex-col md:flex-row justify-between items-start gap-6 border-b border-[var(--border)] pb-8">
-        <div class="flex flex-col gap-2 max-w-3xl">
-          <span class="text-xs uppercase tracking-widest text-[var(--accent)] font-bold font-heading">Product Architect Profile</span>
-          <h2 class="font-heading text-3xl md:text-4xl font-extrabold text-main">Isaac Ahlfield</h2>
-          <p class="text-sm font-semibold text-[var(--accent)]">Software Engineer &amp; Product Owner</p>
-          <p class="text-xs text-muted leading-relaxed mt-2">
-            Software Engineer and Product Owner with expertise in full-stack development and automation, delivering scalable web applications and APIs. Led development of automation solutions generating over $500k in annual savings and improved bot performance by more than twelvefold. Known for collaborating with cross-functional teams to translate user needs into intuitive, reliable features. Passionate about building lovable fintech products that blend technical excellence with user empathy.
-          </p>
-        </div>
-        
-        <!-- Quick Info Panel -->
-        <div class="p-5 border border-[var(--border)] custom-radius bg-[var(--bg-card)] text-xs flex flex-col gap-3 flex-shrink-0 w-full md:w-64">
-          <div class="flex flex-col">
-            <span class="text-muted text-[10px] uppercase font-mono">Location</span>
-            <span class="font-semibold text-main">Broken Arrow, OK</span>
-          </div>
-          <div class="flex flex-col">
-            <span class="text-muted text-[10px] uppercase font-mono">Email</span>
-            <a href="mailto:isaac.ahlfield@gmail.com" class="font-semibold text-xs text-main hover:text-[var(--accent)] hover:underline">isaac.ahlfield@gmail.com</a>
-          </div>
-          <div class="flex flex-col">
-            <span class="text-muted text-[10px] uppercase font-mono">Portals</span>
-            <div class="flex gap-2.5 mt-1">
-              <a href="https://github.com/higherkey" target="_blank" class="font-mono bg-[var(--border)] hover:bg-[var(--accent)] hover:text-[var(--bg-main)] px-2 py-0.5 rounded transition-colors duration-200">GitHub</a>
-              <a href="https://www.linkedin.com/in/isaac-ahlfield" target="_blank" class="font-mono bg-[var(--border)] hover:bg-[var(--accent)] hover:text-[var(--bg-main)] px-2 py-0.5 rounded transition-colors duration-200">LinkedIn</a>
-            </div>
-          </div>
-          <a href="docs/traces/Isaac Ahlfield_Software Engineer - Product_20260526.pdf" download class="btn-action w-full text-center text-xs py-2 px-4 rounded border border-[var(--accent)] bg-[var(--accent)] text-[var(--bg-main)] font-semibold mt-1">
-            Download Resume PDF
-          </a>
-        </div>
-      </div>
-
-      <!-- Experience & Skills Grid -->
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-        
-        <!-- Experience Timeline Column (Left/Center) -->
-        <div class="lg:col-span-2 flex flex-col gap-6">
-          <h3 class="font-heading text-xl font-bold text-main flex items-center gap-2">
-            <svg class="w-5 h-5 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-            Professional Milestones
-          </h3>
-          <div id="resume-timeline" class="timeline-container">
-            <!-- Dynamically populated by JS -->
-          </div>
-        </div>
-
-        <!-- Skills & Certifications Column (Right) -->
-        <div class="flex flex-col gap-6">
-          
-          <!-- Certifications -->
-          <div class="flex flex-col gap-4">
-            <h3 class="font-heading text-xl font-bold text-main flex items-center gap-2">
-              <svg class="w-5 h-5 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
-              Certifications
-            </h3>
-            <div id="certs-list" class="flex flex-col gap-2.5">
-              <!-- Dynamically populated by JS -->
-            </div>
-          </div>
-
-          <!-- Skills Grid -->
-          <div class="flex flex-col gap-4">
-            <h3 class="font-heading text-xl font-bold text-main flex items-center gap-2">
-              <svg class="w-5 h-5 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
-              Technical Proficiencies
-            </h3>
-            <div id="skills-grid" class="flex flex-col gap-3">
-              <!-- Dynamically populated by JS -->
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-    </section>
-
-    <!-- ══════════════════ Section III: Portfolio (Bento Metric Grid) ══════════════════ -->
-    <section id="sec-portfolio" class="section-view flex-col custom-section-gap">
-      
-      <!-- Header -->
-      <div>
-        <span class="text-xs uppercase tracking-widest text-[var(--accent)] font-bold font-heading block mb-1">Quantifiable Outcomes</span>
-        <h2 class="font-heading text-3xl font-extrabold text-main">Accomplishments &amp; Systems Showcase</h2>
-        <p class="text-xs text-muted mt-1">An overview of major, high-impact systems designed, developed, and deployed with structural craft.</p>
-      </div>
-
-      <!-- Bento Grid populated by JS -->
-      <div id="portfolio-bento-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <!-- Dynamically hydrated by app.js with col-span-2 on specific elements -->
-      </div>
-
-    </section>
-
-    <!-- ══════════════════ Section IV: Contact ══════════════════ -->
-    <section id="sec-contact" class="section-view flex-col custom-section-gap">
-      
-      <!-- Header -->
-      <div>
-        <span class="text-xs uppercase tracking-widest text-[var(--accent)] font-bold font-heading block mb-1">Operational Handshake</span>
-        <h2 class="font-heading text-3xl font-extrabold text-main">Connect &amp; Collaborate</h2>
-        <p class="text-xs text-muted mt-1">Interested in building elegant, high-impact systems, or looking for a Product Owner/Full-Stack engineer? Let's connect.</p>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 items-stretch">
-        
-        <!-- Left details panel -->
-        <div class="lg:col-span-2 flex flex-col gap-6">
-          
-          <div class="p-6 border border-[var(--border)] custom-radius bg-[var(--bg-card)] flex flex-col gap-4 h-full justify-between">
-            <div class="flex flex-col gap-3">
-              <span class="text-[10px] uppercase font-bold tracking-widest text-[var(--accent)] font-heading">Direct Outlets</span>
-              <h3 class="font-heading text-xl font-bold text-main">Get in touch directly</h3>
-              <p class="text-xs text-muted leading-relaxed">
-                Whether you have an automation roadblock, a legacy system to convert into REST APIs, or need an experienced Product Owner with full-stack capability, I'd love to discuss.
-              </p>
-            </div>
-            
-            <div class="flex flex-col gap-4 mt-6">
-              <!-- Mail card -->
-              <div class="flex items-center gap-3.5 p-3 border border-[var(--border)] rounded bg-[var(--bg-main)]">
-                <svg class="w-5 h-5 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                <div class="flex flex-col">
-                  <span class="text-[9px] uppercase font-mono text-muted">Mail Address</span>
-                  <a href="mailto:isaac.ahlfield@gmail.com" class="font-semibold text-xs text-main hover:text-[var(--accent)] hover:underline">isaac.ahlfield@gmail.com</a>
-                </div>
-              </div>
-
-              <!-- LinkedIn card -->
-              <div class="flex items-center gap-3.5 p-3 border border-[var(--border)] rounded bg-[var(--bg-main)]">
-                <svg class="w-5 h-5 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
-                <div class="flex flex-col">
-                  <span class="text-[9px] uppercase font-mono text-muted">LinkedIn Profile</span>
-                  <a href="https://www.linkedin.com/in/isaac-ahlfield" target="_blank" class="font-semibold text-xs text-main hover:text-[var(--accent)] hover:underline">linkedin.com/in/isaac-ahlfield</a>
-                </div>
-              </div>
-
-              <!-- GitHub card -->
-              <div class="flex items-center gap-3.5 p-3 border border-[var(--border)] rounded bg-[var(--bg-main)]">
-                <svg class="w-5 h-5 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
-                <div class="flex flex-col">
-                  <span class="text-[9px] uppercase font-mono text-muted">GitHub Repository</span>
-                  <a href="https://github.com/higherkey" target="_blank" class="font-semibold text-xs text-main hover:text-[var(--accent)] hover:underline">github.com/higherkey</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Right contact form panel -->
-        <div class="lg:col-span-3">
-          
-          <form id="contact-form" class="p-6 border border-[var(--border)] custom-radius bg-[var(--bg-card)] flex flex-col gap-4 h-full" onsubmit="event.preventDefault(); alert('Message dispatched! Rooted in wisdom, we will respond shortly.'); this.reset();">
-            <span class="text-[10px] uppercase font-bold tracking-widest text-[var(--accent)] font-heading">Secure Handshake Form</span>
-            
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div class="flex flex-col gap-1.5">
-                <label for="contact-name" class="text-[10px] font-mono uppercase text-muted">Your Name</label>
-                <input type="text" id="contact-name" class="input-premium" placeholder="e.g. Sovereign Client" required>
-              </div>
-              <div class="flex flex-col gap-1.5">
-                <label for="contact-email" class="text-[10px] font-mono uppercase text-muted">Your Email</label>
-                <input type="email" id="contact-email" class="input-premium" placeholder="e.g. client@domain.com" required>
-              </div>
-            </div>
-
-            <div class="flex flex-col gap-1.5">
-              <label for="contact-subject" class="text-[10px] font-mono uppercase text-muted">Subject Inquiry</label>
-              <input type="text" id="contact-subject" class="input-premium" placeholder="e.g. C# RPA Automations / Core Web App Setup" required>
-            </div>
-
-            <div class="flex flex-col gap-1.5 flex-grow">
-              <label for="contact-message" class="text-[10px] font-mono uppercase text-muted">Detailed Description</label>
-              <textarea id="contact-message" class="input-premium flex-grow min-h-24 md:min-h-36 resize-y" placeholder="Describe the operational goals, constraints, or partnership plans..." required></textarea>
-            </div>
-
-            <button type="submit" class="btn-action w-full text-center text-xs py-3 px-6 rounded border border-[var(--accent)] bg-[var(--accent)] text-[var(--bg-main)] font-bold tracking-wider uppercase font-heading mt-2">
-              Dispatch Message
-            </button>
-          </form>
-
-        </div>
-
       </div>
 
     </section>
@@ -373,12 +206,13 @@
   <footer class="border-t border-[var(--border)] bg-[var(--bg-card)] py-6 px-6 mt-10 transition-colors duration-300">
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-xs text-muted gap-3">
       <div class="flex items-center gap-2">
-        <span class="font-heading font-semibold text-main">Eight One Five Design Studio</span>
-        <span>· Brand Portal v3.0</span>
+        <span class="font-heading font-semibold text-main">Eight One Five Design LLC (e1f)</span>
+        <span>| "So I recommend having fun... along with all the hard work God gives you under the sun." — Ecclesiastes 8:15</span>
       </div>
-      <p class="text-center md:text-right italic">
-        "So I recommend having fun... along with all the hard work God gives you under the sun." — Ecclesiastes 8:15
-      </p>
+      <div class="flex gap-4">
+        <a href="privacy.html" class="hover:text-main hover:underline">Privacy Policy</a>
+        <a href="terms.html" class="hover:text-main hover:underline">Terms of Service</a>
+      </div>
     </div>
   </footer>
 

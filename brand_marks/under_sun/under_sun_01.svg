@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%" style="background-color:#FDFBF7;">
+  <rect width="400" height="400" fill="#FDFBF7" />
+  <!-- SUN-08 + WIS-10 Var 01: Steps with Playful Nodes -->
+  <!-- Upper Sun Imagery (Offset Eclipse) -->
+  <circle cx="200" cy="140" r="60" fill="#D97706" />
+  <circle cx="212" cy="128" r="60" fill="#FDFBF7" />
+  <circle cx="212" cy="128" r="57" fill="none" stroke="#1A1A1A" stroke-width="3" />
+  <circle cx="200" cy="140" r="10" fill="#D97706" />
+  
+  <!-- Foundation Steps Below (Work & Play Nodes) -->
+  <line x1="100" y1="280" x2="300" y2="280" stroke="#1A1A1A" stroke-width="5" stroke-linecap="round" />
+  <circle cx="100" cy="280" r="5" fill="#D97706" />
+  <circle cx="300" cy="280" r="5" fill="#D97706" />
+  
+  <line x1="130" y1="240" x2="270" y2="240" stroke="#1A1A1A" stroke-width="4" stroke-linecap="round" />
+  <circle cx="130" cy="240" r="4" fill="#D97706" />
+  <circle cx="270" cy="240" r="4" fill="#D97706" />
+  
+  <line x1="160" y1="200" x2="240" y2="200" stroke="#1A1A1A" stroke-width="3.5" stroke-linecap="round" />
+</svg>

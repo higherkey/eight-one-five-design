@@ -102,21 +102,6 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   background-color: rgba(11, 15, 25, 0.8);
 }
 
-/* Tab Switching Fade Transitions */
-.section-view {
-  opacity: 0;
-  transform: translateY(12px);
-  display: none;
-  transition: opacity var(--transition-spd) var(--transition-ease),
-              transform var(--transition-spd) var(--transition-ease);
-}
-
-.section-view.active {
-  display: flex;
-  opacity: 1;
-  transform: translateY(0);
-}
-
 /* Premium Buttons & Cards */
 .btn-action {
   transition: transform var(--transition-spd) var(--transition-ease),
@@ -154,37 +139,69 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   transform: scale(var(--scale-click));
 }
 
-/* Theme Slide Toggle Custom Styling */
-.switch-container {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.switch-track {
-  width: 46px;
-  height: 24px;
+/* Theme Switch Pill Custom Styling */
+.theme-switch-pill {
+  width: 50px;
+  height: 28px;
   background-color: var(--border);
   border-radius: 100px;
   position: relative;
+  display: flex;
+  padding: 3px;
   cursor: pointer;
+  border: none;
+  outline: none;
   transition: background-color var(--transition-spd) var(--transition-ease);
 }
 
-.switch-thumb {
-  width: 18px;
-  height: 18px;
+.theme-switch-slot {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  height: 100%;
+}
+
+.theme-switch-pill svg {
+  width: 14px;
+  height: 14px;
+  pointer-events: none;
+  transition: color var(--transition-spd) var(--transition-ease);
+}
+
+.icon-sun {
+  color: var(--text-muted);
+}
+
+.icon-moon {
+  color: var(--text-muted);
+}
+
+/* Highlight active icon with background color contrast on the slider thumb */
+.theme-dark .icon-moon {
+  color: var(--bg-main);
+}
+
+html:not(.theme-dark) .icon-sun {
+  color: var(--bg-main);
+}
+
+.theme-switch-thumb {
+  width: 22px;
+  height: 22px;
   background-color: var(--accent);
   border-radius: 50%;
   position: absolute;
   top: 3px;
   left: 3px;
+  z-index: 5;
   transition: transform var(--transition-spd) var(--transition-ease),
               background-color var(--transition-spd) var(--transition-ease);
 }
 
-.theme-dark .switch-thumb {
-  transform: translateX(22px);
+.theme-dark .theme-switch-thumb {
+  transform: translateX(100%);
 }
 
 /* Vertical Experience Timeline */
