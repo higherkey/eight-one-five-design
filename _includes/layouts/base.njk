@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if title %}{{ title }} - {% endif %}eight1five design</title>
+  <meta name="description" content="Official home page of eight1five design studio. Rooted in Grounded Wisdom, specializing in high-performance digital systems and creative play.">
+
+  <!-- Google Fonts Preload -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Tailwind CSS CDN (v3) for utility structural layout grid support -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            heading: ['var(--font-heading)', 'sans-serif'],
+            body:    ['var(--font-body)',    'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Grounded Wisdom External Design System CSS -->
+  <link rel="stylesheet" href="/style.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/brand_marks/sun_08.svg">
+
+  <!-- Theme Flash Prevention -->
+  <script>
+    (function() {
+      try {
+        var savedTheme = localStorage.getItem('theme') || 'structural';
+        if (savedTheme === 'authoritative') {
+          document.documentElement.classList.add('theme-dark');
+        }
+      } catch (e) {
+        console.warn('Unable to access localStorage to read theme preference:', e);
+      }
+    })();
+  </script>
+</head>
+
+<body class="min-h-screen flex flex-col antialiased">
+
+  <!-- ══════════════════════════ Navigation Header ══════════════════════════ -->
+  <header class="brand-header w-full px-6 py-4 transition-all duration-300">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+      
+      <!-- Logo + Tagline -->
+      <div class="flex items-center gap-3" aria-label="eight1five design home page">
+        <a href="/" class="hover:opacity-80 transition-opacity flex-shrink-0" aria-label="home page logo">
+          <svg class="w-8 h-8" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logo-title">
+            <title id="logo-title">eight1five design solar eclipse logo</title>
+            <circle cx="200" cy="200" r="80" fill="var(--accent)" />
+            <circle cx="215" cy="185" r="80" fill="var(--bg-main)" />
+            <circle cx="215" cy="185" r="76" fill="none" stroke="var(--text-main)" stroke-width="6" />
+            <circle cx="200" cy="200" r="15" fill="var(--accent)" />
+          </svg>
+        </a>
+        <div class="flex flex-col">
+          <a href="/" class="font-heading text-lg font-bold tracking-tight text-main hover:opacity-80 transition-opacity">eight1five design</a>
+        </div>
+      </div>
+
+      <!-- Navigation Tabs & Theme Toggle -->
+      <div class="flex flex-wrap items-center gap-6">
+        <nav class="flex items-center gap-4 md:gap-6 text-xs font-heading font-medium tracking-wide" aria-label="Main navigation">
+          <a href="/" class="nav-link {% if activeTab == 'home' %}text-main font-bold{% else %}text-muted{% endif %} hover:text-main">Home</a>
+          <a href="/about.html" class="nav-link {% if activeTab == 'about' %}text-main font-bold{% else %}text-muted{% endif %} hover:text-main">About Me</a>
+          <a href="/portfolio.html" class="nav-link {% if activeTab == 'portfolio' %}text-main font-bold{% else %}text-muted{% endif %} hover:text-main">Portfolio</a>
+          <a href="/contact.html" class="nav-link {% if activeTab == 'contact' %}text-main font-bold{% else %}text-muted{% endif %} hover:text-main">Contact</a>
+        </nav>
+
+        <div class="h-4 w-px bg-[var(--border)] hidden sm:block"></div>
+
+        <!-- Theme Switch Pill -->
+        <button id="theme-toggle-btn" class="theme-switch-pill" aria-label="Toggle structural/authoritative theme">
+          <div class="theme-switch-slot">
+            <!-- Sun Icon (left) -->
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="4" />
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+            </svg>
+          </div>
+          <div class="theme-switch-slot">
+            <!-- Moon Icon (right) -->
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+          </div>
+          <!-- Sliding Thumb -->
+          <span class="theme-switch-thumb"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  {{ content | safe }}
+
+  <!-- ══════════════════════════ Footer ══════════════════════════ -->
+  <footer class="border-t border-[var(--border)] bg-[var(--bg-card)] py-6 px-6 mt-10 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-xs text-muted gap-3">
+      <div class="flex items-center gap-2">
+        <span class="font-heading font-semibold text-main">Eight One Five Design LLC (e1f)</span>
+        <span>| "So I recommend having fun... along with all the hard work God gives you under the sun." — Ecclesiastes 8:15</span>
+      </div>
+      <div class="flex gap-4">
+        <a href="/privacy.html" class="hover:text-main hover:underline {% if activeTab == 'privacy' %}font-bold{% endif %}">Privacy Policy</a>
+        <a href="/terms.html" class="hover:text-main hover:underline {% if activeTab == 'terms' %}font-bold{% endif %}">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Grounded Wisdom Interactivity Core Site JS -->
+  <script src="/app.js"></script>
+</body>
+</html>

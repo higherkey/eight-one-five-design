@@ -230,7 +230,7 @@ function setupNavigation() {
   navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
-      const target = link.getAttribute('data-target');
+      const target = link.dataset.target;
       switchSection(target);
     });
   });
@@ -246,7 +246,7 @@ function switchSection(sectionId) {
   
   // Update nav highlights
   document.querySelectorAll('.nav-link').forEach(link => {
-    if (link.getAttribute('data-target') === sectionId) {
+    if (link.dataset.target === sectionId) {
       link.classList.add('active');
     } else {
       link.classList.remove('active');
@@ -262,7 +262,7 @@ function switchSection(sectionId) {
       currentSec.classList.remove('active');
       
       targetSec.classList.add('active');
-      targetSec.offsetHeight; // Force reflow
+      if (targetSec.offsetHeight) { /* Force reflow */ }
       
       targetSec.style.opacity = '1';
       targetSec.style.transform = 'translateY(0)';

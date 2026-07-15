@@ -1,0 +1,17 @@
+{
+  "name": "eight-one-five-design",
+  "version": "1.0.0",
+  "description": "eight1five design studio website",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "keywords": [],
+  "author": "Isaac Ahlfield",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}
