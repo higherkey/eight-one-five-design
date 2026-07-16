@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%" style="background-color:#FDFBF7;">
-  <rect width="400" height="400" fill="#FDFBF7" />
-  <!-- COM-03: Concentric Compass -->
-  <circle cx="200" cy="200" r="90" fill="none" stroke="#1A1A1A" stroke-width="1.5" stroke-dasharray="5 5" />
-  <polygon points="200,80 215,185 320,200 215,215 200,320 185,215 80,200 185,185" fill="none" stroke="#D97706" stroke-width="3.5" />
-  <circle cx="200" cy="200" r="35" fill="none" stroke="#1A1A1A" stroke-width="3" />
-  <circle cx="200" cy="200" r="15" fill="#D97706" />
-</svg>

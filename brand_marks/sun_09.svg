@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%" style="background-color:#FDFBF7;">
-  <rect width="400" height="400" fill="#FDFBF7" />
-  <!-- SUN-09: Equinox Cross -->
-  <line x1="70" y1="200" x2="330" y2="200" stroke="#D97706" stroke-width="3" />
-  <line x1="200" y1="70" x2="200" y2="330" stroke="#D97706" stroke-width="3" />
-  <circle cx="200" cy="200" r="60" fill="#FDFBF7" stroke="#1A1A1A" stroke-width="4.5" />
-  <circle cx="200" cy="200" r="35" fill="none" stroke="#D97706" stroke-width="2" />
-  <circle cx="200" cy="200" r="15" fill="#1A1A1A" />
-</svg>
