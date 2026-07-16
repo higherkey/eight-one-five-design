@@ -26,31 +26,31 @@
   --bg-main: #FDFBF7;
   --bg-card: #FFFFFF;
   --bg-input: #FFFFFF;
-  --text-main: #1A1A1A;
-  --text-muted: #555555;
+  --text-main: #0B0F19;       /* Deep Navy-Black / Obsidian Space Slate */
+  --text-muted: #4E5A70;      /* Muted Navy-Grey */
   --accent: #D97706;        /* Warm Amber */
   --accent-hover: #B45309;  /* Deep Amber */
   --accent-rgb: 217, 119, 6;
   --border: #EFEBE4;        /* Soft Limestone Warm Grey */
-  --shadow-sm: 0 2px 8px rgba(26, 26, 26, 0.02);
+  --shadow-sm: 0 2px 8px rgba(11, 15, 25, 0.02);
   --shadow-md: 0 10px 30px -10px rgba(217, 119, 6, 0.06);
   --shadow-lg: 0 20px 40px -15px rgba(217, 119, 6, 0.08);
 }
 
 /* Theme I: Grounded Wisdom — Authoritative (Dark Mode Overrides) */
 .theme-dark {
-  --bg-main: #0B0F19;       /* Obsidian Space Slate */
-  --bg-card: #111827;       /* Rich Graphite Card */
-  --bg-input: #1F2937;      /* Input Field Charcoal */
-  --text-main: #F8FAFC;     /* Crisp Linen White */
-  --text-muted: #94A3B8;    /* Cool Steel Grey */
-  --accent: #D4AF7A;        /* Muted Brass Gold */
-  --accent-hover: #C59B63;  /* Gilded Gold */
-  --accent-rgb: 212, 175, 122;
-  --border: #1F2937;        /* Obsidian Dark Border */
+  --bg-main: #0B0F19;       /* Obsidian Space Slate Background */
+  --bg-card: #131924;       /* Aligned Navy-Black Card */
+  --bg-input: #1D2433;      /* Navy-based input */
+  --text-main: #FDFBF7;     /* Crisp Warm Linen Text */
+  --text-muted: #8A9BB4;    /* Cool Slate / Steel Grey */
+  --accent: #D97706;        /* Shared Warm Amber */
+  --accent-hover: #B45309;  /* Shared Deep Amber */
+  --accent-rgb: 217, 119, 6;
+  --border: #1E293B;        /* Deep Navy-Slate Border */
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
   --shadow-md: 0 10px 30px -10px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 20px 40px -15px rgba(212, 175, 122, 0.04);
+  --shadow-lg: 0 20px 40px -15px rgba(217, 119, 6, 0.04);
 }
 
 /* Base Styles */
