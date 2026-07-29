@@ -59,22 +59,21 @@ Our visual identity is called Grounded Wisdom. It relies on high-contrast natura
 ### Color Palettes
 We utilize two structural modes: Linen (Light Theme) for general utility, and Obsidian (Dark Theme) for authoritative/immersive experiences.
 
-#### Theme I: Linen (Light Theme Defaults)
-*   **Primary Base / Background**: `#FDFBF7` (Warm Linen)
-*   **Contrast / Text Main**: `#0B0F19` (Deep Navy-Black)
-*   **Secondary / Text Muted**: `#4E5A70` (Muted Navy-Grey)
-*   **Accent**: `#D97706` (Warm Amber)
-*   **Accent Hover**: `#B45309` (Deep Amber)
-*   **Border / Keyline**: `#EFEBE4` (Soft Limestone Warm Grey)
+Color Palettes
+You can choose to design a Light (Warm Linen / Grounded Wisdom) card, a Dark (Obsidian / Authoritative) card, or a combination (e.g., Light front, Dark back).
 
-#### Theme II: Obsidian (Dark Theme Overrides)
-*   **Primary Base / Background**: `#0B0F19` (Deep Navy-Black)
-*   **Card Background**: `#131924` (Deep Navy-Black Card)
-*   **Contrast / Text Main**: `#FDFBF7` (Warm Linen Text)
-*   **Secondary / Text Muted**: `#8A9BB4` (Cool Slate / Steel Grey)
-*   **Accent**: `#D97706` (Warm Amber - Shared Accent)
-*   **Accent Hover**: `#B45309` (Deep Amber - Shared Accent)
-*   **Border / Keyline**: `#1E293B` (Deep Navy-Slate Border)
+Palette	Token	Hex Code	Role / Visual Description
+Light Theme	Primary Base	#FDFBF7	Warm Linen / Off-white Background
+Accent	#D97706	Warm Amber
+Contrast Text	#0B0F19	Deep Navy-Black / Obsidian Space Slate
+Muted Text	#4E5A70	Muted Navy-Grey
+Border	#EFEBE4	Soft Limestone Grey
+
+Dark Theme	Primary Base	#0B0F19	Deep Navy-Black / Obsidian Space Slate
+Accent	#D97706	Warm Amber (Shared Accent)
+Contrast Text	#FDFBF7	Warm Linen Text
+Muted Text	#8A9BB4	Cool Slate / Steel Grey
+Border	#1E293B	Deep Navy-Slate Border
 
 ---
 
@@ -100,6 +99,8 @@ To reflect *Subtle Nobility* and *Essential Void*, all layouts use spacing propo
 ---
 
 ## 5. Logo Guidelines
+
+#IMPORTANT: The logo is under redesign as of 7/26/26. It will be a Infinity symbol with a sun represented on one side and the Moon represented on the other, linking both to the eight in eight1five and the nothing is new under the Sun epitaph.
 
 Our primary logo mark is the **Solar Eclipse (CONFIG: SUN-08)**, symbolizing Ecclesiastes 8:15 ("under the sun"). It is composed of a warm sun eclipsed by a cool moon, with a small core of light resting at the absolute center.
 
