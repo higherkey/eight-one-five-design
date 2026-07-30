@@ -1,6 +1,6 @@
 # eight1five design — Official Brand Identity & Style Guide
 
-Welcome to the official brand registry and design guide for eight1five design (also referred to as eight1five or e1f). This document serves as the single source of truth for our studio philosophy, visual identity, and operational principles.
+Welcome to the official brand registry and design guide for eight1five design (also referred to as eight1five or e1F, legal name Eight One Five Design LLC). This document serves as the single source of truth for our studio philosophy, visual identity, and operational principles.
 
 ---
 
