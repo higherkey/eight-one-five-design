@@ -1,24 +1,191 @@
 ---
-layout: layouts/base.njk
-title: Portfolio
-activeTab: portfolio
+layout: layouts/horizon.njk
+title: Portfolio — Accomplishments & Systems Showcase
+permalink: /portfolio.html
 ---
-<main class="flex-grow w-full max-w-7xl mx-auto px-6 py-10 flex flex-col justify-start">
+<main>
+  <div class="hor-page">
 
-    <!-- ══════════════════ Section III: Portfolio (Bento Metric Grid) ══════════════════ -->
-    <section id="sec-portfolio" class="flex flex-col custom-section-gap">
-      
-      <!-- Header -->
-      <div>
-        <h2 class="font-heading text-3xl font-extrabold text-main">Accomplishments &amp; Systems Showcase</h2>
-        <p class="text-xs text-muted mt-1">An overview of major, high-impact systems designed, developed, and deployed with structural craft.</p>
+    <!-- Asymmetric Header -->
+    <header class="hor-hero" style="min-height:48vh; padding: 6vw 6vw 4vw;">
+      <div class="hor-hero__content">
+        <p class="hor-eyebrow">eight1five design &middot; Portfolio &middot; Structural Craft</p>
+        <h1 class="hor-hero__title" style="font-size: clamp(2.5rem, 6.5vw, 5.5rem);">
+          Systems Showcase &amp; <span class="italic">Deployed Products.</span>
+        </h1>
+        <p class="hor-text" style="font-size:1.1rem; color:var(--slate); max-width:55ch; margin-top:1.5rem;">
+          An overview of high-throughput web applications, real-time multiplayer platforms, deterministic automation engines, and custom client sites engineered with structural craft and zero dark patterns.
+        </p>
       </div>
+    </header>
 
-      <!-- Bento Grid populated by JS -->
-      <div id="portfolio-bento-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <!-- Dynamically hydrated by app.js with col-span-2 on specific elements -->
+    <!-- Staggered Organic Anti-Grid Portfolio Showcase -->
+    <section class="hor-section hor-section--alt">
+      <div class="hor-float-num">01</div>
+      <div class="hor-section__inner">
+        <p class="hor-tag">Products &amp; Interactive Platforms</p>
+        
+        <div class="hor-stagger" style="gap:3.5rem;">
+          
+          <!-- Kipu -->
+          <div class="hor-stagger__item" style="background:var(--cream); padding:2.5rem; border-left:3px solid var(--amber);">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:1rem;">
+              <div>
+                <span class="hor-tag" style="font-size:0.58rem; margin-bottom:0.25rem; block">WISDOM &middot; PRODUCT / SYSTEM</span>
+                <h3 class="hor-head" style="margin-bottom:0.25rem;">Kipu</h3>
+                <p style="font-size:0.85rem; font-weight:600; color:var(--amber); margin-bottom:0.75rem;">Sensory Mini-Games &amp; Knowledge Engine</p>
+              </div>
+              <span style="font-family:var(--serif); font-size:1.75rem; font-style:italic; color:var(--amber); opacity:0.6;">100% Safety</span>
+            </div>
+            <p class="hor-text">A premium, sensory-focused collection of tactile and educational mini-games for children. Built for rapid capture, structural clarity, and zero runtime overhead.</p>
+            <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:1.25rem; padding-top:1rem; border-top:1px solid var(--mist);">
+              <span style="font-size:0.68rem; font-family:var(--sans); background:var(--sand); padding:0.2rem 0.5rem; border-radius:2px; color:var(--charcoal);">TypeScript</span>
+              <span style="font-size:0.68rem; font-family:var(--sans); background:var(--sand); padding:0.2rem 0.5rem; border-radius:2px; color:var(--charcoal);">Vite</span>
+              <span style="font-size:0.68rem; font-family:var(--sans); background:var(--sand); padding:0.2rem 0.5rem; border-radius:2px; color:var(--charcoal);">Matter.js</span>
+              <span style="font-size:0.68rem; font-family:var(--sans); background:var(--sand); padding:0.2rem 0.5rem; border-radius:2px; color:var(--charcoal);">Howler.js</span>
+              <span style="font-size:0.68rem; font-family:var(--sans); background:var(--sand); padding:0.2rem 0.5rem; border-radius:2px; color:var(--charcoal);">Tailwind</span>
+            </div>
+            <div style="margin-top:1.25rem;">
+              <a href="https://higherkey.github.io/kipu/" target="_blank" rel="noopener noreferrer" style="font-size:0.8rem; font-weight:700; color:var(--amber); text-decoration:none;">View Live Deployment &rarr;</a>
+            </div>
+          </div>
+
+          <!-- Board Game Hub -->
+          <div class="hor-stagger__item" style="background:var(--cream); padding:2.5rem; border-left:3px solid var(--dusk);">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:1rem;">
+              <div>
+                <span class="hor-tag" style="font-size:0.58rem; margin-bottom:0.25rem; block">WORK &amp; PLAY &middot; INTERACTIVE PLATFORM</span>
+                <h3 class="hor-head" style="margin-bottom:0.25rem;">Board Game Hub</h3>
+                <p style="font-size:0.85rem; font-weight:600; color:var(--amber); margin-bottom:0.75rem;">Real-Time Multiplayer Platform &amp; Match Lobby</p>
+              </div>
+              <span style="font-family:var(--serif); font-size:1.75rem; font-style:italic; color:var(--dusk); opacity:0.6;">Real-Time</span>
+            </div>
+            <p class="hor-text">Interactive gaming and lobby platform built from the ground up for real-time multiplayer board game rooms (Table display vs. Hand phone controllers), automated score-tracking, and match orchestration.</p>
+            <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:1.25rem; padding-top:1rem; border-top:1px solid var(--mist);">
+              <span style="font-size:0.68rem; font-family:var(--sans); background:var(--sand); padding:0.2rem 0.5rem; border-radius:2px; color:var(--charcoal);">C#</span>
+              <span style="font-size:0.68rem; font-family:var(--sans); background:var(--sand); padding:0.2rem 0.5rem; border-radius:2px; color:var(--charcoal); font-weight:600;">.NET Core</span>
+              <span style="font-size:0.68rem; font-family:var(--sans); background:var(--sand); padding:0.2rem 0.5rem; border-radius:2px; color:var(--charcoal);">SignalR</span>
+              <span style="font-size:0.68rem; font-family:var(--sans); background:var(--sand); padding:0.2rem 0.5rem; border-radius:2px; color:var(--charcoal);">Angular</span>
+              <span style="font-size:0.68rem; font-family:var(--sans); background:var(--sand); padding:0.2rem 0.5rem; border-radius:2px; color:var(--charcoal);">PostgreSQL</span>
+            </div>
+            <div style="margin-top:1.25rem;">
+              <a href="https://board-game-hub-alpha.vercel.app/" target="_blank" rel="noopener noreferrer" style="font-size:0.8rem; font-weight:700; color:var(--amber); text-decoration:none;">View Live Deployment &rarr;</a>
+            </div>
+          </div>
+
+          <!-- ChooseWho -->
+          <div class="hor-stagger__item" style="background:var(--cream); padding:2.5rem; border-left:3px solid var(--amber);">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:1rem;">
+              <div>
+                <span class="hor-tag" style="font-size:0.58rem; margin-bottom:0.25rem; block">UNDER THE SUN &middot; WEB APPLICATION</span>
+                <h3 class="hor-head" style="margin-bottom:0.25rem;">ChooseWho</h3>
+                <p style="font-size:0.85rem; font-weight:600; color:var(--amber); margin-bottom:0.75rem;">Decision Studio &amp; Weighted Choice Engine</p>
+              </div>
+              <span style="font-family:var(--serif); font-size:1.75rem; font-style:italic; color:var(--amber); opacity:0.6;">Instant</span>
+            </div>
+            <p class="hor-text">Fast, interactive first-player selector tool for board games to eliminate choice paralysis using multi-touch events, procedurally generated Web Audio synthesizers, and haptic feedback.</p>
+            <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:1.25rem; padding-top:1rem; border-top:1px solid var(--mist);">
+              <span style="font-size:0.68rem; font-family:var(--sans); background:var(--sand); padding:0.2rem 0.5rem; border-radius:2px; color:var(--charcoal);">JavaScript</span>
+              <span style="font-size:0.68rem; font-family:var(--sans); background:var(--sand); padding:0.2rem 0.5rem; border-radius:2px; color:var(--charcoal);">HTML5</span>
+              <span style="font-size:0.68rem; font-family:var(--sans); background:var(--sand); padding:0.2rem 0.5rem; border-radius:2px; color:var(--charcoal);">CSS Grid</span>
+              <span style="font-size:0.68rem; font-family:var(--sans); background:var(--sand); padding:0.2rem 0.5rem; border-radius:2px; color:var(--charcoal);">Web Audio API</span>
+            </div>
+            <div style="margin-top:1.25rem;">
+              <a href="https://higherkey.github.io/choosewho/" target="_blank" rel="noopener noreferrer" style="font-size:0.8rem; font-weight:700; color:var(--amber); text-decoration:none;">View Live Deployment &rarr;</a>
+            </div>
+          </div>
+
+        </div>
       </div>
-
     </section>
 
-  </main>
+    <!-- Section 2: Active Dev & Client Platforms -->
+    <section class="hor-section hor-section--dark">
+      <div class="hor-float-num">02</div>
+      <div class="hor-section__inner">
+        <p class="hor-tag">Active Development &amp; Client Projects</p>
+
+        <div class="hor-stagger" style="gap:3.5rem;">
+          
+          <!-- Project Logos -->
+          <div class="hor-stagger__item" style="background:rgba(253,251,247,0.05); padding:2.5rem; border-left:3px solid var(--amber);">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:1rem;">
+              <div>
+                <span class="hor-tag" style="font-size:0.58rem; margin-bottom:0.25rem; block">SUBTLE NOBILITY &middot; ACTIVE DEVELOPMENT</span>
+                <h3 class="hor-head" style="color:var(--cream); margin-bottom:0.25rem;">Project Logos</h3>
+                <p style="font-size:0.85rem; font-weight:600; color:var(--amber); margin-bottom:0.75rem;">Algorithmic SVG Vector &amp; Brand Generator</p>
+              </div>
+              <span style="font-family:var(--serif); font-size:1.5rem; font-style:italic; color:var(--amber); opacity:0.6;">Golden Ratio</span>
+            </div>
+            <p class="hor-text" style="color:rgba(253,251,247,0.65);">Algorithmic SVG logo generator and vector suite built to compute golden-ratio geometry and export multi-theme SVG brand packages.</p>
+            <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:1.25rem; padding-top:1rem; border-top:1px solid rgba(253,251,247,0.1);">
+              <span style="font-size:0.68rem; font-family:var(--sans); background:rgba(253,251,247,0.1); padding:0.2rem 0.5rem; border-radius:2px; color:var(--cream);">TypeScript</span>
+              <span style="font-size:0.68rem; font-family:var(--sans); background:rgba(253,251,247,0.1); padding:0.2rem 0.5rem; border-radius:2px; color:var(--cream);">SVG</span>
+              <span style="font-size:0.68rem; font-family:var(--sans); background:rgba(253,251,247,0.1); padding:0.2rem 0.5rem; border-radius:2px; color:var(--cream);">Node.js</span>
+              <span style="font-size:0.68rem; font-family:var(--sans); background:rgba(253,251,247,0.1); padding:0.2rem 0.5rem; border-radius:2px; color:var(--cream);">Canvas API</span>
+            </div>
+            <div style="margin-top:1.25rem; font-size:0.72rem; color:rgba(253,251,247,0.45); font-style:italic;">
+              Private Repository &middot; Deployment in Active Development (Planned Release: Q4 2026)
+            </div>
+          </div>
+
+          <!-- Amy's Bakes -->
+          <div class="hor-stagger__item" style="background:rgba(253,251,247,0.05); padding:2.5rem; border-left:3px solid var(--cream);">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:1rem;">
+              <div>
+                <span class="hor-tag" style="font-size:0.58rem; margin-bottom:0.25rem; block">ESSENTIAL VOID &middot; CLIENT PROJECT</span>
+                <h3 class="hor-head" style="color:var(--cream); margin-bottom:0.25rem;">Amy's Bakes</h3>
+                <p style="font-size:0.85rem; font-weight:600; color:var(--amber); margin-bottom:0.75rem;">Artisanal Bakery Platform &amp; Order System</p>
+              </div>
+              <span style="font-family:var(--serif); font-size:1.5rem; font-style:italic; color:var(--cream); opacity:0.6;">Sub-300ms</span>
+            </div>
+            <p class="hor-text" style="color:rgba(253,251,247,0.65);">Custom static web storefront and inquiry system featuring online batch reservation tracking, local ordering flows, and high-performance image optimization for an artisanal home bakery.</p>
+            <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:1.25rem; padding-top:1rem; border-top:1px solid rgba(253,251,247,0.1);">
+              <span style="font-size:0.68rem; font-family:var(--sans); background:rgba(253,251,247,0.1); padding:0.2rem 0.5rem; border-radius:2px; color:var(--cream);">Eleventy</span>
+              <span style="font-size:0.68rem; font-family:var(--sans); background:rgba(253,251,247,0.1); padding:0.2rem 0.5rem; border-radius:2px; color:var(--cream);">Tailwind</span>
+              <span style="font-size:0.68rem; font-family:var(--sans); background:rgba(253,251,247,0.1); padding:0.2rem 0.5rem; border-radius:2px; color:var(--cream);">Cloudflare Pages</span>
+              <span style="font-size:0.68rem; font-family:var(--sans); background:rgba(253,251,247,0.1); padding:0.2rem 0.5rem; border-radius:2px; color:var(--cream);">LocalBusiness Schema</span>
+            </div>
+            <div style="margin-top:1.25rem;">
+              <a href="https://higherkey.github.io/amys-bakes/" target="_blank" rel="noopener noreferrer" style="font-size:0.8rem; font-weight:700; color:var(--amber); text-decoration:none;">View Live Deployment &rarr;</a>
+            </div>
+          </div>
+
+          <!-- Exagrow -->
+          <div class="hor-stagger__item" style="background:rgba(253,251,247,0.05); padding:2.5rem; border-left:3px solid var(--amber);">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:1rem;">
+              <div>
+                <span class="hor-tag" style="font-size:0.58rem; margin-bottom:0.25rem; block">WORK &amp; PLAY &middot; CLIENT PROJECT</span>
+                <h3 class="hor-head" style="color:var(--cream); margin-bottom:0.25rem;">Exagrow</h3>
+                <p style="font-size:0.85rem; font-weight:600; color:var(--amber); margin-bottom:0.75rem;">AgTech SaaS Marketing &amp; Analytics Platform</p>
+              </div>
+              <span style="font-family:var(--serif); font-size:1.5rem; font-style:italic; color:var(--amber); opacity:0.6;">99.9% Uptime</span>
+            </div>
+            <p class="hor-text" style="color:rgba(253,251,247,0.65);">High-performance marketing platform and analytics dashboard built for an agricultural technology client to scale regional customer acquisition.</p>
+            <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:1.25rem; padding-top:1rem; border-top:1px solid rgba(253,251,247,0.1);">
+              <span style="font-size:0.68rem; font-family:var(--sans); background:rgba(253,251,247,0.1); padding:0.2rem 0.5rem; border-radius:2px; color:var(--cream);">Astro</span>
+              <span style="font-size:0.68rem; font-family:var(--sans); background:rgba(253,251,247,0.1); padding:0.2rem 0.5rem; border-radius:2px; color:var(--cream);">TypeScript</span>
+              <span style="font-size:0.68rem; font-family:var(--sans); background:rgba(253,251,247,0.1); padding:0.2rem 0.5rem; border-radius:2px; color:var(--cream);">REST APIs</span>
+              <span style="font-size:0.68rem; font-family:var(--sans); background:rgba(253,251,247,0.1); padding:0.2rem 0.5rem; border-radius:2px; color:var(--cream);">OKLCH Palette System</span>
+            </div>
+            <div style="margin-top:1.25rem;">
+              <a href="https://higherkey.github.io/exagrow/" target="_blank" rel="noopener noreferrer" style="font-size:0.8rem; font-weight:700; color:var(--amber); text-decoration:none;">View Live Deployment &rarr;</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="hor-footer">
+      <p>Eight One Five Design LLC (e1F) &mdash; Ecclesiastes 8:15</p>
+      <div style="display:flex;gap:1.5rem;">
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+        <a href="/">Home</a>
+      </div>
+    </footer>
+
+  </div>
+</main>

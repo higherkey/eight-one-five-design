@@ -20,8 +20,7 @@ const STUDIO_CREDENTIALS = {
     role: 'Lead Software Architect & Product Owner',
     location: 'Broken Arrow, OK',
     email: 'isaac@eight1fivedesign.com',
-    linkedin: 'https://www.linkedin.com/in/isaac-ahlfield',
-    github: 'https://github.com/higherkey',
+    linkedin: 'https://www.linkedin.com/company/eight1fivedesign',
     summary: 'Lead Software Architect and Product Owner specializing in robust full-stack systems, high-efficiency workflow automation, and premium digital design. Architect of enterprise automation engines delivering over $13.75M in cumulative operational savings. Focused on engineering high-throughput pipelines, modernizing legacy systems into scalable REST APIs, and advocating for user agency and structural craft.'
   },
   experience: [
@@ -142,44 +141,94 @@ const STUDIO_CREDENTIALS = {
 // ─────────────────────────────────────────────────────────────────────
 const CASE_STUDIES = [
   {
-    title: 'Enterprise Process Automation Engine',
-    metric: '$500K+',
-    metricLabel: 'Annual Direct Savings',
-    pillar: 'Work & Play',
-    description: 'Led the development of a suite of C# backend pipelines and robotic automation processes for payment integrity. Standardized execution using the robust REFramework model, scaling throughput to handle millions of monthly transactions with a 99% success rate. Replaced error-prone manual workflows, reducing operational friction and overhead.',
-    tech: ['C#', '.NET Core', 'UiPath', 'SQL Server', 'SSIS']
-  },
-  {
-    title: 'Cross-Functional Process Optimization',
-    metric: '$13.75M',
-    metricLabel: 'Cumulative Operations Savings',
-    pillar: 'Wisdom',
-    description: 'Founded and facilitated a technical process improvement think tank to streamline complex enterprise operations. Utilized data analysis and workflow mapping to resolve systemic bottlenecks, dramatically reducing operational time overhead across billing and claim tracking sectors.',
-    tech: ['Agile Methodologies', 'Workflow Mapping', 'SQL Analytics', 'Process Redesign']
-  },
-  {
-    title: 'High-Throughput Claims Processing Engine',
-    metric: '24M+',
-    metricLabel: 'Monthly Files Processed',
-    pillar: 'Under the Sun',
-    description: 'Re-engineered file transaction pipelines using multi-threaded Java processors and custom verification frameworks. Scaled system capacity to handle 24 million files monthly, reducing file lifecycle processing speeds from hours down to real-time execution.',
-    tech: ['Java', 'Selenium', 'Multithreading', 'VBScript', 'HTML/CSS']
-  },
-  {
-    title: 'Automations-to-API Modernization',
-    metric: '12x',
-    metricLabel: 'System Speedup',
-    pillar: 'Subtle Royalty',
-    description: 'Architected and executed a system overhaul, converting virtual-machine dependent UI automations into high-speed REST APIs. Eliminated massive server overhead, stabilized transaction workflows, and improved system response latency by twelvefold.',
-    tech: ['C#', 'REST APIs', 'PostgreSQL', 'Docker', 'VM Consolidation']
-  },
-  {
-    title: 'T.D. Williamson Core Operations Apps',
+    id: 'kipu',
+    title: 'Kipu',
+    subtitle: 'Sensory Mini-Games & Knowledge Engine',
+    category: 'Product / System',
     metric: '100%',
-    metricLabel: 'Quality Unification',
+    metricLabel: 'Deterministic Safety',
+    pillar: 'Wisdom',
+    description: 'A premium, sensory-focused collection of tactile and educational mini-games for children. Built for rapid capture, structural clarity, and zero runtime overhead.',
+    tech: ['TypeScript', 'Vite', 'Matter.js', 'Howler.js', 'Tailwind'],
+    isPrivate: false,
+    repoLink: 'https://github.com/higherkey/kipu',
+    liveUrl: 'https://higherkey.github.io/kipu/',
+    deploymentNote: null
+  },
+  {
+    id: 'board-game-hub',
+    title: 'Board Game Hub',
+    subtitle: 'Real-Time Multiplayer Platform & Match Lobby',
+    category: 'Interactive Platform',
+    metric: 'Real-Time',
+    metricLabel: 'Multiplayer Lobby Rooms',
+    pillar: 'Work & Play',
+    description: 'Interactive gaming and lobby platform built from the ground up for real-time multiplayer board game rooms (Table display vs. Hand phone controllers), automated score-tracking, and match orchestration.',
+    tech: ['C#', '.NET Core', 'SignalR', 'Angular', 'PostgreSQL'],
+    isPrivate: false,
+    repoLink: 'https://github.com/higherkey/board-game-hub',
+    liveUrl: 'https://board-game-hub-alpha.vercel.app/',
+    deploymentNote: null
+  },
+  {
+    id: 'choose-who',
+    title: 'ChooseWho',
+    subtitle: 'Decision Studio & Weighted Choice Engine',
+    category: 'Web Application',
+    metric: 'Instant',
+    metricLabel: 'Group Decision Engine',
+    pillar: 'Under the Sun',
+    description: 'Fast, interactive first-player selector tool for board games to eliminate choice paralysis using multi-touch events, procedurally generated Web Audio synthesizers, and haptic feedback.',
+    tech: ['JavaScript', 'HTML5', 'CSS Grid', 'Web Audio API'],
+    isPrivate: false,
+    repoLink: 'https://github.com/higherkey/choosewho',
+    liveUrl: 'https://higherkey.github.io/choosewho/',
+    deploymentNote: null
+  },
+  {
+    id: 'project-logos',
+    title: 'Project Logos',
+    subtitle: 'Algorithmic SVG Vector & Brand Generator',
+    category: 'Active Development',
+    metric: 'Golden Ratio',
+    metricLabel: 'Vector Geometry Generator',
+    pillar: 'Subtle Nobility',
+    description: 'Algorithmic SVG logo generator and vector suite built to compute golden-ratio geometry and export multi-theme SVG brand packages.',
+    tech: ['TypeScript', 'SVG', 'Node.js', 'Canvas API'],
+    isPrivate: true,
+    repoLink: null, // Private repository: MUST NOT BE LINKED
+    liveUrl: null,
+    deploymentNote: 'Deployment in Active Development (Planned Release: Q4 2026)'
+  },
+  {
+    id: 'amys-bakes',
+    title: "Amy's Bakes",
+    subtitle: 'Artisanal Bakery Platform & Order System',
+    category: 'Client Project',
+    metric: 'Sub-300ms',
+    metricLabel: 'Edge Load Speed',
     pillar: 'Essential Void',
-    description: 'Refactored internal apps utilizing Angular, .NET Core, and SignalR. Introduced containerized deployments via Kubernetes and structured automated unit testing, while successfully standardizing SonarQube quality gates across 100+ active repositories.',
-    tech: ['Angular', '.NET Core', 'SignalR', 'Docker', 'Kubernetes', 'SonarQube']
+    description: 'Custom static web storefront and inquiry system featuring online batch reservation tracking, local ordering flows, and high-performance image optimization for an artisanal home bakery.',
+    tech: ['Eleventy', 'Tailwind', 'Cloudflare Pages', 'LocalBusiness Schema'],
+    isPrivate: false,
+    repoLink: 'https://github.com/higherkey/amys-bakes',
+    liveUrl: 'https://higherkey.github.io/amys-bakes/',
+    deploymentNote: null
+  },
+  {
+    id: 'exagrow',
+    title: 'Exagrow',
+    subtitle: 'AgTech SaaS Marketing & Analytics Platform',
+    category: 'Client Project',
+    metric: '99.9%',
+    metricLabel: 'Uptime & Delivery',
+    pillar: 'Work & Play',
+    description: 'High-performance marketing platform and analytics dashboard built for an agricultural technology client to scale regional customer acquisition.',
+    tech: ['Astro', 'TypeScript', 'REST APIs', 'OKLCH Palette System'],
+    isPrivate: true,
+    repoLink: null,
+    liveUrl: 'https://higherkey.github.io/exagrow/',
+    deploymentNote: null
   }
 ];
 
@@ -199,7 +248,7 @@ window.addEventListener('DOMContentLoaded', () => {
 function initTheme() {
   const savedTheme = localStorage.getItem('theme') || 'structural';
   setTheme(savedTheme);
-  
+
   const toggleBtn = document.getElementById('theme-toggle-btn');
   if (toggleBtn) {
     toggleBtn.addEventListener('click', () => {
@@ -442,6 +491,28 @@ function hydratePortfolioSection() {
       });
       
       card.appendChild(topBlock);
+
+      // Deployment link or Planned Deployment Note
+      const linkRow = document.createElement('div');
+      linkRow.className = 'mt-3 text-xs flex items-center gap-2';
+      
+      if (proj.liveUrl) {
+        const link = document.createElement('a');
+        link.href = proj.liveUrl;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.className = 'font-semibold text-xs text-[var(--accent)] hover:underline flex items-center gap-1';
+        link.innerHTML = `View Live Deployment &rarr;`;
+        linkRow.appendChild(link);
+      } else if (proj.deploymentNote) {
+        const note = document.createElement('span');
+        note.className = 'text-[11px] font-mono text-muted italic bg-[var(--bg-main)] px-2 py-0.5 border border-[var(--border)] rounded';
+        note.textContent = proj.deploymentNote;
+        linkRow.appendChild(note);
+      }
+
+      topBlock.appendChild(linkRow);
+
       card.appendChild(bottomBlock);
       bentoGrid.appendChild(card);
     });

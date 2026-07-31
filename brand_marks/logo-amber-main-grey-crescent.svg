@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <!-- Clip area restricting shapes strictly inside the main circle -->
+    <clipPath id="main-circle-interior-amber">
+      <circle cx="215" cy="185" r="154" />
+    </clipPath>
+  </defs>
+
+  <!-- Solar Eclipse Logo (Amber Main Circle, Bottom-Left Grey Interior Crescent, White Exterior) -->
+  
+  <!-- 1. Top-Right Exposed White Circle -->
+  <circle cx="245" cy="155" r="160" fill="#FDFBF7" />
+
+  <!-- 2. Main Circle Base (Muted Navy-Grey #4E5A70 Base for bottom-left interior crescent) -->
+  <circle cx="215" cy="185" r="160" fill="#4E5A70" />
+
+  <!-- 3. Amber Inner Mask Circle (covers center & top-right with Warm Amber #D97706, leaving grey crescent on BOTTOM-LEFT) -->
+  <circle cx="245" cy="155" r="154" fill="#D97706" clip-path="url(#main-circle-interior-amber)" />
+
+  <!-- 4. Main Circle Outer Keyline Ring -->
+  <circle cx="215" cy="185" r="154" fill="none" stroke="#0B0F19" stroke-width="12" />
+</svg>
