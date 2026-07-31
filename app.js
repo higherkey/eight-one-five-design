@@ -188,17 +188,17 @@ const CASE_STUDIES = [
   {
     id: 'project-logos',
     title: 'Project Logos',
-    subtitle: 'Algorithmic SVG Vector & Brand Generator',
+    subtitle: 'Virtual Tabletop (VTT) State Engine & Rules Interpreter',
     category: 'Active Development',
-    metric: 'Golden Ratio',
-    metricLabel: 'Vector Geometry Generator',
+    metric: 'Deterministic AST',
+    metricLabel: 'RPG Rules Engine',
     pillar: 'Subtle Nobility',
-    description: 'Algorithmic SVG logo generator and vector suite built to compute golden-ratio geometry and export multi-theme SVG brand packages.',
-    tech: ['TypeScript', 'SVG', 'Node.js', 'Canvas API'],
+    description: 'Central orchestration engine and state vault for a virtual tabletop (VTT) platform featuring probabilistic semantic intent mapping and deterministic AST RPG rules adjudication.',
+    tech: ['C# .NET 10', 'Blazor Server', 'Python / FastAPI', 'Redis Streams', 'MongoDB'],
     isPrivate: true,
     repoLink: null, // Private repository: MUST NOT BE LINKED
     liveUrl: null,
-    deploymentNote: 'Deployment in Active Development (Planned Release: Q4 2026)'
+    deploymentNote: 'Private Repository · Deployment in Active Development (Planned Release: Q4 2026)'
   },
   {
     id: 'amys-bakes',
