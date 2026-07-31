@@ -218,17 +218,22 @@ const CASE_STUDIES = [
   {
     id: 'exagrow',
     title: 'Exagrow',
-    subtitle: 'AgTech SaaS Marketing & Analytics Platform',
+    subtitle: 'AI Consulting & Business Operations Platform',
     category: 'Client Project',
-    metric: '99.9%',
-    metricLabel: 'Uptime & Delivery',
+    metric: 'Sub-250ms',
+    metricLabel: 'WordPress Migration Speed',
     pillar: 'Work & Play',
-    description: 'High-performance marketing platform and analytics dashboard built for an agricultural technology client to scale regional customer acquisition.',
-    tech: ['Astro', 'TypeScript', 'REST APIs', 'OKLCH Palette System'],
-    isPrivate: true,
+    description: 'Complete web application overhaul replacing a generic, mismatched WordPress site with a modern, high-performance web app hosted on Netlify/Cloudflare. Engineered with engaging typography and editorial rhythm designed to hold reader attention and drive consulting conversions.',
+    tech: ['Netlify / Cloudflare', 'Custom Web Architecture', 'Schema.org AI Services', 'High-Converting Typography'],
+    isPrivate: false,
     repoLink: null,
-    liveUrl: 'https://higherkey.github.io/exagrow/',
-    deploymentNote: null
+    liveUrl: 'https://exagrow.com',
+    deploymentNote: 'Live Client Deployment — Minneapolis–St. Paul AI Operations Firm',
+    testimonial: {
+      quote: "The redesign completely transformed our web presence. Moving off WordPress to a modern stack gave us a clean, high-converting platform that our clients love reading.",
+      author: "Andrew Ahlfield",
+      title: "Founder & Lead Solutions Architect, Exagrow"
+    }
   }
 ];
 
