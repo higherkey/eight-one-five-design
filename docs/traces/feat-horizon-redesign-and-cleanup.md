@@ -31,3 +31,12 @@
 - Tailwind CSS compiled without errors (`npm run build:css`).
 - Local dev server verified on port `8815`.
 - Visual regression screenshots taken via `chrome-devtools-mcp` confirming typography, header logo shrink, section headings, and hero spacing.
+
+---
+
+## 3. Section 4b Opportunities & GitHub Issues Created
+- **#3**: `feat: Interactive Case Study Modals & Deep-Dive Routes` — Created [Issue #3](https://github.com/higherkey/eight-one-five-design/issues/3).
+- **#4**: `feat: Migrate Portfolio Case Studies to Eleventy Data Collections` — Created [Issue #4](https://github.com/higherkey/eight-one-five-design/issues/4).
+- **#5**: `feat: Embed Interactive Product Micro-Demos on Portfolio Showcase` — Created [Issue #5](https://github.com/higherkey/eight-one-five-design/issues/5).
+- **#6**: `perf: Implement Service Worker Offline Caching & PWA Manifest` — Created [Issue #6](https://github.com/higherkey/eight-one-five-design/issues/6).
+- **#7**: `feat: Activate Client Testimonial Modules & Dynamic Quotes` — Created [Issue #7](https://github.com/higherkey/eight-one-five-design/issues/7).
