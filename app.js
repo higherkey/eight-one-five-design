@@ -20,9 +20,8 @@ const STUDIO_CREDENTIALS = {
     role: 'Lead Software Architect & Product Owner',
     location: 'Broken Arrow, OK',
     email: 'isaac@eight1fivedesign.com',
-    linkedin: 'https://www.linkedin.com/in/isaac-ahlfield',
-    github: 'https://github.com/higherkey',
-    summary: 'Lead Software Architect and Product Owner specializing in robust full-stack systems, high-efficiency workflow automation, and premium digital design. Architect of enterprise automation engines delivering over $13.75M in cumulative operational savings. Focused on engineering high-throughput pipelines, modernizing legacy systems into scalable REST APIs, and advocating for user agency and structural craft.'
+    linkedin: 'https://www.linkedin.com/company/eight1fivedesign',
+    summary: 'Lead Software Architect and Product Owner specializing in robust full-stack systems, high-efficiency workflow automation, and premium digital design. Architect of enterprise automation engines delivering over $13.75M in cumulative operational savings. Focused on engineering high-throughput pipelines, modernizing legacy systems into scalable REST APIs, and advocating for user agency and engineering excellence.'
   },
   experience: [
     {
@@ -142,44 +141,94 @@ const STUDIO_CREDENTIALS = {
 // ─────────────────────────────────────────────────────────────────────
 const CASE_STUDIES = [
   {
-    title: 'Enterprise Process Automation Engine',
-    metric: '$500K+',
-    metricLabel: 'Annual Direct Savings',
-    pillar: 'Work & Play',
-    description: 'Led the development of a suite of C# backend pipelines and robotic automation processes for payment integrity. Standardized execution using the robust REFramework model, scaling throughput to handle millions of monthly transactions with a 99% success rate. Replaced error-prone manual workflows, reducing operational friction and overhead.',
-    tech: ['C#', '.NET Core', 'UiPath', 'SQL Server', 'SSIS']
-  },
-  {
-    title: 'Cross-Functional Process Optimization',
-    metric: '$13.75M',
-    metricLabel: 'Cumulative Operations Savings',
+    id: 'kipu',
+    title: 'Kipu',
+    subtitle: 'Sensory Mini-Games & Knowledge Engine',
+    category: 'Interactive App',
+    metric: 'Pure Play',
+    metricLabel: 'Zero Ads & Zero Tracking',
     pillar: 'Wisdom',
-    description: 'Founded and facilitated a technical process improvement think tank to streamline complex enterprise operations. Utilized data analysis and workflow mapping to resolve systemic bottlenecks, dramatically reducing operational time overhead across billing and claim tracking sectors.',
-    tech: ['Agile Methodologies', 'Workflow Mapping', 'SQL Analytics', 'Process Redesign']
+    description: 'A premium, sensory-focused collection of tactile and educational mini-games for children. Built for rapid capture, structural clarity, and zero runtime overhead.',
+    tech: ['Child-First Design', 'Tactile Exploration', 'Sensory Learning', 'Zero Distractions'],
+    isPrivate: false,
+    repoLink: 'https://github.com/higherkey/kipu',
+    liveUrl: 'https://kipu-games.vercel.app/',
+    deploymentNote: null
   },
   {
-    title: 'High-Throughput Claims Processing Engine',
-    metric: '24M+',
-    metricLabel: 'Monthly Files Processed',
+    id: 'board-game-hub',
+    title: 'Board Game Hub',
+    subtitle: 'Low-Latency Multiplayer & Connected Game Rooms',
+    category: 'Interactive Platform',
+    metric: 'Real-Time Sync',
+    metricLabel: 'Low-Latency Sync',
+    pillar: 'Work & Play',
+    description: 'High-engagement multiplayer platform engineered for real-time game rooms across any distance — giving users the presence of sitting in the exact same room with sub-second synchronization.',
+    tech: ['Real-Time Engagement', 'Same-Room Presence', 'Low-Latency Sync', 'Global Multiplayer'],
+    isPrivate: false,
+    repoLink: 'https://github.com/higherkey/board-game-hub',
+    liveUrl: 'https://board-game-hub-alpha.vercel.app/',
+    deploymentNote: null
+  },
+  {
+    id: 'choose-who',
+    title: 'ChooseWho',
+    subtitle: 'Decision Studio & Weighted Choice Engine',
+    category: 'Web Application',
+    metric: 'Instant',
+    metricLabel: 'Group Decision Engine',
     pillar: 'Under the Sun',
-    description: 'Re-engineered file transaction pipelines using multi-threaded Java processors and custom verification frameworks. Scaled system capacity to handle 24 million files monthly, reducing file lifecycle processing speeds from hours down to real-time execution.',
-    tech: ['Java', 'Selenium', 'Multithreading', 'VBScript', 'HTML/CSS']
+    description: 'Fast, interactive first-player selector tool for board games to eliminate choice paralysis using multi-touch events, procedurally generated Web Audio synthesizers, and haptic feedback.',
+    tech: ['Frictionless Choices', 'Intuitive Multi-Touch', 'Audio & Haptic Feedback', 'Instant Response'],
+    isPrivate: false,
+    repoLink: 'https://github.com/higherkey/choosewho',
+    liveUrl: 'https://higherkey.github.io/choosewho/',
+    deploymentNote: null
   },
   {
-    title: 'Automations-to-API Modernization',
-    metric: '12x',
-    metricLabel: 'System Speedup',
-    pillar: 'Subtle Royalty',
-    description: 'Architected and executed a system overhaul, converting virtual-machine dependent UI automations into high-speed REST APIs. Eliminated massive server overhead, stabilized transaction workflows, and improved system response latency by twelvefold.',
-    tech: ['C#', 'REST APIs', 'PostgreSQL', 'Docker', 'VM Consolidation']
+    id: 'project-logos',
+    title: 'Project Logos',
+    subtitle: 'Virtual Tabletop (VTT) State Engine & Rules Interpreter',
+    category: 'Studio Platform',
+    metric: 'Deterministic AST',
+    metricLabel: 'RPG Rules Engine',
+    pillar: 'Subtle Nobility',
+    description: 'Central orchestration engine and state vault for a virtual tabletop (VTT) platform featuring probabilistic semantic intent mapping and deterministic AST RPG rules adjudication.',
+    tech: ['Natural Language Adjudication', 'Deterministic Rules Engine', 'Real-Time State Vault'],
+    isPrivate: true,
+    repoLink: null, // Private repository: MUST NOT BE LINKED
+    liveUrl: null,
+    deploymentNote: 'Private Repository · Deployment in Active Development (Planned Release: Q4 2026)'
   },
   {
-    title: 'T.D. Williamson Core Operations Apps',
-    metric: '100%',
-    metricLabel: 'Quality Unification',
-    pillar: 'Essential Void',
-    description: 'Refactored internal apps utilizing Angular, .NET Core, and SignalR. Introduced containerized deployments via Kubernetes and structured automated unit testing, while successfully standardizing SonarQube quality gates across 100+ active repositories.',
-    tech: ['Angular', '.NET Core', 'SignalR', 'Docker', 'Kubernetes', 'SonarQube']
+    id: 'amys-bakes',
+    title: "Amy's Bakes",
+    subtitle: 'Artisanal Bakery Platform & Order System',
+    category: 'Client Project',
+    metric: null,
+    metricLabel: null,
+    pillar: 'Work & Play',
+    description: 'Custom static web storefront and inquiry system featuring online batch reservation tracking, local ordering flows, and high-performance image optimization for an artisanal home bakery.',
+    tech: ['Artisanal Bakery', 'Batch Reservation System', 'Local Pre-Ordering', 'High-Performance Storefront'],
+    isPrivate: false,
+    repoLink: 'https://github.com/higherkey/amys-bakes',
+    liveUrl: 'https://higherkey.github.io/amys-bakes/',
+    deploymentNote: null
+  },
+  {
+    id: 'exagrow',
+    title: 'Exagrow',
+    subtitle: 'AI Consulting & Business Operations Platform',
+    category: 'Client Project',
+    metric: 'Sub-250ms',
+    metricLabel: 'WordPress Migration Speed',
+    pillar: 'Work & Play',
+    description: 'Complete web application overhaul replacing a generic, mismatched WordPress site with a modern, high-performance web app hosted on Netlify/Cloudflare. Engineered with engaging typography and editorial rhythm designed to hold reader attention and drive consulting conversions.',
+    tech: ['High-Conversion Design', 'Legacy Migration', 'Editorial Layout', 'Executive Conversion'],
+    isPrivate: false,
+    repoLink: null,
+    liveUrl: 'https://exagrow.com',
+    deploymentNote: 'Live Client Deployment — Minneapolis–St. Paul AI Operations Firm'
   }
 ];
 
@@ -188,7 +237,7 @@ const CASE_STUDIES = [
 // ─────────────────────────────────────────────────────────────────────
 window.addEventListener('DOMContentLoaded', () => {
   initTheme();
-  
+
   hydrateResumeSection();
   hydratePortfolioSection();
 });
@@ -199,7 +248,7 @@ window.addEventListener('DOMContentLoaded', () => {
 function initTheme() {
   const savedTheme = localStorage.getItem('theme') || 'structural';
   setTheme(savedTheme);
-  
+
   const toggleBtn = document.getElementById('theme-toggle-btn');
   if (toggleBtn) {
     toggleBtn.addEventListener('click', () => {
@@ -212,9 +261,9 @@ function initTheme() {
 function setTheme(themeName) {
   SiteState.theme = themeName;
   localStorage.setItem('theme', themeName);
-  
+
   const root = document.documentElement;
-  
+
   if (themeName === 'authoritative') {
     root.classList.add('theme-dark');
   } else {
@@ -238,12 +287,12 @@ function setupNavigation() {
 
 function switchSection(sectionId) {
   if (SiteState.activeSection === sectionId) return;
-  
+
   const currentSec = document.getElementById(`sec-${SiteState.activeSection}`);
   const targetSec = document.getElementById(`sec-${sectionId}`);
-  
+
   if (!targetSec) return;
-  
+
   // Update nav highlights
   document.querySelectorAll('.nav-link').forEach(link => {
     if (link.dataset.target === sectionId) {
@@ -252,18 +301,18 @@ function switchSection(sectionId) {
       link.classList.remove('active');
     }
   });
-  
+
   // Animation crossfade transition
   if (currentSec) {
     currentSec.style.opacity = '0';
     currentSec.style.transform = 'translateY(-12px)';
-    
+
     setTimeout(() => {
       currentSec.classList.remove('active');
-      
+
       targetSec.classList.add('active');
       if (targetSec.offsetHeight) { /* Force reflow */ }
-      
+
       targetSec.style.opacity = '1';
       targetSec.style.transform = 'translateY(0)';
       SiteState.activeSection = sectionId;
@@ -289,31 +338,31 @@ function hydrateResumeSection() {
     STUDIO_CREDENTIALS.experience.forEach(exp => {
       const item = document.createElement('div');
       item.className = 'timeline-item relative pl-8 pb-8';
-      
+
       const bullet = document.createElement('div');
       bullet.className = 'timeline-dot';
-      
+
       const content = document.createElement('div');
       content.className = 'flex flex-col gap-1.5';
-      
+
       const meta = document.createElement('div');
       meta.className = 'flex flex-col md:flex-row justify-between items-start md:items-center gap-1';
-      
+
       const roleTitle = document.createElement('h4');
       roleTitle.className = 'font-bold text-base font-heading';
       roleTitle.textContent = exp.role;
-      
+
       const duration = document.createElement('span');
       duration.className = 'text-[11px] font-mono uppercase bg-[var(--border)] px-2 py-0.5 rounded text-muted border border-[var(--border)]';
       duration.textContent = exp.period;
-      
+
       meta.appendChild(roleTitle);
       meta.appendChild(duration);
-      
+
       const companyInfo = document.createElement('div');
       companyInfo.className = 'text-xs font-semibold text-[var(--accent)]';
       companyInfo.textContent = `${exp.company} — ${exp.location}`;
-      
+
       const detailsList = document.createElement('ul');
       detailsList.className = 'list-disc list-outside ml-4 mt-2 text-xs text-muted space-y-1.5 leading-relaxed';
       exp.details.forEach(detail => {
@@ -321,11 +370,11 @@ function hydrateResumeSection() {
         li.textContent = detail;
         detailsList.appendChild(li);
       });
-      
+
       content.appendChild(meta);
       content.appendChild(companyInfo);
       content.appendChild(detailsList);
-      
+
       item.appendChild(bullet);
       item.appendChild(content);
       timeline.appendChild(item);
@@ -337,18 +386,18 @@ function hydrateResumeSection() {
   if (skillsGrid) {
     skillsGrid.innerHTML = '';
     const categories = ['Backend', 'Frontend', 'Database', 'Automation', 'Infrastructure', 'Quality'];
-    
+
     categories.forEach(cat => {
       const catGroup = document.createElement('div');
       catGroup.className = 'p-4 border border-[var(--border)] rounded-lg bg-[var(--bg-card)] flex flex-col gap-2.5';
-      
+
       const title = document.createElement('h4');
       title.className = 'font-bold font-heading text-xs uppercase tracking-wider text-[var(--accent)]';
       title.textContent = cat;
-      
+
       const badgeBox = document.createElement('div');
       badgeBox.className = 'flex flex-wrap gap-1.5';
-      
+
       const filtered = STUDIO_CREDENTIALS.skills.filter(s => s.category === cat);
       filtered.forEach(skill => {
         const badge = document.createElement('span');
@@ -356,7 +405,7 @@ function hydrateResumeSection() {
         badge.textContent = skill.name;
         badgeBox.appendChild(badge);
       });
-      
+
       catGroup.appendChild(title);
       catGroup.appendChild(badgeBox);
       skillsGrid.appendChild(catGroup);
@@ -390,58 +439,80 @@ function hydratePortfolioSection() {
     bentoGrid.innerHTML = '';
     CASE_STUDIES.forEach((proj, idx) => {
       const colSpan = (idx === 0 || idx === 4) ? 'lg:col-span-2' : 'lg:col-span-1';
-      
+
       const card = document.createElement('div');
       card.className = `metric-box flex flex-col justify-between ${colSpan} cursor-pointer`;
-      
+
       const topBlock = document.createElement('div');
       topBlock.className = 'flex flex-col gap-3';
-      
+
       const headerRow = document.createElement('div');
       headerRow.className = 'flex justify-between items-start gap-2';
-      
+
       const badge = document.createElement('span');
       badge.className = 'text-[9px] uppercase font-bold tracking-widest text-[var(--accent)] border border-[var(--border)] bg-[var(--bg-main)] px-2 py-0.5 rounded';
       badge.textContent = proj.pillar;
-      
+
       const flexSpace = document.createElement('div');
       flexSpace.appendChild(badge);
-      
+
       const bigMetric = document.createElement('div');
       bigMetric.className = 'font-heading text-4xl font-extrabold tracking-tight text-main';
       bigMetric.textContent = proj.metric;
-      
+
       const metricLbl = document.createElement('span');
       metricLbl.className = 'text-[10px] font-mono uppercase text-muted tracking-wider block mt-1';
       metricLbl.textContent = proj.metricLabel;
-      
+
       headerRow.appendChild(bigMetric);
       headerRow.appendChild(flexSpace);
-      
+
       const title = document.createElement('h3');
       title.className = 'font-bold font-heading text-base tracking-tight text-main mt-2';
       title.textContent = proj.title;
-      
+
       const desc = document.createElement('p');
       desc.className = 'text-xs text-muted leading-relaxed mt-1.5';
       desc.textContent = proj.description;
-      
+
       topBlock.appendChild(headerRow);
       topBlock.appendChild(metricLbl);
       topBlock.appendChild(title);
       topBlock.appendChild(desc);
-      
+
       const bottomBlock = document.createElement('div');
       bottomBlock.className = 'flex flex-wrap gap-1 mt-5 pt-3 border-t border-[var(--border)]';
-      
+
       proj.tech.forEach(t => {
         const span = document.createElement('span');
         span.className = 'text-[9px] font-mono bg-[var(--border)] text-muted px-2 py-0.5 rounded';
         span.textContent = t;
         bottomBlock.appendChild(span);
       });
-      
+
       card.appendChild(topBlock);
+
+      // Deployment link or Planned Deployment Note
+      const linkRow = document.createElement('div');
+      linkRow.className = 'mt-3 text-xs flex items-center gap-2';
+
+      if (proj.liveUrl) {
+        const link = document.createElement('a');
+        link.href = proj.liveUrl;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.className = 'font-semibold text-xs text-[var(--accent)] hover:underline flex items-center gap-1';
+        link.innerHTML = `View Live Deployment &rarr;`;
+        linkRow.appendChild(link);
+      } else if (proj.deploymentNote) {
+        const note = document.createElement('span');
+        note.className = 'text-[11px] font-mono text-muted italic bg-[var(--bg-main)] px-2 py-0.5 border border-[var(--border)] rounded';
+        note.textContent = proj.deploymentNote;
+        linkRow.appendChild(note);
+      }
+
+      topBlock.appendChild(linkRow);
+
       card.appendChild(bottomBlock);
       bentoGrid.appendChild(card);
     });

@@ -123,7 +123,7 @@ Our primary logo mark is the **Solar Eclipse (CONFIG: SUN-08)**, symbolizing Ecc
 ### Logo SVGs
 
 #### Light Theme Logo (`logo-light.svg`)
-[logo-light.svg](file:///z:/Programming/eight-one-five-design/brand_marks/logo-light.svg)
+[logo-light.svg](file:///c:/Programming/eight-one-five-design/brand_marks/logo-light.svg)
 ```xml
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
   <!-- Solar Eclipse Logo (Light Theme) -->
@@ -135,7 +135,7 @@ Our primary logo mark is the **Solar Eclipse (CONFIG: SUN-08)**, symbolizing Ecc
 ```
 
 #### Dark Theme Logo (`logo-dark.svg`)
-[logo-dark.svg](file:///z:/Programming/eight-one-five-design/brand_marks/logo-dark.svg)
+[logo-dark.svg](file:///c:/Programming/eight-one-five-design/brand_marks/logo-dark.svg)
 ```xml
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
   <!-- Solar Eclipse Logo (Dark Theme) -->

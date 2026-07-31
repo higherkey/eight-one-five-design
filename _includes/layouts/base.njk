@@ -10,26 +10,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <!-- Tailwind CSS CDN (v3) for utility structural layout grid support -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            heading: ['var(--font-heading)', 'sans-serif'],
-            body:    ['var(--font-body)',    'sans-serif'],
-          }
-        }
-      }
-    }
-  </script>
-
-  <!-- Grounded Wisdom External Design System CSS -->
+  <!-- Grounded Wisdom External Design System CSS (includes Tailwind) -->
   <link rel="stylesheet" href="/style.css">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="/brand_marks/sun_08.svg">
+  <link rel="icon" type="image/svg+xml" href="/brand_marks/logo-light.svg">
 
   <!-- Theme Flash Prevention -->
   <script>
@@ -55,7 +40,7 @@
       <!-- Logo + Tagline -->
       <div class="flex items-center gap-3" aria-label="eight1five design home page">
         <a href="/" class="hover:opacity-80 transition-opacity flex-shrink-0" aria-label="home page logo">
-          <svg class="w-8 h-8" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logo-title">
+          <svg class="w-7 h-7" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logo-title">
             <title id="logo-title">eight1five design solar eclipse logo</title>
             <circle cx="185" cy="215" r="160" fill="var(--accent)" />
             <circle cx="215" cy="185" r="160" fill="var(--bg-main)" />
@@ -64,18 +49,19 @@
           </svg>
         </a>
         <div class="flex flex-col">
-          <a href="/" class="font-heading text-lg font-bold tracking-tight text-main hover:opacity-80 transition-opacity">eight1five design</a>
+          <a href="/" class="font-heading text-xl font-bold tracking-tight text-main hover:opacity-80 transition-opacity">eight1five design</a>
         </div>
       </div>
 
       <!-- Navigation Tabs & Theme Toggle -->
       <div class="flex flex-wrap items-center gap-6">
-        <nav class="flex items-center gap-4 md:gap-6 text-xs font-heading font-medium tracking-wide" aria-label="Main navigation">
+        <nav class="flex items-center gap-4 md:gap-6 text-sm font-heading font-medium tracking-wide" aria-label="Main navigation">
           <a href="/" class="nav-link {% if activeTab == 'home' %}text-main font-bold{% else %}text-muted{% endif %} hover:text-main">Home</a>
-          <a href="/about.html" class="nav-link {% if activeTab == 'about' %}text-main font-bold{% else %}text-muted{% endif %} hover:text-main">About Me</a>
           <a href="/portfolio.html" class="nav-link {% if activeTab == 'portfolio' %}text-main font-bold{% else %}text-muted{% endif %} hover:text-main">Portfolio</a>
           <a href="/contact.html" class="nav-link {% if activeTab == 'contact' %}text-main font-bold{% else %}text-muted{% endif %} hover:text-main">Contact</a>
         </nav>
+
+
 
         <div class="h-4 w-px bg-[var(--border)] hidden sm:block"></div>
 
@@ -119,6 +105,6 @@
   </footer>
 
   <!-- Grounded Wisdom Interactivity Core Site JS -->
-  <script src="/app.js"></script>
+  <script src="/app.js" defer></script>
 </body>
 </html>

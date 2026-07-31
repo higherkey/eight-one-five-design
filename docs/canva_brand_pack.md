@@ -35,7 +35,7 @@ Canva supports direct SVG imports (drag-and-drop). You can save the SVG code blo
 ### Option A: Download / Upload SVGs
 Create two files in your workspace (or locally) and upload them to Canva:
 
-#### [NEW] [logo-light.svg](file:///z:/Programming/eight-one-five-design/brand_marks/logo-light.svg)
+#### [NEW] [logo-light.svg](file:///c:/Programming/eight-one-five-design/brand_marks/logo-light.svg)
 ```xml
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
   <!-- Solar Eclipse Logo (Light Theme) -->
@@ -46,7 +46,7 @@ Create two files in your workspace (or locally) and upload them to Canva:
 </svg>
 ```
 
-#### [NEW] [logo-dark.svg](file:///z:/Programming/eight-one-five-design/brand_marks/logo-dark.svg)
+#### [NEW] [logo-dark.svg](file:///c:/Programming/eight-one-five-design/brand_marks/logo-dark.svg)
 ```xml
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
   <!-- Solar Eclipse Logo (Dark Theme) -->
@@ -143,6 +143,8 @@ eight1five is quietly confident, rigorous, and deeply human. We speak with intel
 2. Intelligent Systems & AI
 3. Automation & Integrations
 4. Interactive & Restorative Games
+
+`Web Systems • Automation & Integrations • Applied AI • Interactive Games`
 
 ### Expanded Description of Services
 1. Full-Stack Web Systems & Design

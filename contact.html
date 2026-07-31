@@ -1,99 +1,101 @@
 ---
-layout: layouts/base.njk
-title: Contact
-activeTab: contact
+layout: layouts/horizon.njk
+title: Contact — Connect & Collaborate
+permalink: /contact.html
 ---
-<main class="flex-grow w-full max-w-7xl mx-auto px-6 py-10 flex flex-col justify-start">
+<main>
+  <div class="hor-page">
 
-    <!-- ══════════════════ Section IV: Contact ══════════════════ -->
-    <section id="sec-contact" class="flex flex-col custom-section-gap">
-      
-      <!-- Header -->
-      <div>
-        <h2 class="font-heading text-3xl font-extrabold text-main">Connect &amp; Collaborate</h2>
-        <p class="text-xs text-muted mt-1">Interested in building elegant, high-impact systems, or looking for a Product Owner/Full-Stack engineer? Let's connect.</p>
+    <!-- Asymmetric Hero Banner -->
+    <section class="hor-hero">
+      <div class="hor-hero__content">
+        <p class="hor-eyebrow">eight1five design &middot; Contact</p>
+        <h1 class="hor-hero__title" style="font-size: clamp(2.5rem, 6.5vw, 5.5rem);">
+          Connect &amp; <span class="italic">Collaborate.</span>
+        </h1>
+        <p class="hor-text" style="font-size:1.1rem; color:var(--slate); max-width:55ch; margin-top:1.5rem;">
+          Interested in building high-performance web products, automating brittle administrative workflows, or integrating targeted AI tools into your business? Let's connect.
+        </p>
       </div>
+    </section>
 
-      <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 items-stretch">
-        
-        <!-- Left details panel -->
-        <div class="lg:col-span-2 flex flex-col gap-6">
+    <!-- Staggered Contact Form & Details Section -->
+    <section class="hor-section hor-section--alt">
+      <div class="hor-float-num">01</div>
+      <div class="hor-section__inner">
+        <p class="hor-tag">Get In Touch</p>
+
+        <div style="display:grid; grid-template-columns: 1fr 2fr; gap: 4vw; align-items:start;">
           
-          <div class="p-6 border border-[var(--border)] custom-radius bg-[var(--bg-card)] flex flex-col gap-4 h-full justify-between">
-            <div class="flex flex-col gap-3">
-              <h3 class="font-heading text-xl font-bold text-main">Get in touch directly</h3>
-              <p class="text-xs text-muted leading-relaxed">
-                Whether you have an automation roadblock, a legacy system to convert into REST APIs, or need an experienced Product Owner with full-stack capability, I'd love to discuss.
-              </p>
-            </div>
-            
-            <div class="flex flex-col gap-4 mt-6">
-              <!-- Mail card -->
-              <div class="flex items-center gap-3.5 p-3 border border-[var(--border)] rounded bg-[var(--bg-main)]">
-                <svg class="w-5 h-5 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                <div class="flex flex-col">
-                  <span class="text-[9px] uppercase font-mono text-muted">Mail Address</span>
-                  <a href="mailto:isaac@eight1fivedesign.com" class="font-semibold text-xs text-main hover:text-[var(--accent)] hover:underline">isaac@eight1fivedesign.com</a>
-                </div>
-              </div>
+          <!-- Contact Info Column -->
+          <div style="background:var(--cream); padding:2.5rem; border-left:3px solid var(--amber);">
+            <h3 class="hor-head" style="font-size:1.4rem; margin-bottom:0.75rem;">Direct Channels</h3>
+            <p class="hor-text" style="font-size:0.85rem; margin-bottom:2rem;">
+              Whether you have an automation roadblock, a legacy system to convert into REST APIs, or need senior web architecture, we'd love to discuss.
+            </p>
 
-              <!-- LinkedIn card -->
-              <div class="flex items-center gap-3.5 p-3 border border-[var(--border)] rounded bg-[var(--bg-main)]">
-                <svg class="w-5 h-5 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
-                <div class="flex flex-col">
-                  <span class="text-[9px] uppercase font-mono text-muted">LinkedIn Profile</span>
-                  <a href="https://www.linkedin.com/in/isaac-ahlfield" target="_blank" rel="noopener noreferrer" aria-label="Isaac Ahlfield LinkedIn Profile" class="font-semibold text-xs text-main hover:text-[var(--accent)] hover:underline">linkedin.com/in/isaac-ahlfield</a>
-                </div>
+            <div style="display:flex; flex-direction:column; gap:1.25rem;">
+              <div>
+                <span style="font-size:0.58rem; font-family:var(--sans); font-weight:700; color:var(--amber); letter-spacing:0.14em; text-transform:uppercase; display:block; margin-bottom:0.25rem;">EMAIL DIRECT</span>
+                <a href="mailto:isaac@eight1fivedesign.com" style="font-size:0.88rem; font-weight:600; color:var(--dusk); text-decoration:none;">isaac@eight1fivedesign.com</a>
               </div>
-
-              <!-- GitHub card -->
-              <div class="flex items-center gap-3.5 p-3 border border-[var(--border)] rounded bg-[var(--bg-main)]">
-                <svg class="w-5 h-5 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
-                <div class="flex flex-col">
-                  <span class="text-[9px] uppercase font-mono text-muted">GitHub Repository</span>
-                  <a href="https://github.com/higherkey" target="_blank" rel="noopener noreferrer" aria-label="Isaac Ahlfield GitHub Profile" class="font-semibold text-xs text-main hover:text-[var(--accent)] hover:underline">github.com/higherkey</a>
-                </div>
+              <div style="height:1px; background:var(--mist);"></div>
+              <div>
+                <span style="font-size:0.58rem; font-family:var(--sans); font-weight:700; color:var(--amber); letter-spacing:0.14em; text-transform:uppercase; display:block; margin-bottom:0.25rem;">LINKEDIN</span>
+                <a href="https://www.linkedin.com/company/eight1fivedesign" target="_blank" rel="noopener noreferrer" style="font-size:0.88rem; font-weight:600; color:var(--dusk); text-decoration:none;">linkedin.com/company/eight1fivedesign</a>
               </div>
             </div>
           </div>
 
-        </div>
-
-        <!-- Right contact form panel -->
-        <div class="lg:col-span-3">
-          
-          <form id="contact-form" class="p-6 border border-[var(--border)] custom-radius bg-[var(--bg-card)] flex flex-col gap-4 h-full" onsubmit="event.preventDefault(); alert('Message dispatched! Rooted in wisdom, we will respond shortly.'); this.reset();">
+          <!-- Contact Form Panel -->
+          <div style="background:var(--cream); padding:2.5rem; border-left:3px solid var(--dusk);">
+            <h3 class="hor-head" style="font-size:1.4rem; margin-bottom:1.5rem;">Dispatch a Message</h3>
             
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div class="flex flex-col gap-1.5">
-                <label for="contact-name" class="text-[10px] font-mono uppercase text-muted">Your Name</label>
-                <input type="text" id="contact-name" class="input-premium" placeholder="e.g. Jane Doe" required>
+            <form id="contact-form" action="https://formsubmit.co/isaac@eight1fivedesign.com" method="POST" style="display:flex; flex-direction:column; gap:1.25rem;">
+              <input type="hidden" name="_subject" value="New Contact Inquiry — eight1five design">
+              <input type="hidden" name="_captcha" value="false">
+              <div style="display:grid; grid-template-columns: 1fr 1fr; gap:1.25rem;">
+                <div>
+                  <label for="contact-name" style="font-size:0.6rem; font-family:var(--sans); font-weight:700; color:var(--amber); letter-spacing:0.14em; text-transform:uppercase; display:block; margin-bottom:0.4rem;">YOUR NAME</label>
+                  <input type="text" id="contact-name" name="name" placeholder="e.g. Jane Doe" required style="width:100%; padding:0.75rem 1rem; border:1px solid var(--mist); background:var(--sand); font-family:var(--sans); font-size:0.88rem; color:var(--dusk); outline:none;">
+                </div>
+                <div>
+                  <label for="contact-email" style="font-size:0.6rem; font-family:var(--sans); font-weight:700; color:var(--amber); letter-spacing:0.14em; text-transform:uppercase; display:block; margin-bottom:0.4rem;">YOUR EMAIL</label>
+                  <input type="email" id="contact-email" name="email" placeholder="e.g. client@domain.com" required style="width:100%; padding:0.75rem 1rem; border:1px solid var(--mist); background:var(--sand); font-family:var(--sans); font-size:0.88rem; color:var(--dusk); outline:none;">
+                </div>
               </div>
-              <div class="flex flex-col gap-1.5">
-                <label for="contact-email" class="text-[10px] font-mono uppercase text-muted">Your Email</label>
-                <input type="email" id="contact-email" class="input-premium" placeholder="e.g. client@domain.com" required>
+
+              <div>
+                <label for="contact-subject" style="font-size:0.6rem; font-family:var(--sans); font-weight:700; color:var(--amber); letter-spacing:0.14em; text-transform:uppercase; display:block; margin-bottom:0.4rem;">SUBJECT INQUIRY</label>
+                <input type="text" id="contact-subject" name="subject" placeholder="e.g. Web Engineering / Workflow Automation Audit" required style="width:100%; padding:0.75rem 1rem; border:1px solid var(--mist); background:var(--sand); font-family:var(--sans); font-size:0.88rem; color:var(--dusk); outline:none;">
               </div>
-            </div>
 
-            <div class="flex flex-col gap-1.5">
-              <label for="contact-subject" class="text-[10px] font-mono uppercase text-muted">Subject Inquiry</label>
-              <input type="text" id="contact-subject" class="input-premium" placeholder="e.g. C# RPA Automations / Core Web App Setup" required>
-            </div>
+              <div>
+                <label for="contact-message" style="font-size:0.6rem; font-family:var(--sans); font-weight:700; color:var(--amber); letter-spacing:0.14em; text-transform:uppercase; display:block; margin-bottom:0.4rem;">DETAILED DESCRIPTION</label>
+                <textarea id="contact-message" name="message" rows="5" placeholder="Describe your operational goals, friction points, or project scope..." required style="width:100%; padding:0.75rem 1rem; border:1px solid var(--mist); background:var(--sand); font-family:var(--sans); font-size:0.88rem; color:var(--dusk); outline:none; resize:vertical;"></textarea>
+              </div>
 
-            <div class="flex flex-col gap-1.5 flex-grow">
-              <label for="contact-message" class="text-[10px] font-mono uppercase text-muted">Detailed Description</label>
-              <textarea id="contact-message" class="input-premium flex-grow min-h-24 md:min-h-36 resize-y" placeholder="Describe the operational goals, constraints, or partnership plans..." required></textarea>
-            </div>
-
-            <button type="submit" class="btn-action w-full text-center text-xs py-3 px-6 rounded border border-[var(--accent)] bg-[var(--accent)] text-[var(--bg-main)] font-bold tracking-wider uppercase font-heading mt-2">
-              Dispatch Message
-            </button>
-          </form>
+              <button type="submit" style="font-family:var(--sans); font-size:0.82rem; font-weight:700; background:var(--amber); color:var(--dusk); padding:0.85rem 1.75rem; border:none; text-transform:uppercase; letter-spacing:0.08em; cursor:pointer; align-self:flex-start; margin-top:0.5rem;">Dispatch Message &rarr;</button>
+            </form>
+          </div>
 
         </div>
-
       </div>
-
     </section>
 
-  </main>
+    <!-- Footer -->
+    <footer class="hor-footer">
+      <p>Eight One Five Design LLC (e1F) &mdash; Ecclesiastes 8:15</p>
+      <div style="display:flex; align-items:center; gap:1.75rem;">
+        <a href="https://www.linkedin.com/company/eight1fivedesign" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Company Page" style="display:flex; align-items:center; gap:0.4rem; color:rgba(253,251,247,0.85);">
+          <img src="/brand_marks/linkedin.svg" alt="LinkedIn logo mark" style="width:1.15rem; height:1.15rem; filter:invert(95%) sepia(10%) saturate(100%) hue-rotate(350deg); display:block;">
+          <span>LinkedIn</span>
+        </a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+        <a href="/">Home</a>
+      </div>
+    </footer>
+
+  </div>
+</main>

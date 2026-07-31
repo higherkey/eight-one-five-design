@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <!-- Clip area restricting the interior of the main circle -->
+    <clipPath id="main-circle-interior-swapped">
+      <circle cx="215" cy="185" r="154" />
+    </clipPath>
+  </defs>
+
+  <!-- Solar Eclipse Logo (Light Theme - Full-Size Grey Exterior Crescent, Orange Top-Right Interior Crescent) -->
+  
+  <!-- 1. Bottom-Left Exposed Grey Sun Circle (Muted Navy-Grey #4E5A70 - Standard Offset at 185, 215) -->
+  <circle cx="185" cy="215" r="160" fill="#4E5A70" />
+
+  <!-- 2. Main Eclipsing Moon Circle Base (Warm Amber #D97706 Base for interior crescent) -->
+  <circle cx="215" cy="185" r="160" fill="#D97706" />
+
+  <!-- 3. White Inner Mask Circle (covers center/bottom-left with white #FDFBF7, leaving orange crescent on TOP-RIGHT) -->
+  <circle cx="185" cy="215" r="154" fill="#FDFBF7" clip-path="url(#main-circle-interior-swapped)" />
+
+  <!-- 4. Eclipsing Moon Outer Keyline Ring -->
+  <circle cx="215" cy="185" r="154" fill="none" stroke="#0B0F19" stroke-width="12" />
+</svg>

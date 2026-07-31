@@ -1,139 +1,152 @@
 ---
-layout: layouts/base.njk
-title: Home
-activeTab: home
+layout: layouts/horizon.njk
+title: Home — Software Built to Power Business
+permalink: /index.html
 ---
-<main class="flex-grow w-full max-w-7xl mx-auto px-6 py-10 flex flex-col justify-start">
+<main>
+  <div class="hor-page">
 
-    <!-- ══════════════════ Section I: Home (Identity & Pillars) ══════════════════ -->
-    <section id="sec-home" class="flex flex-col custom-section-gap">
-      
-      <!-- Hero Banner -->
-      <div class="w-full p-8 md:p-12 border border-[var(--border)] custom-radius bg-[var(--bg-card)] relative overflow-hidden shadow-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-        <div class="absolute right-0 top-0 w-80 h-80 rounded-full bg-[var(--accent)] opacity-[0.025] blur-3xl pointer-events-none"></div>
-        <div class="flex flex-col gap-3 max-w-2xl">
-          <h1 class="font-heading text-3xl md:text-5xl font-extrabold tracking-tight text-main">
-            Built to Hold.
-            <br>
-            Designed to Let Go.
-          </h1>
-          <p class="text-base italic text-muted border-l-2 border-[var(--accent)] pl-4 py-1 mt-2">
-            "So I recommend having fun... along with all the hard work God gives you under the sun." — Ecclesiastes 8:15
+    <!-- Asymmetric Hero: StoryBrand Slogan -->
+    <section class="hor-hero">
+      <div class="hor-hero__content">
+        <p class="hor-eyebrow">eight1five design &middot; Grounded Wisdom</p>
+        <h1 class="hor-hero__title">
+          Software Built<br>to Power Business.<br><span class="italic">Systems Engineered</span><br>for Your Time.
+        </h1>
+        <div style="margin-top:2rem; max-width:56ch;">
+          <p style="font-size:1.1rem; color:var(--slate); line-height:1.75;">
+            We construct high-performance web products, deterministic workflow automations, and targeted AI tools — so you can eliminate digital chaos, scale operations, and get back to life.
           </p>
+        </div>
+        <div style="display:flex; flex-wrap:wrap; gap:1.25rem; margin-top:2.5rem; align-items:center;">
+          <a href="/contact.html" style="font-family:var(--sans); font-size:0.85rem; font-weight:700; background:var(--amber); color:var(--dusk); padding:0.85rem 1.75rem; text-decoration:none; text-transform:uppercase; letter-spacing:0.08em; transition:transform 0.15s, background 0.15s; display:inline-block;">Get In Touch &rarr;</a>
+          <a href="/portfolio.html" style="font-family:var(--sans); font-size:0.85rem; font-weight:600; color:var(--dusk); border:1.5px solid var(--dusk); padding:0.8rem 1.75rem; text-decoration:none; text-transform:uppercase; letter-spacing:0.08em; display:inline-block;">Explore Portfolio</a>
         </div>
       </div>
-
-      <!-- Core Identity Overview -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
-        <div class="flex flex-col justify-center gap-4">
-          <h2 class="font-heading text-2xl md:text-3xl font-bold text-main">Duality under heaven.</h2>
-          <p class="text-sm text-muted leading-relaxed">
-            eight1five design is a software development and digital design studio specializing in elegant web systems, robust workflow automation, targeted AI integration, and interactive gaming experiences. The studio represents a unique synthesis of strict, technical engineering discipline and creative play.
-          </p>
-          <p class="text-sm text-muted leading-relaxed">
-            We reject the modern tech narrative of endless hyper-growth and constant optimization at the expense of human health. Instead, we embrace a classic, balanced cycle of high-impact creation followed by rich, satisfying celebration.
-          </p>
-        </div>
-        <div class="p-6 border border-[var(--border)] custom-radius bg-[var(--bg-card)] flex flex-col justify-center gap-3">
-          <h3 class="font-heading text-xl font-bold text-main">Our Mission</h3>
-          <p class="text-xs text-muted leading-relaxed">
-            Cultivate high-performance systems with inquisitive logic and operational humility, establishing a global standard for premium, non-addictive, thoughtful user interfaces that celebrate agency and return joy to work.
-          </p>
-          <div class="h-px bg-[var(--border)] my-2"></div>
-          <h3 class="font-heading text-xl font-bold text-main">Our Vision</h3>
-          <p class="text-xs text-muted leading-relaxed">
-            A world where technology serves human wellness, where digital workspaces respect user agency, and work is followed by satisfying rest.
-          </p>
-        </div>
-      </div>
-
-      <!-- Services & Capabilities -->
-      <div class="mt-4 p-6 border border-[var(--border)] custom-radius bg-[var(--bg-card)] flex flex-col gap-6">
-        <div>
-          <h2 class="font-heading text-2xl md:text-3xl font-bold text-main">Our Services</h2>
-          <p class="text-xs text-muted mt-1">We build reliable, high-performance tools designed to support meaningful work.</p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="flex flex-col gap-2">
-            <h3 class="font-heading text-base font-bold text-main">Web Systems &amp; APIs</h3>
-            <p class="text-xs text-muted leading-relaxed">
-              We design and construct high-performance web systems and robust RESTful APIs. Our focus is on high-efficiency, clean architectures that execute reliably under any load.
-            </p>
-          </div>
-          <div class="h-px w-full bg-[var(--border)] md:hidden"></div>
-          <div class="flex flex-col gap-2">
-            <h3 class="font-heading text-base font-bold text-main">Workflow Automation</h3>
-            <p class="text-xs text-muted leading-relaxed">
-              We connect pipelines and automate repetitive administrative workflows. By replacing overhead with deterministic logic, we restore focus and speed to your daily work.
-            </p>
-          </div>
-          <div class="h-px w-full bg-[var(--border)] md:hidden"></div>
-          <div class="flex flex-col gap-2">
-            <h3 class="font-heading text-base font-bold text-main">Targeted AI Integration</h3>
-            <p class="text-xs text-muted leading-relaxed">
-              We integrate intelligent LLM reasoning into existing software to parse unstructured data and support coding automation—under strict human-in-the-loop validation boundaries.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- 5 Philosophical Pillars Showcase -->
-      <div class="flex flex-col gap-6 mt-4">
-        <div class="text-center md:text-left">
-          <h2 class="font-heading text-2xl md:text-3xl font-bold text-main">The 5 Core Philosophical Pillars</h2>
-          <p class="text-xs text-muted mt-1">Every interface, line of code, and visual mark created by the studio must align with these pillars.</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
-          
-          <!-- Pillar 1 -->
-          <div class="p-5 border border-[var(--border)] custom-radius bg-[var(--bg-card)] flex flex-col gap-3 transition-all duration-300 hover:border-[var(--accent)]">
-            <span class="font-mono text-xs text-[var(--accent)] font-bold">I. WORK &amp; PLAY</span>
-            <h4 class="font-heading text-sm font-bold text-main">High-Performance &amp; Rest</h4>
-            <p class="text-[11px] text-muted leading-relaxed">
-              Diligent labor is a gift but is incomplete without play. We build tools that handle heavy workloads and help people enjoy their lives. Our employees work at their best with satisfying rest and fulfilling work empowering each in turn.
-            </p>
-          </div>
-
-          <!-- Pillar 2 -->
-          <div class="p-5 border border-[var(--border)] custom-radius bg-[var(--bg-card)] flex flex-col gap-3 transition-all duration-300 hover:border-[var(--accent)]">
-            <span class="font-mono text-xs text-[var(--accent)] font-bold">II. WISDOM</span>
-            <h4 class="font-heading text-sm font-bold text-main">Humble Understanding</h4>
-            <p class="text-[11px] text-muted leading-relaxed">
-              True technical wisdom lies in recognizing the boundaries of ourselves and our systems. We approach complex problems with rigorous preparation while remaining humble before the unknown.
-            </p>
-          </div>
-
-          <!-- Pillar 3 -->
-          <div class="p-5 border border-[var(--border)] custom-radius bg-[var(--bg-card)] flex flex-col gap-3 transition-all duration-300 hover:border-[var(--accent)]">
-            <span class="font-mono text-xs text-[var(--accent)] font-bold">III. UNDER THE SUN</span>
-            <h4 class="font-heading text-sm font-bold text-main">Complete Transparency</h4>
-            <p class="text-[11px] text-muted leading-relaxed">
-              We design software that operates in the daylight of shared experience. Our tools illuminate complex workflows rather than obscuring them with dark patterns or addictive user loops.
-            </p>
-          </div>
-
-          <!-- Pillar 4 -->
-          <div class="p-5 border border-[var(--border)] custom-radius bg-[var(--bg-card)] flex flex-col gap-3 transition-all duration-300 hover:border-[var(--accent)]">
-            <span class="font-mono text-xs text-[var(--accent)] font-bold">IV. SUBTLE NOBILITY</span>
-            <h4 class="font-heading text-sm font-bold text-main">Absolute Agency</h4>
-            <p class="text-[11px] text-muted leading-relaxed">
-              Users are the focus. The software acts as a quiet, powerful advisor—felt through premium visual choices, perfect information spacing, and immediate responsiveness.
-            </p>
-          </div>
-
-          <!-- Pillar 5 -->
-          <div class="p-5 border border-[var(--border)] custom-radius bg-[var(--bg-card)] flex flex-col gap-3 transition-all duration-300 hover:border-[var(--accent)]">
-            <span class="font-mono text-xs text-[var(--accent)] font-bold">V. ESSENTIAL VOID</span>
-            <h4 class="font-heading text-sm font-bold text-main">Let Space Speak</h4>
-            <p class="text-[11px] text-muted leading-relaxed">
-              In life and in work, what we leave out is as important as what we put in. We include the important and nothing else. A picture may paint a thousand words, but intuitive design needs none.
-            </p>
-          </div>
-
-        </div>
-      </div>
-
     </section>
 
-  </main>
+    <!-- Guide & 3-Step Plan Section -->
+    <section class="hor-section hor-section--alt">
+      <div class="hor-float-num">01</div>
+      <div class="hor-section__inner">
+        <p class="hor-tag">The Guide &amp; 3-Step Plan</p>
+        <div class="hor-stagger">
+          <div class="hor-stagger__item">
+            <h2 class="hor-head">Stop wrestling software chaos.</h2>
+            <p class="hor-text">Most organizations waste hundreds of hours managing brittle tools, manual data entry, and bloated software stacks that stall growth. At eight1five design, we serve as your technical guide — bringing senior engineering discipline, deterministic logic, and complete operational transparency.</p>
+          </div>
+          <div class="hor-stagger__item">
+            <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; padding: 2.25rem; background: var(--cream); border-left:4px solid var(--amber);">
+              <div>
+                <span style="font-family:var(--sans); font-size:0.6rem; font-weight:700; color:var(--amber); letter-spacing:0.14em;">01 / AUDIT &amp; MAP</span>
+                <h4 style="font-family:var(--serif); font-size:1.05rem; font-weight:700; color:var(--dusk); margin-top:0.3rem;">Locate Friction</h4>
+                <p style="font-size:0.8rem; color:var(--slate); line-height:1.6; margin-top:0.25rem;">We audit your tech stack and pinpoint operational bottlenecks.</p>
+              </div>
+              <div>
+                <span style="font-family:var(--sans); font-size:0.6rem; font-weight:700; color:var(--amber); letter-spacing:0.14em;">02 / ENGINEER &amp; AUTOMATE</span>
+                <h4 style="font-family:var(--serif); font-size:1.05rem; font-weight:700; color:var(--dusk); margin-top:0.3rem;">Clean Systems</h4>
+                <p style="font-size:0.8rem; color:var(--slate); line-height:1.6; margin-top:0.25rem;">We construct robust web applications, APIs, and pipelines.</p>
+              </div>
+              <div>
+                <span style="font-family:var(--sans); font-size:0.6rem; font-weight:700; color:var(--amber); letter-spacing:0.14em;">03 / LAUNCH &amp; REST</span>
+                <h4 style="font-family:var(--serif); font-size:1.05rem; font-weight:700; color:var(--dusk); margin-top:0.3rem;">Reclaim Your Time</h4>
+                <p style="font-size:0.8rem; color:var(--slate); line-height:1.6; margin-top:0.25rem;">Sub-300ms edge execution &amp; total operational clarity.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Capabilities -->
+    <section class="hor-section hor-section--dark">
+      <div class="hor-float-num">02</div>
+      <div class="hor-section__inner">
+        <p class="hor-tag">Core Studio Capabilities</p>
+        <div class="hor-services">
+          <div class="hor-service">
+            <div class="hor-service__index">i.</div>
+            <div class="hor-service__info">
+              <h3 class="hor-service__name">Full-Stack Web Systems &amp; APIs</h3>
+              <p class="hor-service__desc">High-performance web applications and RESTful APIs built on clean architectures that execute reliably under any load.</p>
+            </div>
+            <div class="hor-service__arrow">→</div>
+          </div>
+          <div class="hor-service">
+            <div class="hor-service__index">ii.</div>
+            <div class="hor-service__info">
+              <h3 class="hor-service__name">Workflow Automation &amp; Integrations</h3>
+              <p class="hor-service__desc">Automating repetitive administrative workflows with deterministic logic to restore focus, speed, and operational clarity.</p>
+            </div>
+            <div class="hor-service__arrow">→</div>
+          </div>
+          <div class="hor-service">
+            <div class="hor-service__index">iii.</div>
+            <div class="hor-service__info">
+              <h3 class="hor-service__name">Targeted AI Integration</h3>
+              <p class="hor-service__desc">Intelligent LLM reasoning integrated into existing software under strict human-in-the-loop validation boundaries.</p>
+            </div>
+            <div class="hor-service__arrow">→</div>
+          </div>
+          <div class="hor-service">
+            <div class="hor-service__index">iv.</div>
+            <div class="hor-service__info">
+              <h3 class="hor-service__name">Interactive Experiences &amp; Restorative Play</h3>
+              <p class="hor-service__desc">Crafting interactive gaming experiences and multiplayer platforms that embody meaningful play as human flourishing.</p>
+            </div>
+            <div class="hor-service__arrow">→</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pillars: organic mosaic grid -->
+    <section class="hor-section">
+      <div class="hor-float-num">03</div>
+      <div class="hor-section__inner">
+        <p class="hor-tag" style="margin-bottom:2.5rem;">The Five Canonical Pillars</p>
+        <div class="hor-pillars">
+          <div class="hor-pillar">
+            <p class="hor-pillar__num">Pillar I</p>
+            <h4 class="hor-pillar__name">Work &amp; Play</h4>
+            <p class="hor-pillar__desc">Diligent labor is incomplete without satisfying rest and play alongside all the hard work under the sun.</p>
+          </div>
+          <div class="hor-pillar">
+            <p class="hor-pillar__num">Pillar II</p>
+            <h4 class="hor-pillar__name">Wisdom</h4>
+            <p class="hor-pillar__desc">Recognize system boundaries with preparation and humility.</p>
+          </div>
+          <div class="hor-pillar">
+            <p class="hor-pillar__num">Pillar III</p>
+            <h4 class="hor-pillar__name">Under the Sun</h4>
+            <p class="hor-pillar__desc">Operate in complete daylight without dark patterns or addictive loops.</p>
+          </div>
+          <div class="hor-pillar">
+            <p class="hor-pillar__num">Pillar IV</p>
+            <h4 class="hor-pillar__name">Subtle Nobility</h4>
+            <p class="hor-pillar__desc">Software as a quiet, competent advisor through immediate response.</p>
+          </div>
+          <div class="hor-pillar">
+            <p class="hor-pillar__num">Pillar V</p>
+            <h4 class="hor-pillar__name">Essential Void</h4>
+            <p class="hor-pillar__desc">What we leave out is as critical as what we put in. Silence speaks.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="hor-footer">
+      <p>Eight One Five Design LLC (e1F) &mdash; Ecclesiastes 8:15</p>
+      <div style="display:flex; align-items:center; gap:1.75rem;">
+        <a href="https://www.linkedin.com/company/eight1fivedesign" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Company Page" style="display:flex; align-items:center; gap:0.4rem; color:rgba(253,251,247,0.85);">
+          <img src="/brand_marks/linkedin.svg" alt="LinkedIn logo mark" style="width:1.15rem; height:1.15rem; filter:invert(95%) sepia(10%) saturate(100%) hue-rotate(350deg); display:block;">
+          <span>LinkedIn</span>
+        </a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+        <a href="/">Home</a>
+      </div>
+    </footer>
+
+  </div>
+</main>
