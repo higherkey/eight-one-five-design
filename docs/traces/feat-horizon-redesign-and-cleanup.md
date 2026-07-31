@@ -8,7 +8,8 @@
 ## 1. Summary of Changes
 - **Horizon Organic Anti-Grid Primary System**: Consolidated site architecture (`index.html`, `portfolio.html`, `contact.html`, `privacy.html`, `terms.html`) onto the Horizon design system.
 - **Removed Retired Concepts**: Completely removed retired layout options and HTML prototypes (`Monolith`, `Atelier`, `Manuscript`, `Vault`, `Canon`).
-- **Header & Navigation Refinement**: Enlarged header size, integrated the official Dark Theme Solar Eclipse brand mark SVG (`logo-dark.svg`), and set exact studio casing `eight1five design`.
+- **Header & Navigation Refinement**: Enlarged header logo image to `2.5rem` (`40px`), integrated the official Dark Theme Solar Eclipse brand mark SVG (`logo-dark.svg`), and set exact studio casing `eight1five design`.
+- **Footer Text & Contrast**: Increased footer text size to `0.85rem` with high-contrast text (`rgba(253,251,247,0.85)` against navy `#0B0F19`), and added a locally hosted LinkedIn logo SVG (`brand_marks/linkedin.svg`) linking directly to the company page (`https://www.linkedin.com/company/eight1fivedesign`).
 - **Typography Restoration**: Restored official studio brand typography (**Space Grotesk** for headings and brand marks, **Inter** for UI/body text) and increased hero line-height to `1.22` to resolve descendant overlap.
 - **Contact Form Routing**: Updated `contact.html` form action to dispatch inquiries directly to `isaac@eight1fivedesign.com` with FormSubmit integration.
 - **Brand Guide & Identity Clean Up**: Updated brand documentation (`docs/brand_guide.md`) to use `e1F` casing, and removed inline `(e1F)` text clutter except for hero watermarks and copyright footers.

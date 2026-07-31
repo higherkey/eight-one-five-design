@@ -29,15 +29,15 @@
     body { min-height: 100vh; display: flex; flex-direction: column; overflow-x: hidden; }
 
     /* Main Header Navigation */
-    .lab-strip { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--dusk); display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 4vw; border-bottom: 1px solid rgba(253,251,247,0.08); }
-    .lab-strip__logo { font-family: var(--serif); font-size: 1.25rem; font-weight: 700; letter-spacing: -0.01em; color: var(--cream); text-decoration: none; }
+    .lab-strip { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--dusk); display: flex; align-items: center; justify-content: space-between; padding: 1rem 4vw; border-bottom: 1px solid rgba(253,251,247,0.08); }
+    .lab-strip__logo { font-family: var(--serif); font-size: 1.35rem; font-weight: 700; letter-spacing: -0.01em; color: var(--cream); text-decoration: none; }
     .lab-strip__logo span { color: var(--amber); }
     .lab-strip__links { display: flex; align-items: center; gap: 1.5rem; font-size: 0.9rem; font-family: var(--sans); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
-    .lab-strip__links a { color: rgba(253,251,247,0.65); text-decoration: none; transition: color 0.2s; }
+    .lab-strip__links a { color: rgba(253,251,247,0.75); text-decoration: none; transition: color 0.2s; }
     .lab-strip__links a:hover, .lab-strip__links a.current { color: var(--amber); }
-    .lab-strip__links .sep { color: rgba(253,251,247,0.2); }
+    .lab-strip__links .sep { color: rgba(253,251,247,0.25); }
 
-    main { flex: 1; padding-top: 4.5rem; }
+    main { flex: 1; padding-top: 5rem; }
 
     /* ── Horizon: Organic Anti-Grid System ── */
     .hor-page { overflow: hidden; }
@@ -227,16 +227,16 @@
     .hor-pillar__desc { font-size: 0.8rem; color: var(--slate); line-height: 1.65; max-width: 24ch; }
 
     /* Footer */
-    .hor-footer { background: var(--dusk); padding: 1.5rem 6vw; display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
-    .hor-footer p, .hor-footer a { font-size: 0.62rem; color: rgba(253,251,247,0.3); font-family: var(--sans); text-decoration: none; letter-spacing: 0.04em; }
+    .hor-footer { background: var(--dusk); padding: 2rem 6vw; display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; flex-wrap: wrap; border-top: 1px solid rgba(253,251,247,0.1); }
+    .hor-footer p, .hor-footer a { font-size: 0.85rem; color: rgba(253,251,247,0.85); font-family: var(--sans); text-decoration: none; letter-spacing: 0.04em; }
     .hor-footer a:hover { color: var(--amber); }
   </style>
 </head>
 <body>
 
   <nav class="lab-strip" aria-label="Main navigation">
-    <a href="/" class="lab-strip__logo" style="display:flex; align-items:center; gap:0.75rem; text-transform:none;">
-      <img src="/brand_marks/logo-dark.svg" alt="eight1five design logo mark" style="width:1.75rem; height:1.75rem; display:block;">
+    <a href="/" class="lab-strip__logo" style="display:flex; align-items:center; gap:0.85rem; text-transform:none;">
+      <img src="/brand_marks/logo-dark.svg" alt="eight1five design logo mark" style="width:2.5rem; height:2.5rem; display:block;">
       <span>eight1five design</span>
     </a>
     <div class="lab-strip__links">
