@@ -189,7 +189,7 @@ const CASE_STUDIES = [
     id: 'project-logos',
     title: 'Project Logos',
     subtitle: 'Virtual Tabletop (VTT) State Engine & Rules Interpreter',
-    category: 'Active Development',
+    category: 'Studio Platform',
     metric: 'Deterministic AST',
     metricLabel: 'RPG Rules Engine',
     pillar: 'Subtle Nobility',
