@@ -144,7 +144,7 @@ const CASE_STUDIES = [
     id: 'kipu',
     title: 'Kipu',
     subtitle: 'Sensory Mini-Games & Knowledge Engine',
-    category: 'Product / System',
+    category: 'Interactive App',
     metric: '100%',
     metricLabel: 'Deterministic Safety',
     pillar: 'Wisdom',
