@@ -179,7 +179,7 @@ const CASE_STUDIES = [
     metricLabel: 'Group Decision Engine',
     pillar: 'Under the Sun',
     description: 'Fast, interactive first-player selector tool for board games to eliminate choice paralysis using multi-touch events, procedurally generated Web Audio synthesizers, and haptic feedback.',
-    tech: ['JavaScript', 'HTML5', 'CSS Grid', 'Web Audio API'],
+    tech: ['JavaScript', 'Intuitive Design', 'Web Audio API', 'Haptic Feedback'],
     isPrivate: false,
     repoLink: 'https://github.com/higherkey/choosewho',
     liveUrl: 'https://higherkey.github.io/choosewho/',
