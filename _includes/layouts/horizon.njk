@@ -101,15 +101,15 @@
       justify-content: center;
       background: var(--cream);
     }
-    /* Decorative diagonal sweep */
+    /* Decorative diagonal sweep extending up to header */
     .hor-hero::before {
       content: '';
       position: absolute;
-      top: 0; right: 0;
+      top: -5rem; right: 0;
       width: 45%;
-      height: 100%;
+      height: calc(100% + 5rem);
       background: var(--sand);
-      clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
+      clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%);
       pointer-events: none;
     }
     /* Large watermark text */
