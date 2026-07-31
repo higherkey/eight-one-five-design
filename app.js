@@ -21,7 +21,7 @@ const STUDIO_CREDENTIALS = {
     location: 'Broken Arrow, OK',
     email: 'isaac@eight1fivedesign.com',
     linkedin: 'https://www.linkedin.com/company/eight1fivedesign',
-    summary: 'Lead Software Architect and Product Owner specializing in robust full-stack systems, high-efficiency workflow automation, and premium digital design. Architect of enterprise automation engines delivering over $13.75M in cumulative operational savings. Focused on engineering high-throughput pipelines, modernizing legacy systems into scalable REST APIs, and advocating for user agency and structural craft.'
+    summary: 'Lead Software Architect and Product Owner specializing in robust full-stack systems, high-efficiency workflow automation, and premium digital design. Architect of enterprise automation engines delivering over $13.75M in cumulative operational savings. Focused on engineering high-throughput pipelines, modernizing legacy systems into scalable REST APIs, and advocating for user agency and engineering excellence.'
   },
   experience: [
     {
@@ -145,8 +145,8 @@ const CASE_STUDIES = [
     title: 'Kipu',
     subtitle: 'Sensory Mini-Games & Knowledge Engine',
     category: 'Interactive App',
-    metric: '100%',
-    metricLabel: 'Deterministic Safety',
+    metric: 'Pure Play',
+    metricLabel: 'Zero Ads & Zero Tracking',
     pillar: 'Wisdom',
     description: 'A premium, sensory-focused collection of tactile and educational mini-games for children. Built for rapid capture, structural clarity, and zero runtime overhead.',
     tech: ['Child-First Design', 'Tactile Exploration', 'Sensory Learning', 'Zero Distractions'],
@@ -158,13 +158,13 @@ const CASE_STUDIES = [
   {
     id: 'board-game-hub',
     title: 'Board Game Hub',
-    subtitle: 'Real-Time Multiplayer Platform & Match Lobby',
+    subtitle: 'Low-Latency Multiplayer & Connected Game Rooms',
     category: 'Interactive Platform',
-    metric: 'Real-Time',
-    metricLabel: 'Multiplayer Lobby Rooms',
+    metric: 'Real-Time Sync',
+    metricLabel: 'Low-Latency Sync',
     pillar: 'Work & Play',
-    description: 'Interactive gaming and lobby platform built from the ground up for real-time multiplayer board game rooms (Table display vs. Hand phone controllers), automated score-tracking, and match orchestration.',
-    tech: ['Dual-Screen Experience', 'Multiplayer Game Nights', 'Private Hand Controllers', 'Automated Score Tracking'],
+    description: 'High-engagement multiplayer platform engineered for real-time game rooms across any distance — giving users the presence of sitting in the exact same room with sub-second synchronization.',
+    tech: ['Real-Time Engagement', 'Same-Room Presence', 'Low-Latency Sync', 'Global Multiplayer'],
     isPrivate: false,
     repoLink: 'https://github.com/higherkey/board-game-hub',
     liveUrl: 'https://board-game-hub-alpha.vercel.app/',
@@ -179,7 +179,7 @@ const CASE_STUDIES = [
     metricLabel: 'Group Decision Engine',
     pillar: 'Under the Sun',
     description: 'Fast, interactive first-player selector tool for board games to eliminate choice paralysis using multi-touch events, procedurally generated Web Audio synthesizers, and haptic feedback.',
-    tech: ['Frictionless Choices', 'Intuitive Multi-Touch', 'Audio & Haptic Feedback', 'Instant Player Selection'],
+    tech: ['Frictionless Choices', 'Intuitive Multi-Touch', 'Audio & Haptic Feedback', 'Instant Response'],
     isPrivate: false,
     repoLink: 'https://github.com/higherkey/choosewho',
     liveUrl: 'https://higherkey.github.io/choosewho/',
@@ -194,7 +194,7 @@ const CASE_STUDIES = [
     metricLabel: 'RPG Rules Engine',
     pillar: 'Subtle Nobility',
     description: 'Central orchestration engine and state vault for a virtual tabletop (VTT) platform featuring probabilistic semantic intent mapping and deterministic AST RPG rules adjudication.',
-    tech: ['Natural Language Adjudication', 'Deterministic Rules Engine', 'Real-Time State Vault', 'Streamlined VTT Workflow'],
+    tech: ['Natural Language Adjudication', 'Deterministic Rules Engine', 'Real-Time State Vault'],
     isPrivate: true,
     repoLink: null, // Private repository: MUST NOT BE LINKED
     liveUrl: null,
@@ -209,7 +209,7 @@ const CASE_STUDIES = [
     metricLabel: null,
     pillar: 'Work & Play',
     description: 'Custom static web storefront and inquiry system featuring online batch reservation tracking, local ordering flows, and high-performance image optimization for an artisanal home bakery.',
-    tech: ['Artisanal Brand Storytelling', 'Batch Reservation Flow', 'Instant Local Pre-Ordering', 'Sub-Second Reader Experience'],
+    tech: ['Artisanal Bakery', 'Batch Reservation System', 'Local Pre-Ordering', 'High-Performance Storefront'],
     isPrivate: false,
     repoLink: 'https://github.com/higherkey/amys-bakes',
     liveUrl: 'https://higherkey.github.io/amys-bakes/',
@@ -224,7 +224,7 @@ const CASE_STUDIES = [
     metricLabel: 'WordPress Migration Speed',
     pillar: 'Work & Play',
     description: 'Complete web application overhaul replacing a generic, mismatched WordPress site with a modern, high-performance web app hosted on Netlify/Cloudflare. Engineered with engaging typography and editorial rhythm designed to hold reader attention and drive consulting conversions.',
-    tech: ['Editorial Narrative Flow', 'High-Converting Copywriting', 'Executive Trust Building', 'Sub-Second Load Rhythm'],
+    tech: ['High-Conversion Design', 'Legacy Migration', 'Editorial Layout', 'Executive Conversion'],
     isPrivate: false,
     repoLink: null,
     liveUrl: 'https://exagrow.com',
@@ -237,7 +237,7 @@ const CASE_STUDIES = [
 // ─────────────────────────────────────────────────────────────────────
 window.addEventListener('DOMContentLoaded', () => {
   initTheme();
-  
+
   hydrateResumeSection();
   hydratePortfolioSection();
 });
@@ -261,9 +261,9 @@ function initTheme() {
 function setTheme(themeName) {
   SiteState.theme = themeName;
   localStorage.setItem('theme', themeName);
-  
+
   const root = document.documentElement;
-  
+
   if (themeName === 'authoritative') {
     root.classList.add('theme-dark');
   } else {
@@ -287,12 +287,12 @@ function setupNavigation() {
 
 function switchSection(sectionId) {
   if (SiteState.activeSection === sectionId) return;
-  
+
   const currentSec = document.getElementById(`sec-${SiteState.activeSection}`);
   const targetSec = document.getElementById(`sec-${sectionId}`);
-  
+
   if (!targetSec) return;
-  
+
   // Update nav highlights
   document.querySelectorAll('.nav-link').forEach(link => {
     if (link.dataset.target === sectionId) {
@@ -301,18 +301,18 @@ function switchSection(sectionId) {
       link.classList.remove('active');
     }
   });
-  
+
   // Animation crossfade transition
   if (currentSec) {
     currentSec.style.opacity = '0';
     currentSec.style.transform = 'translateY(-12px)';
-    
+
     setTimeout(() => {
       currentSec.classList.remove('active');
-      
+
       targetSec.classList.add('active');
       if (targetSec.offsetHeight) { /* Force reflow */ }
-      
+
       targetSec.style.opacity = '1';
       targetSec.style.transform = 'translateY(0)';
       SiteState.activeSection = sectionId;
@@ -338,31 +338,31 @@ function hydrateResumeSection() {
     STUDIO_CREDENTIALS.experience.forEach(exp => {
       const item = document.createElement('div');
       item.className = 'timeline-item relative pl-8 pb-8';
-      
+
       const bullet = document.createElement('div');
       bullet.className = 'timeline-dot';
-      
+
       const content = document.createElement('div');
       content.className = 'flex flex-col gap-1.5';
-      
+
       const meta = document.createElement('div');
       meta.className = 'flex flex-col md:flex-row justify-between items-start md:items-center gap-1';
-      
+
       const roleTitle = document.createElement('h4');
       roleTitle.className = 'font-bold text-base font-heading';
       roleTitle.textContent = exp.role;
-      
+
       const duration = document.createElement('span');
       duration.className = 'text-[11px] font-mono uppercase bg-[var(--border)] px-2 py-0.5 rounded text-muted border border-[var(--border)]';
       duration.textContent = exp.period;
-      
+
       meta.appendChild(roleTitle);
       meta.appendChild(duration);
-      
+
       const companyInfo = document.createElement('div');
       companyInfo.className = 'text-xs font-semibold text-[var(--accent)]';
       companyInfo.textContent = `${exp.company} — ${exp.location}`;
-      
+
       const detailsList = document.createElement('ul');
       detailsList.className = 'list-disc list-outside ml-4 mt-2 text-xs text-muted space-y-1.5 leading-relaxed';
       exp.details.forEach(detail => {
@@ -370,11 +370,11 @@ function hydrateResumeSection() {
         li.textContent = detail;
         detailsList.appendChild(li);
       });
-      
+
       content.appendChild(meta);
       content.appendChild(companyInfo);
       content.appendChild(detailsList);
-      
+
       item.appendChild(bullet);
       item.appendChild(content);
       timeline.appendChild(item);
@@ -386,18 +386,18 @@ function hydrateResumeSection() {
   if (skillsGrid) {
     skillsGrid.innerHTML = '';
     const categories = ['Backend', 'Frontend', 'Database', 'Automation', 'Infrastructure', 'Quality'];
-    
+
     categories.forEach(cat => {
       const catGroup = document.createElement('div');
       catGroup.className = 'p-4 border border-[var(--border)] rounded-lg bg-[var(--bg-card)] flex flex-col gap-2.5';
-      
+
       const title = document.createElement('h4');
       title.className = 'font-bold font-heading text-xs uppercase tracking-wider text-[var(--accent)]';
       title.textContent = cat;
-      
+
       const badgeBox = document.createElement('div');
       badgeBox.className = 'flex flex-wrap gap-1.5';
-      
+
       const filtered = STUDIO_CREDENTIALS.skills.filter(s => s.category === cat);
       filtered.forEach(skill => {
         const badge = document.createElement('span');
@@ -405,7 +405,7 @@ function hydrateResumeSection() {
         badge.textContent = skill.name;
         badgeBox.appendChild(badge);
       });
-      
+
       catGroup.appendChild(title);
       catGroup.appendChild(badgeBox);
       skillsGrid.appendChild(catGroup);
@@ -439,63 +439,63 @@ function hydratePortfolioSection() {
     bentoGrid.innerHTML = '';
     CASE_STUDIES.forEach((proj, idx) => {
       const colSpan = (idx === 0 || idx === 4) ? 'lg:col-span-2' : 'lg:col-span-1';
-      
+
       const card = document.createElement('div');
       card.className = `metric-box flex flex-col justify-between ${colSpan} cursor-pointer`;
-      
+
       const topBlock = document.createElement('div');
       topBlock.className = 'flex flex-col gap-3';
-      
+
       const headerRow = document.createElement('div');
       headerRow.className = 'flex justify-between items-start gap-2';
-      
+
       const badge = document.createElement('span');
       badge.className = 'text-[9px] uppercase font-bold tracking-widest text-[var(--accent)] border border-[var(--border)] bg-[var(--bg-main)] px-2 py-0.5 rounded';
       badge.textContent = proj.pillar;
-      
+
       const flexSpace = document.createElement('div');
       flexSpace.appendChild(badge);
-      
+
       const bigMetric = document.createElement('div');
       bigMetric.className = 'font-heading text-4xl font-extrabold tracking-tight text-main';
       bigMetric.textContent = proj.metric;
-      
+
       const metricLbl = document.createElement('span');
       metricLbl.className = 'text-[10px] font-mono uppercase text-muted tracking-wider block mt-1';
       metricLbl.textContent = proj.metricLabel;
-      
+
       headerRow.appendChild(bigMetric);
       headerRow.appendChild(flexSpace);
-      
+
       const title = document.createElement('h3');
       title.className = 'font-bold font-heading text-base tracking-tight text-main mt-2';
       title.textContent = proj.title;
-      
+
       const desc = document.createElement('p');
       desc.className = 'text-xs text-muted leading-relaxed mt-1.5';
       desc.textContent = proj.description;
-      
+
       topBlock.appendChild(headerRow);
       topBlock.appendChild(metricLbl);
       topBlock.appendChild(title);
       topBlock.appendChild(desc);
-      
+
       const bottomBlock = document.createElement('div');
       bottomBlock.className = 'flex flex-wrap gap-1 mt-5 pt-3 border-t border-[var(--border)]';
-      
+
       proj.tech.forEach(t => {
         const span = document.createElement('span');
         span.className = 'text-[9px] font-mono bg-[var(--border)] text-muted px-2 py-0.5 rounded';
         span.textContent = t;
         bottomBlock.appendChild(span);
       });
-      
+
       card.appendChild(topBlock);
 
       // Deployment link or Planned Deployment Note
       const linkRow = document.createElement('div');
       linkRow.className = 'mt-3 text-xs flex items-center gap-2';
-      
+
       if (proj.liveUrl) {
         const link = document.createElement('a');
         link.href = proj.liveUrl;
