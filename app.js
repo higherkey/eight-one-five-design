@@ -224,16 +224,11 @@ const CASE_STUDIES = [
     metricLabel: 'WordPress Migration Speed',
     pillar: 'Work & Play',
     description: 'Complete web application overhaul replacing a generic, mismatched WordPress site with a modern, high-performance web app hosted on Netlify/Cloudflare. Engineered with engaging typography and editorial rhythm designed to hold reader attention and drive consulting conversions.',
-    tech: ['Netlify / Cloudflare', 'Custom Web Architecture', 'Schema.org AI Services', 'High-Converting Typography'],
+    tech: ['Netlify / Cloudflare', 'Custom Architecture', 'High-Converting UI'],
     isPrivate: false,
     repoLink: null,
     liveUrl: 'https://exagrow.com',
-    deploymentNote: 'Live Client Deployment — Minneapolis–St. Paul AI Operations Firm',
-    testimonial: {
-      quote: "The redesign completely transformed our web presence. Moving off WordPress to a modern stack gave us a clean, high-converting platform that our clients love reading.",
-      author: "Andrew Ahlfield",
-      title: "Founder & Lead Solutions Architect, Exagrow"
-    }
+    deploymentNote: 'Live Client Deployment — Minneapolis–St. Paul AI Operations Firm'
   }
 ];
 
