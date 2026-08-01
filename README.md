@@ -8,7 +8,7 @@
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)](https://www.w3.org/Style/CSS/)
 [![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=flat-square&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
-This repository serves as the official **Source of Truth** and guiding beacon for **Eight One Five Design** (stylized as **8:15 Design** or **8-1-5 Design**). It outlines the core genesis, philosophical pillars, design system architecture, and technical structure of our studio ecosystem.
+This repository serves as the official **Source of Truth** and guiding beacon for **Eight One Five Design LLC** (stylized as **eight1five** or **e1F**). It outlines the core genesis, philosophical pillars, design system architecture, and technical structure of our studio ecosystem.
 
 ## Table of Contents
 
