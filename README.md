@@ -63,21 +63,6 @@ This is a static web application with zero external dependencies.
 
 ---
 
-## Usage
-
-For local development with hot-reloading:
-1. Open the project folder in VS Code.
-2. Launch with the **Live Server** extension, or host it locally using a simple HTTP server (e.g. `npx serve .`).
-3. Access the browser view at the served address.
-
----
-
-## Contributing
-
-Please ensure any additions or visual modifications respect the core philosophical pillars (especially *Subtle Royalty* and *Essential Void*) and remain free of external libraries.
-
----
-
 ## License
 
 Built by [higherkey](https://github.com/higherkey). Standard copyright applies.
