@@ -13,9 +13,6 @@ This repository serves as the official **Source of Truth** and guiding beacon fo
 ## Table of Contents
 
 - [Background](#background)
-- [Install](#install)
-- [Usage](#usage)
-- [Contributing](#contributing)
 - [License](#license)
 
 ## Background
@@ -46,20 +43,6 @@ Our identity is derived entirely from the scriptural perspective on the duality 
 - **[index.html](file:///c:/Programming/eight-one-five-design/index.html)**: Primary portal structure (Home, About Me, Portfolio Bento Grid, Contact).
 - **[style.css](file:///c:/Programming/eight-one-five-design/style.css)**: Golden-ratio layouts and theme transitions.
 - **[app.js](file:///c:/Programming/eight-one-five-design/app.js)**: Tab navigation, case studies database, local storage theme managers.
-
----
-
-## Install
-
-This is a static web application with zero external dependencies.
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/higherkey/eight-one-five-design.git
-   cd eight-one-five-design
-   ```
-2. **Setup local viewing:**
-   Simply open `index.html` in any modern web browser, or launch using a local static HTTP server.
 
 ---
 
