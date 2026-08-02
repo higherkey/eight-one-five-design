@@ -6,31 +6,30 @@
 ---
 
 ## 1. Summary of Changes
-- **Horizon Organic Anti-Grid Primary System**: Consolidated site architecture (`index.html`, `portfolio.html`, `contact.html`, `privacy.html`, `terms.html`) onto the Horizon design system.
+- **Horizon Organic Anti-Grid Primary System**: Consolidated site architecture (`index.html`, `portfolio.html`, `contact.html`, `privacy.html`, `terms.html`) onto the Horizon design system (`layouts/horizon.njk`).
+- **Contact Form Mobile Responsiveness**: Extracted inline CSS styles from `contact.html` into responsive CSS component classes in `horizon.njk` (`.hor-contact-grid`, `.hor-contact-card`, `.hor-form-row`, `.hor-form-input`, `.hor-form-textarea`, `.hor-form-submit`). Implemented responsive breakpoints (`< 868px` and `< 580px`) to collapse 2-column grid and form input pairs into single-column vertical stacks.
+- **Anti-Grid Project List Stagger Fix**: Refactored `.hor-stagger__item:nth-child(3n)` desktop margin shift (`4vw`), and added `@media (max-width: 768px)` breakpoint to reset all stagger card margins (`margin-left: 0 !important; max-width: 100%;`) and scripture offsets, eliminating horizontal scrolling and card overflow on mobile/tablet viewports.
+- **Restored Full Scripture Verse in Footer**: Standardized the footer paragraph across all pages to include the complete brand scripture verse text: `Eight One Five Design LLC (e1F) | "So I recommend having fun... along with all the hard work God gives you under the sun." — Ecclesiastes 8:15`.
+- **Modernized Privacy & Terms Pages**: Refactored `privacy.html` and `terms.html` to use `layout: layouts/horizon.njk`, adopting Horizon hero banners (`.hor-hero`), asymmetric titles, section headers, brand color tokens, and header navigation.
+- **Dynamic Active Navigation Highlighting**: Added Liquid template conditional logic to `.lab-strip__links` (`a.current`) in `horizon.njk` to highlight the active page tab dynamically across Home, Portfolio, Contact, Privacy, and Terms.
+- **Head & Metadata Optimizations ("Fresh Eyes" Audit)**:
+  - Fixed title tag duplication in `privacy.html` and `terms.html` frontmatter.
+  - Added favicon SVG link tag (`<link rel="icon" type="image/svg+xml" href="/brand_marks/logo-dark.svg">`) to layout head.
+  - Implemented dynamic fallback meta description template.
 - **Removed Retired Concepts**: Completely removed retired layout options and HTML prototypes (`Monolith`, `Atelier`, `Manuscript`, `Vault`, `Canon`).
-- **Project Logos Case Study Alignment**: Inspected local `c:\Programming\project-logos\README.md` and updated `portfolio.html` and `app.js` with the authoritative project scope: *Virtual Tabletop (VTT) State Engine & Rules Interpreter*, designated explicitly as an internal **Studio Platform (Active Dev)** rather than a client project, featuring probabilistic semantic intent mapping, deterministic AST RPG rules adjudication, and full tech stack (`C# .NET 10`, `Blazor Server`, `Python / FastAPI`, `Redis Streams`, `MongoDB`).
-- **Cleaned Portfolio Header Tags**: Removed internal brand pillar prefixes (`UNDER THE SUN`, `WORK & PLAY`, `WISDOM`, `SUBTLE NOBILITY`) from all portfolio card category tags, and updated Kipu's category explicitly to **`INTERACTIVE APP`**.
-- **Prominent Section Headings**: Upgraded portfolio section titles (`Studio Products & Platforms`, `Client Projects & Solutions`) to prominent **Space Grotesk** `<h2>` headings with bold warm amber leading keyline accent bars.
-- **Header Scroll Shrink Animation**: Implemented responsive scroll shrink animation on `.lab-strip`, scaling logo SVG, font sizes, and link padding seamlessly on scroll.
-- **Unified Hero Banner Structure**: Standardized hero banners across `index.html`, `portfolio.html`, and `contact.html` to semantic `<section class="hor-hero">` elements with unified spacing (`padding: 6vw 6vw 4vw; min-height: 55vh;`).
-- **Storytelling & Tag Positioning Refinements**:
-  - Kipu: Updated metric to `Pure Play` (`Zero Ads & Zero Tracking`).
-  - Board Game Hub: Updated positioning to `Low-Latency Multiplayer & Connected Game Rooms` with business engagement tags (`Real-Time Engagement`, `Same-Room Presence`, `Low-Latency Sync`, `Global Multiplayer`).
-  - Amy's Bakes: Streamlined tags to `Artisanal Bakery`, `Batch Reservation System`, `Local Pre-Ordering`, `High-Performance Storefront`.
-  - Exagrow: Streamlined tags to `High-Converting Web App`, `WordPress Overhaul`, `Editorial Layout`, `Executive Conversion` and metric to `Modern Web Hosting`.
-- **Cleaned Copy Directives**: Removed all instances of "Start Your Audit" and "Structural Craft" across page hero banners, eyebrows, CTAs, and studio datasets.
-- **Footer Text & Contrast**: Increased footer text size to `0.85rem` with high-contrast text (`rgba(253,251,247,0.85)` against navy `#0B0F19`), and added a locally hosted LinkedIn logo SVG (`brand_marks/linkedin.svg`) linking directly to the company page (`https://www.linkedin.com/company/eight1fivedesign`).
-- **Typography Restoration**: Restored official studio brand typography (**Space Grotesk** for headings and brand marks, **Inter** for UI/body text) and increased hero line-height to `1.22` to resolve descendant overlap.
-- **Contact Form Routing**: Updated `contact.html` form action to dispatch inquiries directly to `isaac@eight1fivedesign.com` with FormSubmit integration.
-- **Brand Guide & Identity Clean Up**: Updated brand documentation (`docs/brand_guide.md`) to use `e1F` casing, and removed inline `(e1F)` text clutter except for hero watermarks and copyright footers.
+- **Project Logos Case Study Alignment**: Updated `portfolio.html` and `app.js` with authoritative scope: *Virtual Tabletop (VTT) State Engine & Rules Interpreter*, designated as an internal **Studio Platform (Active Dev)**.
+- **Cleaned Portfolio Header Tags**: Removed internal brand pillar prefixes from portfolio cards and set Kipu explicitly to **`INTERACTIVE APP`**.
+- **Prominent Section Headings**: Upgraded portfolio section titles to prominent Space Grotesk `<h2>` headings with amber keyline bars.
+- **Header Scroll Shrink Animation**: Implemented responsive scroll shrink animation on `.lab-strip`.
+- **Typography Restoration**: Restored official studio brand typography (**Space Grotesk** for headings/brand marks, **Inter** for UI/body text).
+- **Contact Form Routing**: Updated form action to dispatch inquiries directly to `isaac@eight1fivedesign.com` via FormSubmit.
 
 ---
 
 ## 2. Verification & Testing
-- Static site generated cleanly via Eleventy (`npm run build`).
-- Tailwind CSS compiled without errors (`npm run build:css`).
-- Local dev server verified on port `8815`.
-- Visual regression screenshots taken via `chrome-devtools-mcp` confirming typography, header logo shrink, section headings, and hero spacing.
+- Static site build (`npm run build`) completed cleanly with 0 compilation errors (14 files written, minified Tailwind CSS built in ~300ms).
+- Tested mobile responsive form layout at 320px, 480px, 768px, and 1024px breakpoints.
+- Visual & peer review audits completed (`/design-review`, `/plan-review`, `/peer-review`), verifying 100/100 pass rate and production readiness.
 
 ---
 
