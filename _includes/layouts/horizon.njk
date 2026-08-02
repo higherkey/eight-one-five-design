@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% if title %}{{ title }} — {% endif %}eight1five design</title>
-  <meta name="description" content="Horizon — organic anti-grid design concept. eight1five design studio.">
+  <meta name="description" content="{% if description %}{{ description }}{% else %}eight1five design studio — Software built to power business. Grounded wisdom & deterministic digital systems.{% endif %}">
+  <link rel="icon" type="image/svg+xml" href="/brand_marks/logo-dark.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -229,8 +230,104 @@
     }
     .hor-stagger__item { max-width: 70ch; }
     .hor-stagger__item:nth-child(even) { margin-left: auto; }
-    .hor-stagger__item:nth-child(3n) { margin-left: 8vw; }
-    @media (max-width: 600px) { .hor-stagger__item { margin-left: 0; } }
+    .hor-stagger__item:nth-child(3n) { margin-left: 4vw; }
+
+    /* Contact Form Layout & Components */
+    .hor-contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.8fr;
+      gap: 3vw;
+      align-items: start;
+    }
+    .hor-contact-card {
+      background: var(--cream);
+      padding: 2.5rem;
+      border-left: 3px solid var(--amber);
+    }
+    .hor-contact-card--alt {
+      background: var(--cream);
+      padding: 2.5rem;
+      border-left: 3px solid var(--dusk);
+    }
+    .hor-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .hor-form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+    .hor-form-label {
+      font-size: 0.6rem;
+      font-family: var(--sans);
+      font-weight: 700;
+      color: var(--amber);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+    .hor-form-input, .hor-form-textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--mist);
+      background: var(--sand);
+      font-family: var(--sans);
+      font-size: 0.88rem;
+      color: var(--dusk);
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      min-height: 44px;
+    }
+    .hor-form-textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+    .hor-form-input:focus, .hor-form-textarea:focus {
+      border-color: var(--amber);
+      box-shadow: 0 0 0 2px var(--amber-pale);
+    }
+    .hor-form-submit {
+      font-family: var(--sans);
+      font-size: 0.82rem;
+      font-weight: 700;
+      background: var(--amber);
+      color: var(--dusk);
+      padding: 0.85rem 1.75rem;
+      border: none;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+      align-self: flex-start;
+      margin-top: 0.5rem;
+      min-height: 44px;
+      transition: background 0.2s ease, transform 0.15s ease;
+    }
+    .hor-form-submit:hover {
+      background: var(--amber-warm);
+    }
+
+    @media (max-width: 868px) {
+      .hor-contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .hor-contact-card, .hor-contact-card--alt {
+        padding: 1.5rem;
+      }
+    }
+    @media (max-width: 768px) {
+      .hor-stagger__item { margin-left: 0 !important; margin-right: 0 !important; max-width: 100%; }
+      .hor-scripture { margin-left: 0 !important; max-width: 100%; }
+    }
+    @media (max-width: 580px) {
+      .hor-form-row {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+    }
 
     .hor-tag {
       font-family: var(--sans);
@@ -334,11 +431,11 @@
       <span>eight1five design</span>
     </a>
     <div class="lab-strip__links">
-      <a href="/">Home</a>
+      <a href="/" class="{% if page.url == '/' or page.url == '/index.html' or activeTab == 'home' %}current{% endif %}">Home</a>
       <span class="sep">|</span>
-      <a href="/portfolio.html">Portfolio</a>
+      <a href="/portfolio.html" class="{% if page.url == '/portfolio.html' or activeTab == 'portfolio' %}current{% endif %}">Portfolio</a>
       <span class="sep">|</span>
-      <a href="/contact.html">Contact</a>
+      <a href="/contact.html" class="{% if page.url == '/contact.html' or activeTab == 'contact' %}current{% endif %}">Contact</a>
     </div>
   </nav>
 

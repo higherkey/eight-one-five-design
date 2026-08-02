@@ -1,6 +1,7 @@
 ---
 layout: layouts/horizon.njk
 title: Contact — Connect & Collaborate
+activeTab: contact
 permalink: /contact.html
 ---
 <main>
@@ -25,10 +26,10 @@ permalink: /contact.html
       <div class="hor-section__inner">
         <p class="hor-tag">Get In Touch</p>
 
-        <div style="display:grid; grid-template-columns: 1fr 2fr; gap: 4vw; align-items:start;">
+        <div class="hor-contact-grid">
           
           <!-- Contact Info Column -->
-          <div style="background:var(--cream); padding:2.5rem; border-left:3px solid var(--amber);">
+          <div class="hor-contact-card">
             <h3 class="hor-head" style="font-size:1.4rem; margin-bottom:0.75rem;">Direct Channels</h3>
             <p class="hor-text" style="font-size:0.85rem; margin-bottom:2rem;">
               Whether you have an automation roadblock, a legacy system to convert into REST APIs, or need senior web architecture, we'd love to discuss.
@@ -36,46 +37,46 @@ permalink: /contact.html
 
             <div style="display:flex; flex-direction:column; gap:1.25rem;">
               <div>
-                <span style="font-size:0.58rem; font-family:var(--sans); font-weight:700; color:var(--amber); letter-spacing:0.14em; text-transform:uppercase; display:block; margin-bottom:0.25rem;">EMAIL DIRECT</span>
+                <span class="hor-form-label">EMAIL DIRECT</span>
                 <a href="mailto:isaac@eight1fivedesign.com" style="font-size:0.88rem; font-weight:600; color:var(--dusk); text-decoration:none;">isaac@eight1fivedesign.com</a>
               </div>
               <div style="height:1px; background:var(--mist);"></div>
               <div>
-                <span style="font-size:0.58rem; font-family:var(--sans); font-weight:700; color:var(--amber); letter-spacing:0.14em; text-transform:uppercase; display:block; margin-bottom:0.25rem;">LINKEDIN</span>
+                <span class="hor-form-label">LINKEDIN</span>
                 <a href="https://www.linkedin.com/company/eight1fivedesign" target="_blank" rel="noopener noreferrer" style="font-size:0.88rem; font-weight:600; color:var(--dusk); text-decoration:none;">linkedin.com/company/eight1fivedesign</a>
               </div>
             </div>
           </div>
 
           <!-- Contact Form Panel -->
-          <div style="background:var(--cream); padding:2.5rem; border-left:3px solid var(--dusk);">
+          <div class="hor-contact-card--alt">
             <h3 class="hor-head" style="font-size:1.4rem; margin-bottom:1.5rem;">Dispatch a Message</h3>
             
-            <form id="contact-form" action="https://formsubmit.co/isaac@eight1fivedesign.com" method="POST" style="display:flex; flex-direction:column; gap:1.25rem;">
+            <form id="contact-form" action="https://formsubmit.co/isaac@eight1fivedesign.com" method="POST" class="hor-form">
               <input type="hidden" name="_subject" value="New Contact Inquiry — eight1five design">
               <input type="hidden" name="_captcha" value="false">
-              <div style="display:grid; grid-template-columns: 1fr 1fr; gap:1.25rem;">
+              <div class="hor-form-row">
                 <div>
-                  <label for="contact-name" style="font-size:0.6rem; font-family:var(--sans); font-weight:700; color:var(--amber); letter-spacing:0.14em; text-transform:uppercase; display:block; margin-bottom:0.4rem;">YOUR NAME</label>
-                  <input type="text" id="contact-name" name="name" placeholder="e.g. Jane Doe" required style="width:100%; padding:0.75rem 1rem; border:1px solid var(--mist); background:var(--sand); font-family:var(--sans); font-size:0.88rem; color:var(--dusk); outline:none;">
+                  <label for="contact-name" class="hor-form-label">YOUR NAME</label>
+                  <input type="text" id="contact-name" name="name" class="hor-form-input" placeholder="e.g. Jane Doe" required>
                 </div>
                 <div>
-                  <label for="contact-email" style="font-size:0.6rem; font-family:var(--sans); font-weight:700; color:var(--amber); letter-spacing:0.14em; text-transform:uppercase; display:block; margin-bottom:0.4rem;">YOUR EMAIL</label>
-                  <input type="email" id="contact-email" name="email" placeholder="e.g. client@domain.com" required style="width:100%; padding:0.75rem 1rem; border:1px solid var(--mist); background:var(--sand); font-family:var(--sans); font-size:0.88rem; color:var(--dusk); outline:none;">
+                  <label for="contact-email" class="hor-form-label">YOUR EMAIL</label>
+                  <input type="email" id="contact-email" name="email" class="hor-form-input" placeholder="e.g. client@domain.com" required>
                 </div>
               </div>
 
               <div>
-                <label for="contact-subject" style="font-size:0.6rem; font-family:var(--sans); font-weight:700; color:var(--amber); letter-spacing:0.14em; text-transform:uppercase; display:block; margin-bottom:0.4rem;">SUBJECT INQUIRY</label>
-                <input type="text" id="contact-subject" name="subject" placeholder="e.g. Web Engineering / Workflow Automation Audit" required style="width:100%; padding:0.75rem 1rem; border:1px solid var(--mist); background:var(--sand); font-family:var(--sans); font-size:0.88rem; color:var(--dusk); outline:none;">
+                <label for="contact-subject" class="hor-form-label">SUBJECT INQUIRY</label>
+                <input type="text" id="contact-subject" name="subject" class="hor-form-input" placeholder="e.g. Web Engineering / Workflow Automation Audit" required>
               </div>
 
               <div>
-                <label for="contact-message" style="font-size:0.6rem; font-family:var(--sans); font-weight:700; color:var(--amber); letter-spacing:0.14em; text-transform:uppercase; display:block; margin-bottom:0.4rem;">DETAILED DESCRIPTION</label>
-                <textarea id="contact-message" name="message" rows="5" placeholder="Describe your operational goals, friction points, or project scope..." required style="width:100%; padding:0.75rem 1rem; border:1px solid var(--mist); background:var(--sand); font-family:var(--sans); font-size:0.88rem; color:var(--dusk); outline:none; resize:vertical;"></textarea>
+                <label for="contact-message" class="hor-form-label">DETAILED DESCRIPTION</label>
+                <textarea id="contact-message" name="message" rows="5" class="hor-form-textarea" placeholder="Describe your operational goals, friction points, or project scope..." required></textarea>
               </div>
 
-              <button type="submit" style="font-family:var(--sans); font-size:0.82rem; font-weight:700; background:var(--amber); color:var(--dusk); padding:0.85rem 1.75rem; border:none; text-transform:uppercase; letter-spacing:0.08em; cursor:pointer; align-self:flex-start; margin-top:0.5rem;">Dispatch Message &rarr;</button>
+              <button type="submit" class="hor-form-submit">Dispatch Message &rarr;</button>
             </form>
           </div>
 
@@ -85,7 +86,7 @@ permalink: /contact.html
 
     <!-- Footer -->
     <footer class="hor-footer">
-      <p>Eight One Five Design LLC (e1F) &mdash; Ecclesiastes 8:15</p>
+      <p>Eight One Five Design LLC (e1F) | "So I recommend having fun... along with all the hard work God gives you under the sun." &mdash; Ecclesiastes 8:15</p>
       <div style="display:flex; align-items:center; gap:1.75rem;">
         <a href="https://www.linkedin.com/company/eight1fivedesign" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Company Page" style="display:flex; align-items:center; gap:0.4rem; color:rgba(253,251,247,0.85);">
           <img src="/brand_marks/linkedin.svg" alt="LinkedIn logo mark" style="width:1.15rem; height:1.15rem; filter:invert(95%) sepia(10%) saturate(100%) hue-rotate(350deg); display:block;">

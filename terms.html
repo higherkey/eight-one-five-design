@@ -1,35 +1,89 @@
 ---
-layout: layouts/base.njk
+layout: layouts/horizon.njk
 title: Terms of Service
+description: Terms of service and operational governance for eight1five design studio.
 activeTab: terms
+permalink: /terms.html
 ---
-<main class="flex-grow w-full max-w-4xl mx-auto px-6 py-10 flex flex-col justify-start">
-    <section class="flex flex-col gap-6">
-      <div>
-        <h1 class="font-heading text-3xl font-extrabold text-main">Terms of Service</h1>
-        <p class="text-xs text-muted mt-1">Last Updated: July 14, 2026</p>
-      </div>
+<main>
+  <div class="hor-page">
 
-      <div class="p-8 border border-[var(--border)] custom-radius bg-[var(--bg-card)] flex flex-col gap-6 text-sm text-muted leading-relaxed">
-        <h2 class="font-heading text-xl font-bold text-main">1. Acceptance of Terms</h2>
-        <p>
-          By accessing this website, you agree to comply with standard operations of eight1five design. These terms align with the <strong>Under the Sun</strong> (Absolute Transparency) and <strong>Essential Void</strong> (Logical Essentialism) core foundations.
-        </p>
-
-        <h2 class="font-heading text-xl font-bold text-main">2. Intellectual Property</h2>
-        <p>
-          All site designs, code architectures, custom brand marks, and layout content are the sole property of eight1five design. You may view and print materials for personal portfolio review. Commercial redistribution of visual assets or source code requires explicit, written consent.
-        </p>
-
-        <h2 class="font-heading text-xl font-bold text-main">3. Client &amp; Lead Engagements</h2>
-        <p>
-          The submission of an operational handshake inquiry via the contact form does not construct a formal binding software development contract. Formal client projects are initiated under discrete Statements of Work (SOWs) and legal operational handshakes.
-        </p>
-
-        <h2 class="font-heading text-xl font-bold text-main">4. Liability Limitations</h2>
-        <p>
-          Software solutions and integrations are delivered with strict craftsmanship and tested against comprehensive quality gates. Unless governed by client SOW boundaries, the information on this website is provided "as is" without warranty.
+    <!-- Asymmetric Hero Banner -->
+    <section class="hor-hero">
+      <div class="hor-hero__content">
+        <p class="hor-eyebrow">eight1five design &middot; Legal &amp; Governance</p>
+        <h1 class="hor-hero__title" style="font-size: clamp(2.5rem, 6.5vw, 5.5rem);">
+          Terms of <span class="italic">Service.</span>
+        </h1>
+        <p class="hor-text" style="font-size:1.1rem; color:var(--slate); max-width:55ch; margin-top:1.5rem;">
+          Operational standards, intellectual property governance, and craftsmanship commitments.
         </p>
       </div>
     </section>
-  </main>
+
+    <!-- Terms Content Section -->
+    <section class="hor-section hor-section--alt">
+      <div class="hor-float-num">01</div>
+      <div class="hor-section__inner">
+        <p class="hor-tag">Governance &amp; Terms</p>
+
+        <div class="hor-contact-card" style="max-width: 800px;">
+          <h2 class="hor-head" style="font-size:1.5rem; margin-bottom:0.25rem;">Terms of Service</h2>
+          <p style="font-size:0.75rem; font-weight:600; color:var(--amber); margin-bottom:2rem; text-transform:uppercase; letter-spacing:0.08em;">Last Updated: August 2026</p>
+
+          <div style="display:flex; flex-direction:column; gap:1.75rem; font-size:0.92rem; color:var(--slate); line-height:1.75;">
+            <div>
+              <h3 style="font-family:var(--serif); font-size:1.15rem; font-weight:700; color:var(--dusk); margin-bottom:0.4rem;">1. Acceptance of Terms</h3>
+              <p>
+                By accessing this website, you agree to comply with standard operations of eight1five design. These terms align with our core foundations of absolute transparency and logical essentialism.
+              </p>
+            </div>
+
+            <div style="height:1px; background:var(--mist);"></div>
+
+            <div>
+              <h3 style="font-family:var(--serif); font-size:1.15rem; font-weight:700; color:var(--dusk); margin-bottom:0.4rem;">2. Intellectual Property</h3>
+              <p>
+                All site designs, code architectures, custom brand marks, and layout content are the sole property of eight1five design. You may view and print materials for personal portfolio review. Commercial redistribution of visual assets or source code requires explicit, written consent.
+              </p>
+            </div>
+
+            <div style="height:1px; background:var(--mist);"></div>
+
+            <div>
+              <h3 style="font-family:var(--serif); font-size:1.15rem; font-weight:700; color:var(--dusk); margin-bottom:0.4rem;">3. Client &amp; Lead Engagements</h3>
+              <p>
+                The submission of an operational handshake inquiry via the contact form does not construct a formal binding software development contract. Formal client projects are initiated under discrete Statements of Work (SOWs) and legal operational handshakes.
+              </p>
+            </div>
+
+            <div style="height:1px; background:var(--mist);"></div>
+
+            <div>
+              <h3 style="font-family:var(--serif); font-size:1.15rem; font-weight:700; color:var(--dusk); margin-bottom:0.4rem;">4. Liability Limitations</h3>
+              <p>
+                Software solutions and integrations are delivered with strict craftsmanship and tested against comprehensive quality gates. Unless governed by client SOW boundaries, the information on this website is provided "as is" without warranty.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="hor-footer">
+      <p>Eight One Five Design LLC (e1F) | "So I recommend having fun... along with all the hard work God gives you under the sun." &mdash; Ecclesiastes 8:15</p>
+      <div style="display:flex; align-items:center; gap:1.75rem;">
+        <a href="https://www.linkedin.com/company/eight1fivedesign" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Company Page" style="display:flex; align-items:center; gap:0.4rem; color:rgba(253,251,247,0.85);">
+          <img src="/brand_marks/linkedin.svg" alt="LinkedIn logo mark" style="width:1.15rem; height:1.15rem; filter:invert(95%) sepia(10%) saturate(100%) hue-rotate(350deg); display:block;">
+          <span>LinkedIn</span>
+        </a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+        <a href="/">Home</a>
+      </div>
+    </footer>
+
+  </div>
+</main>

@@ -1,35 +1,89 @@
 ---
-layout: layouts/base.njk
+layout: layouts/horizon.njk
 title: Privacy Policy
+description: Privacy policy and data protection commitments for eight1five design studio.
 activeTab: privacy
+permalink: /privacy.html
 ---
-<main class="flex-grow w-full max-w-4xl mx-auto px-6 py-10 flex flex-col justify-start">
-    <section class="flex flex-col gap-6">
-      <div>
-        <h1 class="font-heading text-3xl font-extrabold text-main">Privacy Policy</h1>
-        <p class="text-xs text-muted mt-1">Last Updated: July 14, 2026</p>
-      </div>
+<main>
+  <div class="hor-page">
 
-      <div class="p-8 border border-[var(--border)] custom-radius bg-[var(--bg-card)] flex flex-col gap-6 text-sm text-muted leading-relaxed">
-        <h2 class="font-heading text-xl font-bold text-main">1. Respecting User Agency</h2>
-        <p>
-          At eight1five design, we believe your data belongs to you. In alignment with our core pillar of <strong>Subtle Royalty</strong> (Absolute User Agency), we do not track your browsing habits, utilize third-party marketing cookies, or build user behavior profiles.
-        </p>
-
-        <h2 class="font-heading text-xl font-bold text-main">2. Contact Form Inquiries</h2>
-        <p>
-          When you use the contact form on this site, we collect your name, email, subject, and message content solely to respond to your inquiry. This data is handled in confidence and is never sold, traded, or shared with third parties.
-        </p>
-
-        <h2 class="font-heading text-xl font-bold text-main">3. Data Retention</h2>
-        <p>
-          We retain email inquiry records only as long as necessary to complete our business communications. You may request the deletion of your message logs at any time by contacting us directly.
-        </p>
-
-        <h2 class="font-heading text-xl font-bold text-main">4. Cookies and Session Storage</h2>
-        <p>
-          This website does not use tracking cookies. We utilize standard local storage (`localStorage`) to remember your preferred visual theme choice (Structural vs. Authoritative). No personal data is captured.
+    <!-- Asymmetric Hero Banner -->
+    <section class="hor-hero">
+      <div class="hor-hero__content">
+        <p class="hor-eyebrow">eight1five design &middot; Legal &amp; Privacy</p>
+        <h1 class="hor-hero__title" style="font-size: clamp(2.5rem, 6.5vw, 5.5rem);">
+          Privacy <span class="italic">Policy.</span>
+        </h1>
+        <p class="hor-text" style="font-size:1.1rem; color:var(--slate); max-width:55ch; margin-top:1.5rem;">
+          Our commitment to user privacy, operational transparency, and zero dark patterns.
         </p>
       </div>
     </section>
-  </main>
+
+    <!-- Policy Content Section -->
+    <section class="hor-section hor-section--alt">
+      <div class="hor-float-num">01</div>
+      <div class="hor-section__inner">
+        <p class="hor-tag">Data Protection &amp; Terms</p>
+
+        <div class="hor-contact-card" style="max-width: 800px;">
+          <h2 class="hor-head" style="font-size:1.5rem; margin-bottom:0.25rem;">Privacy Commitments</h2>
+          <p style="font-size:0.75rem; font-weight:600; color:var(--amber); margin-bottom:2rem; text-transform:uppercase; letter-spacing:0.08em;">Last Updated: August 2026</p>
+
+          <div style="display:flex; flex-direction:column; gap:1.75rem; font-size:0.92rem; color:var(--slate); line-height:1.75;">
+            <div>
+              <h3 style="font-family:var(--serif); font-size:1.15rem; font-weight:700; color:var(--dusk); margin-bottom:0.4rem;">1. Respecting User Agency</h3>
+              <p>
+                At eight1five design, we believe your data belongs to you. In alignment with our core pillar of absolute user agency, we do not track your browsing habits, utilize third-party marketing cookies, or build user behavior profiles.
+              </p>
+            </div>
+
+            <div style="height:1px; background:var(--mist);"></div>
+
+            <div>
+              <h3 style="font-family:var(--serif); font-size:1.15rem; font-weight:700; color:var(--dusk); margin-bottom:0.4rem;">2. Contact Form Inquiries</h3>
+              <p>
+                When you use the contact form on this site, we collect your name, email, subject, and message content solely to respond to your inquiry. This data is handled in strict confidence and is never sold, traded, or shared with third parties.
+              </p>
+            </div>
+
+            <div style="height:1px; background:var(--mist);"></div>
+
+            <div>
+              <h3 style="font-family:var(--serif); font-size:1.15rem; font-weight:700; color:var(--dusk); margin-bottom:0.4rem;">3. Data Retention</h3>
+              <p>
+                We retain email inquiry records only as long as necessary to complete our business communications. You may request the deletion of your message logs at any time by contacting us directly at <a href="mailto:isaac@eight1fivedesign.com" style="color:var(--amber); text-decoration:none; font-weight:600;">isaac@eight1fivedesign.com</a>.
+              </p>
+            </div>
+
+            <div style="height:1px; background:var(--mist);"></div>
+
+            <div>
+              <h3 style="font-family:var(--serif); font-size:1.15rem; font-weight:700; color:var(--dusk); margin-bottom:0.4rem;">4. Cookies and Session Storage</h3>
+              <p>
+                This website does not use tracking cookies. We utilize standard local storage (`localStorage`) solely to remember visual UI preferences. No personal identification data is ever captured or sent to external servers.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="hor-footer">
+      <p>Eight One Five Design LLC (e1F) | "So I recommend having fun... along with all the hard work God gives you under the sun." &mdash; Ecclesiastes 8:15</p>
+      <div style="display:flex; align-items:center; gap:1.75rem;">
+        <a href="https://www.linkedin.com/company/eight1fivedesign" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Company Page" style="display:flex; align-items:center; gap:0.4rem; color:rgba(253,251,247,0.85);">
+          <img src="/brand_marks/linkedin.svg" alt="LinkedIn logo mark" style="width:1.15rem; height:1.15rem; filter:invert(95%) sepia(10%) saturate(100%) hue-rotate(350deg); display:block;">
+          <span>LinkedIn</span>
+        </a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+        <a href="/">Home</a>
+      </div>
+    </footer>
+
+  </div>
+</main>
