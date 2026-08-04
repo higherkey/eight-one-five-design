@@ -152,7 +152,7 @@ const CASE_STUDIES = [
     tech: ['Child-First Design', 'Tactile Exploration', 'Sensory Learning', 'Zero Distractions'],
     isPrivate: false,
     repoLink: 'https://github.com/higherkey/kipu',
-    liveUrl: 'https://kipu-games.vercel.app/',
+    liveUrl: 'https://kipu-games.eight1fivedesign.com/',
     deploymentNote: null
   },
   {
