@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#090b10">
+  <meta name="description" content="Tectonic Siege - Mobile-First Simultaneous WeGo Destructible Subterranean Artillery">
+  <title>Tectonic Siege — Mobile Tactical Artillery</title>
+  <script type="module" crossorigin src="/tectonic-siege/assets/index-BeDRlWdk.js"></script>
+  <link rel="stylesheet" crossorigin href="/tectonic-siege/assets/index-Dzv1uc18.css">
+</head>
+<body>
+  <div class="mobile-device-shell">
+    <!-- Top Mobile Tactical Header -->
+    <header class="mobile-header">
+      <div class="brand-line">
+        <h1 class="brand-title">TECTONIC SIEGE</h1>
+        <span class="brand-tag">WEGO 0.18</span>
+      </div>
+      <div class="telemetry-pill-row">
+        <span id="hud-turn" class="pill pill-turn" aria-label="Turn Number">TURN 1</span>
+        <span id="hud-timer" class="pill pill-timer" aria-label="Planning Time Remaining">12s</span>
+        <span id="hud-wind" class="pill pill-wind" aria-label="Wind Direction and Speed">WIND: 0 CALM</span>
+      </div>
+    </header>
+
+    <!-- Subterranean Status Alert Banner -->
+    <div id="status-banner" class="status-banner" role="status" aria-live="polite">
+      CONNECTING TO SUBTERRANEAN RADAR...
+    </div>
+
+    <!-- Interactive Cavern Canvas Viewport -->
+    <main class="cavern-viewport-wrapper">
+      <canvas id="cavern-canvas" width="1200" height="700" aria-label="Destructible Subterranean Cavern Cross-Section"></canvas>
+      <div class="touch-aim-hint" id="touch-hint" aria-hidden="true">TOUCH & DRAG TO AIM</div>
+    </main>
+
+    <!-- Mobile Thumb-Zone Console Drawer -->
+    <nav class="thumb-console" aria-label="Tactical Rig Controls">
+      <!-- Geological Warhead Selector Pills -->
+      <div class="payload-bar" role="group" aria-label="Warhead Selection">
+        <button type="button" id="shell-standard" class="payload-btn active" aria-pressed="true" aria-label="Standard HE Shell">
+          <span class="payload-icon" aria-hidden="true">💥</span>
+          <span class="payload-label">STANDARD</span>
+        </button>
+        <button type="button" id="shell-magma" class="payload-btn magma" aria-pressed="false" aria-label="Magma Bedrock Melting Shell">
+          <span class="payload-icon" aria-hidden="true">🔥</span>
+          <span class="payload-label">MAGMA</span>
+        </button>
+        <button type="button" id="shell-seismic" class="payload-btn seismic" aria-pressed="false" aria-label="Seismic Stalactite Collapse Shell">
+          <span class="payload-icon" aria-hidden="true">⚡</span>
+          <span class="payload-label">SEISMIC</span>
+        </button>
+      </div>
+
+      <!-- Aim Angle & Power Row -->
+      <div class="stepper-row">
+        <!-- Angle Control -->
+        <div class="stepper-card">
+          <div class="stepper-header">
+            <label for="angle-input" class="stepper-label">AIM ANGLE</label>
+            <span id="angle-val" class="stepper-display">45°</span>
+          </div>
+          <div class="stepper-touch-controls">
+            <button type="button" id="angle-dec-btn" class="step-btn" aria-label="Decrease Angle by 5 Degrees">-5°</button>
+            <input type="range" id="angle-input" min="-180" max="180" value="45" step="1" aria-label="Firing Angle in Degrees">
+            <button type="button" id="angle-inc-btn" class="step-btn" aria-label="Increase Angle by 5 Degrees">+5°</button>
+          </div>
+        </div>
+
+        <!-- Power Control -->
+        <div class="stepper-card">
+          <div class="stepper-header">
+            <label for="power-input" class="stepper-label">LAUNCH POWER</label>
+            <span id="power-val" class="stepper-display">60%</span>
+          </div>
+          <div class="stepper-touch-controls">
+            <button type="button" id="power-dec-btn" class="step-btn" aria-label="Decrease Power by 5 Percent">-5%</button>
+            <input type="range" id="power-input" min="10" max="100" value="60" step="1" aria-label="Launch Power Percentage">
+            <button type="button" id="power-inc-btn" class="step-btn" aria-label="Increase Power by 5 Percent">+5%</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Crawler Repositioning & Grapple -->
+      <div class="mobility-row">
+        <button type="button" id="move-left-btn" class="touch-action-btn" aria-label="Move Rig 20 Pixels West">◀ WEST (-20px)</button>
+        <div class="mobility-center-badge">
+          <span id="move-val" class="mobility-val">0 px</span>
+          <span id="fuel-cost-val" class="fuel-val">0 Fuel</span>
+        </div>
+        <button type="button" id="move-right-btn" class="touch-action-btn" aria-label="Move Rig 20 Pixels East">+20px EAST ▶</button>
+      </div>
+
+      <!-- Grapple Winch & AI Bot Toggle Row -->
+      <div class="aux-row">
+        <button type="button" id="grapple-toggle-btn" class="aux-btn" aria-pressed="false" aria-label="Toggle Winch-Grapple Ceiling Tether">
+          🪝 WINCH-GRAPPLE (15F)
+        </button>
+        <button type="button" id="bot-toggle-btn" class="aux-btn" aria-pressed="false" aria-label="Toggle Solo AI Drill-Rig Opponent">
+          🤖 SOLO BOT: OFF
+        </button>
+      </div>
+
+      <!-- Big Thumb-Reachable Sticky Submit Button -->
+      <div class="submit-tray">
+        <button type="button" id="submit-orders-btn" class="giant-submit-btn" aria-label="Lock In Secret WeGo Orders">
+          LOCK IN ORDERS
+        </button>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Accessible Modal Dialog for Game Over -->
+  <dialog id="game-over-dialog" class="tactical-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-content">
+      <h2 id="dialog-title" class="dialog-title">MISSION CONCLUDED</h2>
+      <p id="winner-text" class="dialog-text"></p>
+      <button type="button" id="restart-btn" class="giant-submit-btn" aria-label="Restart Match">
+        ENGAGE NEW SECTOR
+      </button>
+    </div>
+  </dialog>
+
+</body>
+</html>
