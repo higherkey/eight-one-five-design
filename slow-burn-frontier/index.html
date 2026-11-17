@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#070a13" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>Slow Burn Frontier — Mobile Command</title>
+  <script type="module" crossorigin src="./assets/index-DE1L2n5w.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-f0ZTjxVb.css">
+</head>
+<body>
+  <div class="mobile-app-shell">
+    <!-- Compact Mobile HUD Header -->
+    <header class="hud-header">
+      <div class="hud-title-zone">
+        <div class="hud-title-row">
+          <a href="/" class="hud-studio-back" aria-label="Return to eight1five design home">e1F</a>
+          <span class="hud-app-name">SLOW BURN</span>
+        </div>
+        <div class="hud-phase-chip">
+          <span class="status-dot"></span>
+          <span id="match-phase">ACTIVE</span>
+        </div>
+      </div>
+
+      <div class="hud-metrics-zone">
+        <div class="mini-metric">
+          <span class="mini-label">CYCLE</span>
+          <span id="tick-counter" class="mini-val">0</span>
+        </div>
+        <div class="mini-metric">
+          <span class="mini-label">SECTORS</span>
+          <span id="control-ratio" class="mini-val">0%</span>
+        </div>
+      </div>
+
+      <!-- Compact Action Point Capacitor Ring -->
+      <div class="apc-mobile-gauge" title="Action Point Capacitor (10 max, +1 / 20s)">
+        <svg class="apc-gauge-svg" viewBox="0 0 44 44" aria-hidden="true">
+          <circle class="apc-bg-circle" cx="22" cy="22" r="18"></circle>
+          <circle id="apc-circle" class="apc-progress-circle" cx="22" cy="22" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"></circle>
+        </svg>
+        <div class="apc-center-data">
+          <span id="apc-tokens" class="apc-token-val">10</span>
+          <span class="apc-unit-icon">⚡</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Tactical Map Stage (Upper Half of Mobile Screen) -->
+    <section class="tactical-stage" aria-label="Orbital Tactical Map">
+      <svg id="map-svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid meet"></svg>
+
+      <!-- Game Over Overlay Banner -->
+      <div id="game-over-banner" class="game-over-banner" role="alert" aria-live="assertive">
+        <div id="game-over-title" class="game-over-title">MATCH CONCLUDED</div>
+        <button id="btn-restart" type="button" class="btn-primary">Deploy New Match</button>
+      </div>
+    </section>
+
+    <!-- Mobile Command Tray (Bottom Half of Mobile Screen) -->
+    <section class="mobile-command-tray" aria-label="Commander Action Tray">
+      <!-- Tab Navigation Bar -->
+      <nav class="tray-tabs-bar" role="tablist">
+        <button id="tab-btn-fleet" type="button" class="tab-btn active" role="tab" aria-selected="true" aria-controls="panel-fleet">
+          🚀 Fleet Command
+        </button>
+        <button id="tab-btn-conduits" type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-conduits">
+          ⚡ Conduits
+        </button>
+        <button id="tab-btn-lobby" type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-lobby">
+          ⚙ Operations
+        </button>
+      </nav>
+
+      <!-- Tab 1: Fleet Command Panel -->
+      <div id="panel-fleet" class="tray-panel active" role="tabpanel">
+        <div class="selection-route-card">
+          <div class="route-node-box">
+            <span class="route-label">ORIGIN</span>
+            <span id="label-origin" class="route-sector">Select Node</span>
+          </div>
+          <span class="route-arrow">➔</span>
+          <div class="route-node-box">
+            <span class="route-label">TARGET</span>
+            <span id="label-target" class="route-sector">Tap Adjacent</span>
+          </div>
+        </div>
+
+        <div class="transit-eta-row">
+          <span class="detail-label">Transit Delay:</span>
+          <span id="label-transit-time" class="detail-value">--</span>
+        </div>
+
+        <!-- Touch-Friendly Slider & Presets -->
+        <div class="dispatch-control-group">
+          <div class="slider-header-row">
+            <span>Attack Fleet Units:</span>
+            <span id="slider-units-val" class="units-highlight">0</span>
+          </div>
+          <input id="slider-units" type="range" min="1" max="1" value="1" disabled />
+          
+          <div class="quick-preset-buttons">
+            <button id="preset-25" type="button" class="btn-preset" disabled>25%</button>
+            <button id="preset-50" type="button" class="btn-preset" disabled>50%</button>
+            <button id="preset-75" type="button" class="btn-preset" disabled>75%</button>
+            <button id="preset-max" type="button" class="btn-preset" disabled>MAX</button>
+          </div>
+        </div>
+
+        <!-- Primary Touch Actions (Thumb Zone) -->
+        <div class="mobile-action-buttons">
+          <button id="btn-dispatch" type="button" class="btn-primary" disabled>
+            Dispatch Fleet (1 APC)
+          </button>
+          <button id="btn-fortify" type="button" class="btn-secondary" disabled>
+            Fortify (1 APC)
+          </button>
+        </div>
+      </div>
+
+      <!-- Tab 2: Programmed Logistics Conduits Panel -->
+      <div id="panel-conduits" class="tray-panel" role="tabpanel" hidden>
+        <div class="conduits-header-row">
+          <span class="conduits-title">Programmed Supply Conduits</span>
+          <button id="btn-open-rule-dialog" type="button" class="btn-primary btn-mini">+ New Rule</button>
+        </div>
+        <div id="rules-container" class="rules-scroll-list">
+          <div class="detail-label">No automated conduits active. Tap "+ New Rule" to program supply convoys.</div>
+        </div>
+      </div>
+
+      <!-- Tab 3: Lobby / Operations Panel -->
+      <div id="panel-lobby" class="tray-panel" role="tabpanel" hidden>
+        <div class="panel-section">
+          <div class="panel-heading">Match Deployment</div>
+          <div class="action-button-group">
+            <button id="btn-solo-bot" type="button" class="btn-primary">Solo Bot Match</button>
+            <button id="btn-pvp-match" type="button" class="btn-secondary">PvP Match</button>
+          </div>
+          <a href="/" class="btn-secondary nav-studio-btn">← Return to eight1five design Studio</a>
+        </div>
+        <div class="panel-section info-card">
+          <div class="panel-heading">Doctrine Cheat Sheet</div>
+          <ul class="doctrine-list">
+            <li><strong>APC Capacitor:</strong> Start with 10 tokens. Recharges 1 token every 20 seconds.</li>
+            <li><strong>Logistics Conduits:</strong> Shuttles reinforcements along adjacent lanes free of APC cost with 8s cooldown.</li>
+            <li><strong>Combat & Fortification:</strong> Defending sectors get 1.25x multiplier when fortified. Controlling ≥ 75% of sectors achieves victory.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Mobile Bottom-Sheet Modal: Program Logistics Rule -->
+  <dialog id="rule-dialog" class="rule-modal" aria-labelledby="dialog-title">
+    <div class="panel-heading" id="dialog-title">Program Supply Conduit</div>
+    <form id="rule-form" method="dialog">
+      <div class="form-group">
+        <label for="rule-src">Source Sector</label>
+        <select id="rule-src" required></select>
+      </div>
+
+      <div class="form-group">
+        <label for="rule-dst">Destination Sector</label>
+        <select id="rule-dst" required></select>
+      </div>
+
+      <div class="form-group">
+        <label for="rule-threshold">Garrison Threshold (Min 2)</label>
+        <input id="rule-threshold" type="number" min="2" max="500" value="30" required />
+      </div>
+
+      <div class="form-group">
+        <label for="rule-amount">Dispatch Amount (Min 1)</label>
+        <input id="rule-amount" type="number" min="1" max="500" value="15" required />
+      </div>
+
+      <div class="action-button-group">
+        <button id="btn-submit-rule" type="submit" class="btn-primary">Program (1 APC)</button>
+        <button id="btn-cancel-rule" type="button" class="btn-secondary">Cancel</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Client Application Script -->
+</body>
+</html>
