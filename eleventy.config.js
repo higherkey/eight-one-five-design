@@ -20,6 +20,10 @@ export default function eleventy (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("frontier");
   eleventyConfig.addPassthroughCopy("frontier.html");
   eleventyConfig.addPassthroughCopy("slow-burn-frontier.html");
+  eleventyConfig.addPassthroughCopy("resonance");
+  eleventyConfig.addPassthroughCopy("resonance.html");
+  eleventyConfig.addPassthroughCopy("aether-dreadnought");
+  eleventyConfig.addPassthroughCopy("aether-dreadnought.html");
 
   return {
     dir: {
