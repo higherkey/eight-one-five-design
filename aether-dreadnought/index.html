@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#121518">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Aether Dreadnought — Mobile Bridge</title>
+  <script type="module" crossorigin src="/aether-dreadnought/assets/index-Drpbtj8H.js"></script>
+  <link rel="stylesheet" crossorigin href="/aether-dreadnought/assets/index-BR2uXwfU.css">
+</head>
+<body>
+
+  <!-- Mobile Viewport Container (Native App Frame) -->
+  <div class="mobile-app-shell">
+
+    <!-- Mobile Top Navigation & Mission HUD -->
+    <header class="mobile-header">
+      <div class="hud-top-row">
+        <div class="ship-brand">
+          <span class="ship-insignia" aria-hidden="true">AD</span>
+          <div class="ship-identity">
+            <h1 class="ship-name">DREADNOUGHT</h1>
+            <span class="telemetry-rate">10 HZ LINK</span>
+          </div>
+        </div>
+        <div class="hud-status-group">
+          <span id="pill-wave" class="badge-hud">W1</span>
+          <span id="pill-phase" class="badge-hud phase-active">ACTIVE</span>
+        </div>
+      </div>
+
+      <!-- Critical Bridge Alarm Toast -->
+      <aside id="alarm-banner" class="alarm-banner hidden" role="alert" aria-live="assertive">
+        <div class="alarm-content">
+          <span class="alarm-icon" aria-hidden="true">⚠</span>
+          <span id="alarm-text" class="alarm-label">CRITICAL ALARM</span>
+        </div>
+        <button id="btn-silence-alarm" class="btn-alarm-ack" type="button">ACK</button>
+      </aside>
+
+      <!-- Compact 5-Cluster Mobile Telemetry Strip -->
+      <section class="mobile-hud-strip" aria-label="Flight Telemetry">
+        <div class="hud-cell">
+          <span class="cell-label">HULL</span>
+          <span id="telem-hull" class="cell-val">100%</span>
+          <progress id="bar-hull" class="hud-progress progress-hull" value="100" max="100" aria-label="Hull Integrity"></progress>
+        </div>
+
+        <div class="hud-cell">
+          <span class="cell-label">PSI</span>
+          <span id="telem-pressure" class="cell-val">75.0</span>
+          <progress id="bar-pressure" class="hud-progress progress-psi" value="75" max="120" aria-label="Boiler Pressure"></progress>
+        </div>
+
+        <div class="hud-cell">
+          <span class="cell-label">STEAM</span>
+          <span id="telem-steam" class="cell-val">50%</span>
+          <progress id="bar-steam" class="hud-progress progress-steam" value="50" max="100" aria-label="Steam Capacity"></progress>
+        </div>
+
+        <div class="hud-cell">
+          <span class="cell-label">ALT</span>
+          <span id="telem-altitude" class="cell-val">800m</span>
+          <progress id="bar-altitude" class="hud-progress progress-alt" value="500" max="1100" aria-label="Altitude"></progress>
+        </div>
+
+        <div class="hud-cell">
+          <span class="cell-label">WIND</span>
+          <span id="telem-wind" class="cell-val">0.0</span>
+          <span class="cell-sub">m/s</span>
+        </div>
+      </section>
+    </header>
+
+    <!-- Scrollable Station Work Area -->
+    <main class="mobile-main">
+
+      <!-- ================= STATION 1: HELM ================= -->
+      <section id="bay-helm" class="mobile-station-bay active" aria-labelledby="helm-heading">
+        <div class="bay-header">
+          <h2 id="helm-heading" class="bay-title">HELM CONSOLE</h2>
+          <button id="claim-btn-helm" class="btn-claim-toggle" data-station="HELM" type="button">CLAIM</button>
+        </div>
+
+        <div class="card-mobile">
+          <div class="control-header-row">
+            <label for="helm-alt-slider" class="control-title">BALLAST ALTITUDE</label>
+            <span id="helm-alt-val" class="control-num-val">800m</span>
+          </div>
+          <input id="helm-alt-slider" class="mobile-slider" type="range" min="300" max="1400" step="10" value="800" aria-label="Target Ballast Altitude">
+          <div class="slider-ticks">
+            <span>300m (Floor)</span>
+            <span>800m</span>
+            <span>1400m (Ceiling)</span>
+          </div>
+          <span class="control-subtext">Climb/dive 28 m/s // Consumes 1.5 steam/s</span>
+        </div>
+
+        <div class="card-mobile">
+          <div class="control-header-row">
+            <label for="helm-heading-slider" class="control-title">RUDDER YAW TRIM</label>
+            <span id="helm-heading-val" class="control-num-val">0°</span>
+          </div>
+          <input id="helm-heading-slider" class="mobile-slider" type="range" min="-45" max="45" step="1" value="0" aria-label="Rudder Heading Trim">
+          <div class="slider-ticks">
+            <span>-45° Port</span>
+            <span>0° Trim</span>
+            <span>+45° Stbd</span>
+          </div>
+          <span class="control-subtext">Hold canyon center against lateral wind vortices</span>
+        </div>
+      </section>
+
+      <!-- ================= STATION 2: BOILER ================= -->
+      <section id="bay-boiler" class="mobile-station-bay" aria-labelledby="boiler-heading">
+        <div class="bay-header">
+          <h2 id="boiler-heading" class="bay-title">BOILER CONSOLE</h2>
+          <button id="claim-btn-boiler" class="btn-claim-toggle" data-station="BOILER" type="button">CLAIM</button>
+        </div>
+
+        <!-- Mobile SVG Bourdon Tube Pressure Dial -->
+        <div class="card-mobile gauge-card">
+          <div class="dial-wrap">
+            <svg class="svg-pressure-dial" viewBox="0 0 200 200" role="img" aria-label="Bourdon Tube Steam Pressure Dial">
+              <circle cx="100" cy="100" r="75" class="dial-bg"></circle>
+              <!-- Safe Arc (40 to 105 PSI) -->
+              <path d="M 47 153 A 75 75 0 1 1 153 153" class="dial-arc-safe"></path>
+              <!-- Rupture Arc (> 105 PSI) -->
+              <path d="M 153 153 A 75 75 0 0 1 166 128" class="dial-arc-danger"></path>
+              <!-- Needle -->
+              <line id="boiler-dial-needle" x1="100" y1="100" x2="100" y2="35" class="dial-needle" transform="rotate(33.75 100 100)"></line>
+              <circle cx="100" cy="100" r="10" class="dial-pivot"></circle>
+              <text id="dial-pressure-val" x="100" y="145" class="dial-text-val">75 PSI</text>
+              <text x="100" y="165" class="dial-text-sub">SAFE: 40-105 PSI</text>
+            </svg>
+          </div>
+        </div>
+
+        <div class="card-mobile">
+          <div class="control-header-row">
+            <label for="boiler-coal-slider" class="control-title">COAL STOKING FEED</label>
+            <span id="boiler-coal-val" class="control-num-val">Level 1</span>
+          </div>
+          <input id="boiler-coal-slider" class="mobile-slider" type="range" min="0" max="4" step="1" value="1" aria-label="Coal Feed Rate">
+          <div class="slider-ticks">
+            <span>0 (Cool)</span>
+            <span>1</span>
+            <span>2 (Cruise)</span>
+            <span>3</span>
+            <span>4 (Max)</span>
+          </div>
+          <span class="control-subtext">Level 4: +14.0 PSI/s // Rupture at &gt;105 PSI</span>
+        </div>
+
+        <div class="card-mobile">
+          <span class="control-title">EMERGENCY RELIEF LATCH</span>
+          <button id="btn-relief-valve" class="btn-relief-toggle" type="button">VALVE LATCHED (CLOSED)</button>
+          <span class="control-subtext">Vents 16.5 PSI/s to avert catastrophic rupture</span>
+        </div>
+      </section>
+
+      <!-- ================= STATION 3: BALLISTICS ================= -->
+      <section id="bay-ballistics" class="mobile-station-bay" aria-labelledby="ballistics-heading">
+        <div class="bay-header">
+          <h2 id="ballistics-heading" class="bay-title">FLAK ARTILLERY</h2>
+          <button id="claim-btn-ballistics" class="btn-claim-toggle" data-station="BALLISTICS" type="button">CLAIM</button>
+        </div>
+
+        <!-- 2D Canvas Radar & Trajectory Plotter -->
+        <div class="card-mobile radar-card">
+          <canvas id="ballistics-canvas" class="mobile-canvas" width="400" height="220" role="img" aria-label="Canyon Radar and Ballistic Trajectory View"></canvas>
+        </div>
+
+        <div class="card-mobile">
+          <div class="control-header-row">
+            <label for="artillery-elev-slider" class="control-title">CANNON ELEVATION</label>
+            <span id="artillery-elev-val" class="control-num-val">15°</span>
+          </div>
+          <input id="artillery-elev-slider" class="mobile-slider" type="range" min="0" max="60" step="1" value="15" aria-label="Flak Cannon Elevation Angle">
+        </div>
+
+        <div class="card-mobile">
+          <div class="control-header-row">
+            <label for="artillery-lead-slider" class="control-title">CROSSWIND LEAD</label>
+            <span id="artillery-lead-val" class="control-num-val">0m</span>
+          </div>
+          <input id="artillery-lead-slider" class="mobile-slider" type="range" min="-100" max="100" step="5" value="0" aria-label="Lateral Wind Lead Offset">
+        </div>
+
+        <!-- Primary Mobile Action Button -->
+        <div class="card-mobile action-card">
+          <button id="btn-fire-artillery" class="btn-fire-action" type="button">FIRE FLAK CANNON (-20 STEAM)</button>
+        </div>
+      </section>
+
+      <!-- ================= STATION 4: DAMAGE CONTROL ================= -->
+      <section id="bay-damage_control" class="mobile-station-bay" aria-labelledby="damage-heading">
+        <div class="bay-header">
+          <h2 id="damage-heading" class="bay-title">DAMAGE CONTROL</h2>
+          <button id="claim-btn-damage_control" class="btn-claim-toggle" data-station="DAMAGE_CONTROL" type="button">CLAIM</button>
+        </div>
+
+        <div class="card-mobile">
+          <h3 class="control-title">STRUCTURAL COMPARTMENT SEAL</h3>
+          <p class="control-subtext">Pneumatic patch clamps weld breached bulkheads and restore hull integrity.</p>
+          <button id="btn-patch-hull" class="btn-patch-action" type="button">DEPLOY HULL PATCH (-15 STEAM, +8% HULL)</button>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Mobile Bottom Navigation Ribbon (Thumb Reach Zone) -->
+    <nav class="mobile-nav-bar" aria-label="Bridge Consoles">
+      <button class="nav-tab active" data-station="HELM" type="button">
+        <span class="tab-icon" aria-hidden="true">⚓</span>
+        <span class="tab-title">HELM</span>
+        <span id="badge-helm" class="tab-badge badge-auto">AUTO</span>
+      </button>
+
+      <button class="nav-tab" data-station="BOILER" type="button">
+        <span class="tab-icon" aria-hidden="true">⚙</span>
+        <span class="tab-title">BOILER</span>
+        <span id="badge-boiler" class="tab-badge badge-auto">AUTO</span>
+      </button>
+
+      <button class="nav-tab" data-station="BALLISTICS" type="button">
+        <span class="tab-icon" aria-hidden="true">🎯</span>
+        <span class="tab-title">GUNS</span>
+        <span id="badge-ballistics" class="tab-badge badge-auto">AUTO</span>
+      </button>
+
+      <button class="nav-tab" data-station="DAMAGE_CONTROL" type="button">
+        <span class="tab-icon" aria-hidden="true">🔧</span>
+        <span class="tab-title">REPAIR</span>
+        <span id="badge-damage_control" class="tab-badge badge-auto">AUTO</span>
+      </button>
+    </nav>
+
+    <!-- Mobile Event Log Drawer -->
+    <footer class="mobile-event-drawer">
+      <div id="bridge-log-box" class="drawer-log-list" role="log" aria-live="polite">
+        <div class="log-entry">
+          <span class="log-time">[LINK]</span>
+          <span class="log-info">Mobile bridge telemetry initialized. 10 Hz synchronization online.</span>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+</body>
+</html>

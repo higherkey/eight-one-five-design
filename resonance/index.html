@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Resonance — Blind-Accessible Acoustic Stealth Extraction</title>
+  <script type="module" crossorigin src="/resonance/assets/index-Bi1WA3kb.js"></script>
+  <link rel="stylesheet" crossorigin href="/resonance/assets/index-C7mtFccZ.css">
+</head>
+<body>
+  <!-- Screen reader live regions for 100% blind accessibility parity -->
+  <div id="sr-announcements" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+  <div id="sr-alerts" class="sr-only" aria-live="assertive" aria-atomic="true"></div>
+
+  <header>
+    <div class="brand-container">
+      <div class="brand-title">RESONANCE</div>
+      <div id="status-phase" class="status-badge" aria-label="Game phase">STANDBY</div>
+    </div>
+    <div class="header-status">
+      <div id="status-relics" class="status-badge" aria-label="Relics collected">3/3 RELICS</div>
+      <div id="status-surface" class="status-badge" aria-label="Surface material">STONE</div>
+      <button type="button" id="btn-toggle-blind" class="btn btn-sm" aria-label="Toggle blind audio mode (Hotkey B)">
+        BLIND [B]
+      </button>
+      <button type="button" id="btn-help" class="btn btn-sm" aria-label="Open instructions modal">
+        ?
+      </button>
+    </div>
+  </header>
+
+  <main id="app-main">
+    <div id="canvas-container">
+      <canvas id="game-canvas" width="1280" height="960" role="img" aria-label="Acoustic CRT oscilloscope displaying soundwave reflections and LiDAR decay dots"></canvas>
+    </div>
+
+    <!-- Mobile-First Touch Overlay -->
+    <div id="touch-controls-overlay">
+      <!-- Left Thumb: Virtual Analog Joystick -->
+      <div id="joystick-zone" aria-label="Movement touch joystick" role="region">
+        <div id="joystick-base">
+          <div id="joystick-stick"></div>
+          <div class="joystick-arrow arrow-up" aria-hidden="true">&#9650;</div>
+          <div class="joystick-arrow arrow-down" aria-hidden="true">&#9660;</div>
+          <div class="joystick-arrow arrow-left" aria-hidden="true">&#9664;</div>
+          <div class="joystick-arrow arrow-right" aria-hidden="true">&#9654;</div>
+        </div>
+      </div>
+
+      <!-- Center Status readout -->
+      <div id="touch-hud">
+        <span id="hud-noise">NOISE: 0 px</span> | 
+        <span id="hud-cooldown">CLAP READY</span>
+      </div>
+
+      <!-- Right Thumb: Action Buttons -->
+      <div id="touch-actions">
+        <button type="button" id="btn-touch-sneak" class="btn btn-action" aria-label="Toggle sneak mode (cuts speed and footstep noise)">
+          <span class="btn-subtext">WALK</span>
+          <span class="btn-maintext">SNEAK</span>
+        </button>
+        <button type="button" id="btn-touch-clap" class="btn btn-action btn-primary" aria-label="Emit active echolocation clap (1500ms cooldown)">
+          <span class="btn-subtext">RADIAL</span>
+          <span class="btn-maintext">CLAP</span>
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <dialog id="help-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-header" id="dialog-title">RESONANCE FIELD MANUAL</div>
+    <div class="dialog-content">
+      <p>A blind-accessible acoustic stealth extraction game. Playable 100% via audio or with amber CRT oscilloscope.</p>
+      <ul>
+        <li><strong>Left Thumb / WASD:</strong> Drag the virtual joystick to steer your explorer in 360 degrees.</li>
+        <li><strong>CLAP Button / Space:</strong> Emits an active echolocation pulse. Returns 24 directional stereo reflections.</li>
+        <li><strong>SNEAK Button / Shift:</strong> Cuts movement noise from 175 px down to 45 px.</li>
+        <li><strong>Water Hazard:</strong> Splashing in shallow water amplifies your footstep noise by 1.5x, alerting sound-hunting automatons!</li>
+        <li><strong>Relic Chimes:</strong> Follow the directional stereo triad chimes to locate and collect all 3 relics.</li>
+        <li><strong>Blind Mode (B):</strong> Turns the screen 100% black for pure audio immersion.</li>
+      </ul>
+    </div>
+    <div class="dialog-actions">
+      <button type="button" id="btn-close-help" class="btn">DISMISS</button>
+    </div>
+  </dialog>
+
+</body>
+</html>
