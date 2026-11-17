@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%" style="background-color:#FDFBF7;">
-  <rect width="400" height="400" fill="#FDFBF7" />
-  <!-- WLD-05: Tectonic Plates -->
-  <polygon points="200,60 310,140 270,290 130,290 90,140" fill="none" stroke="#1A1A1A" stroke-width="3" />
-  <line x1="200" y1="60" x2="200" y2="290" stroke="#D97706" stroke-width="2" />
-  <line x1="90" y1="140" x2="270" y2="290" stroke="#1A1A1A" stroke-width="1.5" />
-  <circle cx="200" cy="170" r="20" fill="#FDFBF7" stroke="#D97706" stroke-width="3.5" />
-</svg>
