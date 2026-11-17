@@ -14,6 +14,11 @@ export default function eleventy (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("docs");
   eleventyConfig.addPassthroughCopy("robots.txt");
   eleventyConfig.addPassthroughCopy("sitemap.xml");
+  eleventyConfig.addPassthroughCopy("tectonic-siege");
+  eleventyConfig.addPassthroughCopy("slow-burn-frontier");
+  eleventyConfig.addPassthroughCopy("frontier");
+  eleventyConfig.addPassthroughCopy("frontier.html");
+  eleventyConfig.addPassthroughCopy("slow-burn-frontier.html");
 
   return {
     dir: {
