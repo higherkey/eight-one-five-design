@@ -141,6 +141,21 @@ const STUDIO_CREDENTIALS = {
 // ─────────────────────────────────────────────────────────────────────
 const CASE_STUDIES = [
   {
+    id: 'slow-burn-frontier',
+    title: 'Slow Burn Frontier',
+    subtitle: 'Mobile-First Orbital Conquest & Logistics Engine',
+    category: 'Interactive Game',
+    metric: '1 Hz',
+    metricLabel: 'Deterministic Loop',
+    pillar: 'Work & Play',
+    description: 'A mobile-first, zero-micro orbital sector conquest strategy game built with Colyseus 0.18 and deterministic planar networks. Features automated supply conduits, private commander StateViews, Gabriel planar orbital networks, and thumb-zone ergonomics.',
+    tech: ['TypeScript', 'Colyseus 0.18', 'StateView', 'SVG Console', 'Gabriel Planar Graphs'],
+    isPrivate: false,
+    repoLink: 'https://github.com/higherkey/slow-burn-frontier',
+    liveUrl: '/slow-burn-frontier/',
+    deploymentNote: null
+  },
+  {
     id: 'kipu',
     title: 'Kipu',
     subtitle: 'Sensory Mini-Games & Knowledge Engine',
