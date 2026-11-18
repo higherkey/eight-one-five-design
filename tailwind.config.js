@@ -5,6 +5,7 @@ export default {
     "./about.html",
     "./contact.html",
     "./portfolio.html",
+    "./play.html",
     "./privacy.html",
     "./terms.html",
     "./_includes/**/*.njk",
