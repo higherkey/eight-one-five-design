@@ -24,6 +24,10 @@ export default function eleventy (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("resonance.html");
   eleventyConfig.addPassthroughCopy("aether-dreadnought");
   eleventyConfig.addPassthroughCopy("aether-dreadnought.html");
+  eleventyConfig.addPassthroughCopy("seeded-courier");
+  eleventyConfig.addPassthroughCopy("seeded-courier.html");
+  eleventyConfig.addPassthroughCopy("nested-terminals");
+  eleventyConfig.addPassthroughCopy("nested-terminals.html");
 
   return {
     dir: {

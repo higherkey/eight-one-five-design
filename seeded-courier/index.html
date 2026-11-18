@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content="Seeded Courier: a daily ghost-relay platformer where your past self holds the gates open." />
+    <title>Seeded Courier</title>
+    <script type="module" crossorigin src="/seeded-courier/assets/index-W43HWpAc.js"></script>
+    <link rel="stylesheet" crossorigin href="/seeded-courier/assets/index-D-p6aYfL.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <h1 class="brand">Seeded <span>Courier</span></h1>
+      <p class="meta">
+        <span>Course <strong id="date-key">today</strong></span>
+        <span id="conn" class="badge">Not started</span>
+      </p>
+    </header>
+
+    <main class="layout">
+      <section class="stage" aria-label="Game view">
+        <canvas id="game" class="game-canvas" role="img" aria-label="Side view of the course"></canvas>
+        <div class="hud-top">
+          <p id="stage-label" class="pill">Stage 1 · Set up the relay</p>
+          <p id="clock" class="clock">0.00 s</p>
+        </div>
+        <p id="objective" class="objective">Climb to the deck and stand on the plates your future self will need.</p>
+        <p id="toast" class="toast" role="status" aria-live="polite"></p>
+      </section>
+
+      <section class="panel timeline-panel" aria-labelledby="timeline-heading">
+        <h2 id="timeline-heading">Ghost timeline</h2>
+        <canvas id="timeline" class="timeline" role="img" aria-label="Ghost timeline: no plates held yet."></canvas>
+      </section>
+
+      <section class="actions" aria-label="Relay controls">
+        <button id="btn-lock" class="btn btn-primary" type="button">Lock relay <kbd>L</kbd></button>
+        <button id="btn-retry1" class="btn" type="button">Retry Stage 1 <kbd>R</kbd></button>
+        <button id="btn-retry2" class="btn" type="button">Retry Stage 2 <kbd>T</kbd></button>
+      </section>
+
+      <section class="touchpad" aria-label="Touch controls">
+        <div class="pad-group">
+          <button class="pad" type="button" data-hold="left" aria-label="Move left">&#9664;</button>
+          <button class="pad" type="button" data-hold="right" aria-label="Move right">&#9654;</button>
+        </div>
+        <div class="pad-group">
+          <button class="pad pad-dash" type="button" data-hold="dash" aria-label="Dash">Dash</button>
+          <button class="pad pad-jump" type="button" data-hold="jump" aria-label="Jump">Jump</button>
+        </div>
+      </section>
+
+      <aside class="panel board" aria-labelledby="board-heading">
+        <h2 id="board-heading">Today's top 3</h2>
+        <ol id="board-list" class="board-list"></ol>
+        <p id="board-note" class="note">Finish a delivery to post a time.</p>
+        <h2>Keys</h2>
+        <ul class="keys">
+          <li><kbd>A</kbd><kbd>D</kbd> or arrows: move</li>
+          <li><kbd>Space</kbd> / <kbd>W</kbd>: jump (hold for height)</li>
+          <li><kbd>Shift</kbd> / <kbd>J</kbd>: dash (no cargo)</li>
+          <li><kbd>L</kbd> lock relay · <kbd>R</kbd> retry 1 · <kbd>T</kbd> retry 2</li>
+        </ul>
+      </aside>
+    </main>
+
+    <dialog id="intro" class="dialog" aria-labelledby="intro-heading">
+      <form method="dialog" class="dialog-body">
+        <h2 id="intro-heading">You are your own teammate</h2>
+        <ol class="howto">
+          <li><strong>Stage 1:</strong> run free. Stand on pressure plates; they hold the matching gates open.</li>
+          <li><strong>Lock the relay.</strong> Your run becomes a ghost.</li>
+          <li><strong>Stage 2:</strong> carry heavy cargo along the corridor while your ghost replays beside you. A gate closes the moment your ghost steps off its plate, so be on plate A when you'll reach gate A.</li>
+        </ol>
+        <label class="field" for="handle">Callsign
+          <input id="handle" name="handle" maxlength="16" autocomplete="nickname" />
+        </label>
+        <button class="btn btn-primary" value="start" type="submit">Start today's course</button>
+      </form>
+    </dialog>
+
+    <dialog id="results" class="dialog" aria-labelledby="results-heading">
+      <form method="dialog" class="dialog-body">
+        <h2 id="results-heading">Cargo delivered</h2>
+        <p id="result-time" class="result-time"></p>
+        <p id="result-rank"></p>
+        <ol id="result-board" class="board-list"></ol>
+        <div class="dialog-actions">
+          <button class="btn btn-primary" value="retry2" type="submit">Retry delivery <kbd>T</kbd></button>
+          <button class="btn" value="retry1" type="submit">New relay <kbd>R</kbd></button>
+        </div>
+      </form>
+    </dialog>
+
+  </body>
+</html>
