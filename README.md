@@ -44,6 +44,9 @@ Our identity is derived entirely from the scriptural perspective on the duality 
 - **[style.css](file:///c:/Programming/eight-one-five-design/style.css)**: Golden-ratio layouts and theme transitions.
 - **[app.js](file:///c:/Programming/eight-one-five-design/app.js)**: Tab navigation, case studies database, local storage theme managers.
 
+### Hosted apps
+- **Toothpaws** (`/toothpaws/`): served by the Cloudflare Pages Function in `functions/toothpaws/[[path]].js`, which fetches the app from the `higherkey/toothpaws` GitHub Pages site at the edge. Merges to that repository go live here with no copy step.
+
 ---
 
 ## License
