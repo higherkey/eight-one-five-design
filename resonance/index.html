@@ -2,88 +2,94 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <title>Resonance — Blind-Accessible Acoustic Stealth Extraction</title>
-  <script type="module" crossorigin src="/resonance/assets/index-DtscKb34.js"></script>
-  <link rel="stylesheet" crossorigin href="/resonance/assets/index-C7mtFccZ.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Resonance: a first-person co-op maze you explore by sound. Clap to echolocate, knock down hollow walls, find three bells and ring the sealed door's melody, all while automatons listen. Equally playable sighted or blind.">
+  <title>Resonance</title>
+  <script type="module" crossorigin src="/resonance/assets/index-BrJ9GDks.js"></script>
+  <link rel="stylesheet" crossorigin href="/resonance/assets/index-BCM0F7-z.css">
 </head>
 <body>
-  <!-- Screen reader live regions for 100% blind accessibility parity -->
-  <div id="sr-announcements" class="sr-only" aria-live="polite" aria-atomic="true"></div>
-  <div id="sr-alerts" class="sr-only" aria-live="assertive" aria-atomic="true"></div>
+  <!-- Every game event is spoken here: the game is fully playable with the screen off. -->
+  <div id="sr-polite" class="sr-only" role="log" aria-live="polite"></div>
+  <div id="sr-assertive" class="sr-only" aria-live="assertive" aria-atomic="true"></div>
 
-  <header>
-    <div class="brand-container">
-      <div class="brand-title">RESONANCE</div>
-      <div id="status-phase" class="status-badge" aria-label="Game phase">STANDBY</div>
+  <header class="topbar">
+    <h1 class="brand">RESONANCE</h1>
+    <div class="topbar-status">
+      <span id="status-phase" class="badge">STANDBY</span>
+      <span id="status-relics" class="badge">0/3 BELLS</span>
+      <span id="status-surface" class="badge">STONE</span>
     </div>
-    <div class="header-status">
-      <div id="status-relics" class="status-badge" aria-label="Relics collected">3/3 RELICS</div>
-      <div id="status-surface" class="status-badge" aria-label="Surface material">STONE</div>
-      <button type="button" id="btn-toggle-blind" class="btn btn-sm" aria-label="Toggle blind audio mode (Hotkey B)">
-        BLIND [B]
-      </button>
-      <button type="button" id="btn-help" class="btn btn-sm" aria-label="Open instructions modal">
-        ?
-      </button>
+    <div class="topbar-actions">
+      <button type="button" id="btn-status" class="btn btn-sm" aria-keyshortcuts="R" aria-label="Speak status (R)">STATUS</button>
+      <button type="button" id="btn-blind" class="btn btn-sm" aria-pressed="false" aria-keyshortcuts="B" aria-label="Blind mode (B)">BLIND</button>
+      <button type="button" id="btn-help" class="btn btn-sm" aria-keyshortcuts="H" aria-label="Help (H)">?</button>
     </div>
   </header>
 
-  <main id="app-main">
-    <div id="canvas-container">
-      <canvas id="game-canvas" width="1280" height="960" role="img" aria-label="Acoustic CRT oscilloscope displaying soundwave reflections and LiDAR decay dots"></canvas>
+  <main class="stage">
+    <canvas id="game-canvas" class="scope" aria-hidden="true"></canvas>
+    <div class="reticle" aria-hidden="true"></div>
+    <div class="scanlines" aria-hidden="true"></div>
+
+    <div class="hud" aria-hidden="true">
+      <span id="hud-noise">NOISE 0</span>
+      <span id="hud-clap">CLAP READY</span>
     </div>
 
-    <!-- Mobile-First Touch Overlay -->
-    <div id="touch-controls-overlay">
-      <!-- Left Thumb: Virtual Analog Joystick -->
-      <div id="joystick-zone" aria-label="Movement touch joystick" role="region">
-        <div id="joystick-base">
-          <div id="joystick-stick"></div>
-          <div class="joystick-arrow arrow-up" aria-hidden="true">&#9650;</div>
-          <div class="joystick-arrow arrow-down" aria-hidden="true">&#9660;</div>
-          <div class="joystick-arrow arrow-left" aria-hidden="true">&#9664;</div>
-          <div class="joystick-arrow arrow-right" aria-hidden="true">&#9654;</div>
+    <!-- Visual captions: the same words the screen reader speaks (aria-hidden so they aren't read twice). -->
+    <div id="captions" class="captions" aria-hidden="true"></div>
+
+    <div class="controls">
+      <div class="dpad" role="group" aria-label="Move with W A S D. Turn with the arrow keys, Q and E, or by dragging the view">
+        <button type="button" class="btn pad pad-tl" data-control="turnL" aria-label="Turn left (Left arrow)"><span aria-hidden="true">&#10226;</span></button>
+        <button type="button" class="btn pad pad-f" data-control="fwd" aria-label="Walk forward (W)"><span aria-hidden="true">&#9650;</span></button>
+        <button type="button" class="btn pad pad-tr" data-control="turnR" aria-label="Turn right (Right arrow)"><span aria-hidden="true">&#10227;</span></button>
+        <button type="button" class="btn pad pad-l" data-control="left" aria-label="Step left (A)"><span aria-hidden="true">&#9664;</span></button>
+        <button type="button" class="btn pad pad-b" data-control="back" aria-label="Walk back (S)"><span aria-hidden="true">&#9660;</span></button>
+        <button type="button" class="btn pad pad-r" data-control="right" aria-label="Step right (D)"><span aria-hidden="true">&#9654;</span></button>
+      </div>
+      <div class="actions">
+        <div class="bells" role="group" aria-label="Ring a bell">
+          <button type="button" class="btn btn-bell bell-low" data-ring="0" aria-keyshortcuts="1" aria-label="Ring the low bell (1)">1</button>
+          <button type="button" class="btn btn-bell bell-mid" data-ring="1" aria-keyshortcuts="2" aria-label="Ring the middle bell (2)">2</button>
+          <button type="button" class="btn btn-bell bell-high" data-ring="2" aria-keyshortcuts="3" aria-label="Ring the high bell (3)">3</button>
         </div>
-      </div>
-
-      <!-- Center Status readout -->
-      <div id="touch-hud">
-        <span id="hud-noise">NOISE: 0 px</span> | 
-        <span id="hud-cooldown">CLAP READY</span>
-      </div>
-
-      <!-- Right Thumb: Action Buttons -->
-      <div id="touch-actions">
-        <button type="button" id="btn-touch-sneak" class="btn btn-action" aria-label="Toggle sneak mode (cuts speed and footstep noise)">
-          <span class="btn-subtext">WALK</span>
-          <span class="btn-maintext">SNEAK</span>
-        </button>
-        <button type="button" id="btn-touch-clap" class="btn btn-action btn-primary" aria-label="Emit active echolocation clap (1500ms cooldown)">
-          <span class="btn-subtext">RADIAL</span>
-          <span class="btn-maintext">CLAP</span>
-        </button>
+        <button type="button" id="btn-knock" class="btn btn-action" aria-keyshortcuts="F" aria-label="Knock on the wall ahead (F)">KNOCK</button>
+        <button type="button" id="btn-sneak" class="btn btn-action" aria-pressed="false" aria-keyshortcuts="C" aria-label="Sneak (C, or hold Shift)">SNEAK</button>
+        <button type="button" id="btn-clap" class="btn btn-action btn-primary" aria-keyshortcuts="Space" aria-label="Clap to echolocate (Space)">CLAP</button>
       </div>
     </div>
   </main>
 
-  <dialog id="help-dialog" aria-labelledby="dialog-title">
-    <div class="dialog-header" id="dialog-title">RESONANCE FIELD MANUAL</div>
-    <div class="dialog-content">
-      <p>A blind-accessible acoustic stealth extraction game. Playable 100% via audio or with amber CRT oscilloscope.</p>
+  <dialog id="help-dialog" aria-labelledby="help-title">
+    <h2 id="help-title" class="dialog-title">FIELD MANUAL</h2>
+    <div class="dialog-body">
+      <p>You stand in drowned ruins, in total darkness. You see and hear only what sound reveals. Sighted and blind players get the same cues: every echo is drawn as points of light, played in 3D audio, and captioned. Headphones help.</p>
       <ul>
-        <li><strong>Left Thumb / WASD:</strong> Drag the virtual joystick to steer your explorer in 360 degrees.</li>
-        <li><strong>CLAP Button / Space:</strong> Emits an active echolocation pulse. Returns 24 directional stereo reflections.</li>
-        <li><strong>SNEAK Button / Shift:</strong> Cuts movement noise from 175 px down to 45 px.</li>
-        <li><strong>Water Hazard:</strong> Splashing in shallow water amplifies your footstep noise by 1.5x, alerting sound-hunting automatons!</li>
-        <li><strong>Relic Chimes:</strong> Follow the directional stereo triad chimes to locate and collect all 3 relics.</li>
-        <li><strong>Blind Mode (B):</strong> Turns the screen 100% black for pure audio immersion.</li>
+        <li><strong>Move:</strong> W and S walk, A and D step sideways. <strong>Turn:</strong> the arrow keys, the mouse (click the view first), or drag on touch. Q and E turn exactly 45 degrees and say your new facing.</li>
+        <li><strong>Clap (Space):</strong> each direction answers with a tap. A later tap means a farther wall, and silence means open passage. A drip means water, a crunch means gravel, and a metallic ring is an automaton. A deep <em>boom</em> (drawn in violet) is a hollow wall.</li>
+        <li><strong>Knock (F):</strong> knock on the wall in front of you. Solid stone thuds. A hollow wall crumbles open, but the crash brings automatons running.</li>
+        <li><strong>Bells:</strong> three relic bells chime from hidden niches, some sealed behind hollow walls. Walk into a bell to take it. Whoever finds a bell carries it.</li>
+        <li><strong>The sealed door</strong> hums. Clap beside it and it sings a four-note melody. With all three bells found, ring them in that order beside the door (keys 1 low, 2 middle, 3 high). Every ring is loud. In the view, a higher light means a higher bell.</li>
+        <li><strong>Escape:</strong> once the door opens, follow its beacon out.</li>
+        <li><strong>Sneak (hold Shift, or C to toggle):</strong> slow and quiet. Water and gravel make every step carry farther.</li>
+        <li><strong>Status (R)</strong> speaks your bells, the door's melody and your facing. <strong>Blind mode (B)</strong> turns the screen fully black.</li>
       </ul>
+      <p>Online, the ruins keep running while this help is open.</p>
     </div>
     <div class="dialog-actions">
-      <button type="button" id="btn-close-help" class="btn">DISMISS</button>
+      <button type="button" id="btn-close-help" class="btn">CLOSE</button>
     </div>
   </dialog>
-
+
+  <dialog id="end-dialog" aria-labelledby="end-title" aria-describedby="end-text">
+    <h2 id="end-title" class="dialog-title">EXTRACTED</h2>
+    <p id="end-text" class="dialog-body"></p>
+    <div class="dialog-actions">
+      <button type="button" id="btn-again" class="btn">PLAY AGAIN</button>
+    </div>
+  </dialog>
+
 </body>
 </html>
