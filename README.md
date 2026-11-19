@@ -45,7 +45,7 @@ Our identity is derived entirely from the scriptural perspective on the duality 
 - **[app.js](file:///c:/Programming/eight-one-five-design/app.js)**: Tab navigation, case studies database, local storage theme managers.
 
 ### Hosted apps
-- **Toothpaws** (`/toothpaws/`): served by the Cloudflare Pages Function in `functions/toothpaws/[[path]].js`, which fetches the app from the `higherkey/toothpaws` GitHub Pages site at the edge. Merges to that repository go live here with no copy step.
+- **Toothpaws** (`/toothpaws/`): served by the Cloudflare Pages Function in `functions/toothpaws/[[path]].js`, which fetches the app from GitHub Pages at the edge, trying `higherkey.github.io/toothpaws/` and then `higherkey.github.io/brush-buddies/` (the repository's old name), so it works before and after the rename. Merges to that repository go live here with no copy step. Old `/brush-buddies/` links on this domain redirect to `/toothpaws/`.
 
 ---
 
